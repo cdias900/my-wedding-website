@@ -68,6 +68,7 @@
       }
     ],
     "no-empty": ["error", { "allowEmptyCatch": true }],
+    "react/function-component-definition": "off",
     "import-helpers/order-imports": [
       "error",
       {
