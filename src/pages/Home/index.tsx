@@ -1,7 +1,7 @@
 import { Container } from './styles';
 
 const Home = () => {
-  return <Container>Hello World</Container>;
+  return <Container>Home</Container>;
 };
 
 export { Home };
