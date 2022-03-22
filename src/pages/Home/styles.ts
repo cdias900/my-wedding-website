@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
-import coverImg from 'assets/cover.png';
+import coverImg from 'assets/images/cover.png';
+import PedroGabi01 from 'assets/images/pedro-gabi-01.jpg';
 
 interface ProfilePictureProps {
   image: string;
@@ -8,6 +9,19 @@ interface ProfilePictureProps {
 
 interface ProfilePictureFrameProps {
   borderColor: string;
+}
+
+interface AboutUsPictureContainerProps {
+  orientation?: 'left' | 'right';
+}
+
+interface ProfileDetailsProps {
+  orientation?: 'left' | 'right';
+  position?: 'bottom' | 'top';
+}
+
+interface TextProps {
+  textAlign?: 'left' | 'center' | 'right';
 }
 
 export const Container = styled.div`
@@ -72,10 +86,11 @@ export const Title = styled.h2`
   color: ${({ theme }) => theme.blue};
 `;
 
-export const Text = styled.p`
+export const Text = styled.p<TextProps>`
   font-family: 'Nunito', sans-serif;
   font-size: 17px;
   color: ${({ theme }) => theme.black};
+  text-align: ${({ textAlign }) => textAlign};
 `;
 
 export const CountdownContainer = styled.div`
@@ -116,28 +131,30 @@ export const CountdownLabel = styled.span`
 `;
 
 export const AboutUsContainer = styled.div`
-  margin-top: 96px;
-  width: 100%;
+  margin: 96px auto 0;
+  width: 60%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 `;
 
-export const AboutUsPictureContainer = styled.div`
+export const AboutUsPictureContainer = styled.div<AboutUsPictureContainerProps>`
   display: flex;
-  flex-direction: row;
+  flex-direction: ${({ orientation }) =>
+    orientation === 'right' ? 'row-reverse' : 'row'};
   align-items: center;
   justify-content: flex-start;
+  width: 80%;
 `;
 
 export const ProfilePicture = styled.div<ProfilePictureProps>`
   background-image: url(${({ image }) => image});
-  background-position: center 20%;
+  background-position: center 30%;
   background-size: cover;
   background-repeat: no-repeat;
-  width: 480px;
-  height: 480px;
+  width: 360px;
+  height: 360px;
   padding: 16px;
 `;
 
@@ -153,4 +170,69 @@ export const ProfileName = styled.p`
   font-weight: 400;
   color: ${({ color }) => color};
   font-size: 26px;
+  margin-bottom: 16px;
+`;
+
+export const ProfileDetails = styled.div<ProfileDetailsProps>`
+  width: 50%;
+  margin: 0 48px;
+  display: flex;
+  flex-direction: column;
+  align-self: ${({ position }) =>
+    position === 'bottom' ? 'flex-end' : 'flex-start'};
+  align-items: ${({ orientation }) =>
+    orientation === 'right' ? 'flex-end' : 'flex-start'};
+  justify-content: center;
+`;
+
+export const SocialContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+`;
+
+export const SocialIconContainer = styled.a.attrs({
+  target: '_blank',
+})`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: ${({ theme }) => theme.white};
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  box-shadow: 0 3px 10px ${({ theme }) => theme.lightGray};
+  margin: 0 8px;
+  cursor: pointer;
+
+  :hover {
+    filter: brightness(0.9);
+  }
+
+  :active {
+    filter: brightness(1.1);
+  }
+`;
+
+export const CenterProfileImage = styled.div`
+  background-image: url(${PedroGabi01});
+  background-position: center 30%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 435px;
+  height: 435px;
+  margin: -12% 0;
+  z-index: 2;
+  border: 15px solid ${({ theme }) => theme.white};
+  box-shadow: 0 3px 10px ${({ theme }) => theme.lightGray};
+`;
+
+export const HistoryContainer = styled.div`
+  width: 60%;
+  margin: 96px auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;

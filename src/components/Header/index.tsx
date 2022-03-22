@@ -1,4 +1,4 @@
-import Plant from 'assets/plant.svg';
+import Plant from 'assets/icons/plant.svg';
 
 import { Button } from 'components/Button';
 
