@@ -6,7 +6,7 @@ import {
   differenceInMinutes,
   differenceInSeconds,
 } from 'date-fns';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 import Pedro01 from 'assets/images/pedro-01.jpg';
 import Gabi01 from 'assets/images/gabi-01.jpg';
@@ -47,6 +47,7 @@ const Home = () => {
   const theme = useTheme();
 
   const location = useLocation();
+  const navigate = useNavigate();
 
   const aboutUsRef = useRef<HTMLDivElement>(null);
   const historyRef = useRef<HTMLDivElement>(null);
@@ -136,7 +137,7 @@ const Home = () => {
         <ImageBackdrop>
           <ImageUpperLabel>Nosso Casamento</ImageUpperLabel>
           <ImageLabel>Pedro & Gabi</ImageLabel>
-          <Button label="Nossa História" />
+          <Button label="Nossa História" onClick={() => navigate('/history')} />
         </ImageBackdrop>
       </CoverImageContainer>
       <CountdownGradient>

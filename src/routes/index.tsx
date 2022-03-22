@@ -2,7 +2,7 @@ import { BrowserRouter, Routes as RouterRoutes, Route } from 'react-router-dom';
 
 import { Home, GiftList } from 'pages';
 
-import { Header, Navbar } from 'components';
+import { Footer, Header, Navbar } from 'components';
 
 const Routes = () => (
   <BrowserRouter>
@@ -12,6 +12,7 @@ const Routes = () => (
       <Route path="gift-list" element={<GiftList />} />
       <Route path="*" element={<Home />} />
     </RouterRoutes>
+    <Footer />
   </BrowserRouter>
 );
 
