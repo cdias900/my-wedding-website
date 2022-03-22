@@ -47,11 +47,10 @@ const Home = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      const weddingDate = new Date('2022-12-16T16:30:00.364Z');
+      const weddingDate = new Date('2022-12-16T19:30:00.000Z');
       const currentDate = new Date();
       const monthDiff = differenceInMonths(weddingDate, currentDate);
-      const dayDiff =
-        differenceInDays(weddingDate, currentDate) - monthDiff * 30.5;
+      const dayDiff = differenceInDays(weddingDate, currentDate) % 30.5;
       const hourDiff =
         differenceInHours(weddingDate, currentDate) -
         monthDiff * 30.5 * 24 -
@@ -67,6 +66,24 @@ const Home = () => {
         dayDiff * 24 * 60 * 60 -
         hourDiff * 60 * 60 -
         minutesDiff * 60;
+
+      if (
+        monthDiff <= 0 &&
+        dayDiff <= 0 &&
+        hourDiff <= 0 &&
+        minutesDiff <= 0 &&
+        secondsDiff <= 0
+      ) {
+        setTimeLeft({
+          months: 0,
+          days: 0,
+          hours: 0,
+          minutes: 0,
+          seconds: 0,
+        });
+        clearInterval(interval);
+        return;
+      }
 
       setTimeLeft({
         months: monthDiff,
@@ -101,29 +118,35 @@ const Home = () => {
         {timeLeft.months > 0 && (
           <Countdown>
             <CountdownNumber>{timeLeft.months}</CountdownNumber>
-            <CountdownLabel>Meses</CountdownLabel>
+            <CountdownLabel>
+              {timeLeft.months === 1 ? 'Mês' : 'Meses'}
+            </CountdownLabel>
           </Countdown>
         )}
         {timeLeft.days > 0 && (
           <Countdown>
             <CountdownNumber>{timeLeft.days}</CountdownNumber>
-            <CountdownLabel>Dias</CountdownLabel>
+            <CountdownLabel>Dia{timeLeft.days === 1 ? '' : 's'}</CountdownLabel>
           </Countdown>
         )}
         <Countdown>
           <CountdownNumber>{timeLeft.hours}</CountdownNumber>
-          <CountdownLabel>Horas</CountdownLabel>
+          <CountdownLabel>Hora{timeLeft.hours === 1 ? '' : 's'}</CountdownLabel>
         </Countdown>
         {timeLeft.months <= 0 && (
           <Countdown>
             <CountdownNumber>{timeLeft.minutes}</CountdownNumber>
-            <CountdownLabel>Minutos</CountdownLabel>
+            <CountdownLabel>
+              Minuto{timeLeft.minutes === 1 ? '' : 's'}
+            </CountdownLabel>
           </Countdown>
         )}
         {timeLeft.days <= 0 && (
           <Countdown>
             <CountdownNumber>{timeLeft.seconds}</CountdownNumber>
-            <CountdownLabel>Segundos</CountdownLabel>
+            <CountdownLabel>
+              Segundo{timeLeft.seconds === 1 ? '' : 's'}
+            </CountdownLabel>
           </Countdown>
         )}
       </CountdownContainer>

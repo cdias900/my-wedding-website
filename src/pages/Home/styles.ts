@@ -97,8 +97,8 @@ export const Countdown = styled.div`
   background-color: ${({ theme }) => theme.white};
   border-radius: 20px;
   box-shadow: 0 3px 10px ${({ theme }) => theme.lightBlue};
-  margin: 0 16px;
-  padding: 24px 8px;
+  margin: 0 12px;
+  padding: 32px 16px;
 `;
 
 export const CountdownNumber = styled.span`
