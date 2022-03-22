@@ -7,6 +7,7 @@ const defaultTheme: DefaultTheme = {
   white: '#FFFFFF',
   black: '#322F3D',
   gray: '#5F6E7F',
+  lightGray: '#ddd',
 };
 
 export { defaultTheme };

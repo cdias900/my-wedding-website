@@ -1,12 +1,20 @@
 import Plant from 'assets/plant.svg';
 
-import { Container, Title } from './styles';
+import { Button } from 'components/Button';
+
+import { Container, Title, TitleContainer } from './styles';
 
 const Header = () => (
   <Container>
-    <Title>Pedro & Gabi</Title>
-    <img src={Plant} alt="Plant" />
-    <button type="button">Confirmar Presença</button>
+    <TitleContainer>
+      <Title>Pedro & Gabi</Title>
+      <img src={Plant} alt="Plant" />
+    </TitleContainer>
+    <Button
+      type="button"
+      label="Confirmar Presença"
+      style={{ position: 'absolute', right: '10%' }}
+    />
   </Container>
 );
 

@@ -93,7 +93,8 @@
       }
     ],
     "no-console": "off",
-    "prefer-regex-literals": "off"
+    "prefer-regex-literals": "off",
+    "react/button-has-type": "off"
   },
   "settings": {
     "import/resolver": {
