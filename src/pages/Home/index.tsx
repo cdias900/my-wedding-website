@@ -204,10 +204,14 @@ const Home = () => {
               <SocialIconContainer
                 style={{ marginLeft: 0 }}
                 href="https://www.facebook.com/PedroHCD/"
+                color={theme.lightBlue}
               >
                 <FacebookIcon color={theme.lightBlue} />
               </SocialIconContainer>
-              <SocialIconContainer href="https://www.instagram.com/phcd0/">
+              <SocialIconContainer
+                href="https://www.instagram.com/phcd0/"
+                color={theme.lightBlue}
+              >
                 <InstagramIcon color={theme.lightBlue} />
               </SocialIconContainer>
             </SocialContainer>
@@ -229,10 +233,14 @@ const Home = () => {
               <SocialIconContainer
                 style={{ marginLeft: 0 }}
                 href="https://www.facebook.com/marciagabriella.dantasvidal"
+                color={theme.pink}
               >
                 <FacebookIcon color={theme.pink} />
               </SocialIconContainer>
-              <SocialIconContainer href="https://www.instagram.com/gabividal18/">
+              <SocialIconContainer
+                href="https://www.instagram.com/gabividal18/"
+                color={theme.pink}
+              >
                 <InstagramIcon color={theme.pink} />
               </SocialIconContainer>
               {/* <SocialIconContainer>

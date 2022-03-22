@@ -104,7 +104,6 @@ export const CountdownContainer = styled.div`
 `;
 
 export const Countdown = styled.div`
-  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -112,8 +111,9 @@ export const Countdown = styled.div`
   background-color: ${({ theme }) => theme.white};
   border-radius: 20px;
   box-shadow: 0 3px 10px ${({ theme }) => theme.lightBlue};
-  margin: 0 12px;
-  padding: 32px 16px;
+  margin: 0 10px;
+  width: 180px;
+  height: 195px;
 `;
 
 export const CountdownNumber = styled.span`
@@ -202,7 +202,7 @@ export const SocialIconContainer = styled.a.attrs({
   border-radius: 50%;
   width: 36px;
   height: 36px;
-  box-shadow: 0 3px 10px ${({ theme }) => theme.lightGray};
+  box-shadow: 0 3px 10px ${({ color }) => color};
   margin: 0 8px;
   cursor: pointer;
 
