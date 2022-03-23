@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { RefObject, useCallback, useEffect, useRef, useState } from 'react';
 import {
   differenceInDays,
   differenceInMonths,
@@ -61,6 +61,13 @@ const Home = () => {
     seconds: 0,
   });
 
+  const scrollToRef = useCallback((ref: RefObject<HTMLDivElement>) => {
+    window.scrollTo({
+      top: (ref.current?.offsetTop || 0) - 200,
+      behavior: 'smooth',
+    });
+  }, []);
+
   useEffect(() => {
     const interval = setInterval(() => {
       const weddingDate = new Date('2022-12-16T19:30:00.000Z');
@@ -122,15 +129,15 @@ const Home = () => {
         });
         break;
       case '/about-us':
-        aboutUsRef.current?.scrollIntoView({ behavior: 'smooth' });
+        scrollToRef(aboutUsRef);
         break;
       case '/history':
-        historyRef.current?.scrollIntoView({ behavior: 'smooth' });
+        scrollToRef(historyRef);
         break;
       default:
         break;
     }
-  }, [location]);
+  }, [location, scrollToRef]);
 
   return (
     <Container hasTopOffset={showHeader}>
