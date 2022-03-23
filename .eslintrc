@@ -95,7 +95,8 @@
     "no-console": "off",
     "prefer-regex-literals": "off",
     "react/button-has-type": "off",
-    "react/jsx-no-constructed-context-values": "off"
+    "react/jsx-no-constructed-context-values": "off",
+    "react/require-default-props": "off"
   },
   "settings": {
     "import/resolver": {

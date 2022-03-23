@@ -11,7 +11,6 @@ export const Container = styled.div<ContainerProps>`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  position: relative;
   height: 126px;
   border-bottom: 1px solid ${({ theme }) => theme.lightGray};
   transition: all 0.3s;
