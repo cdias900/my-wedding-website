@@ -1,17 +1,28 @@
 import styled from 'styled-components';
 
-export const Container = styled.nav`
-  width: 60vw;
-  height: 70px;
+interface ContainerProps {
+  show: boolean;
+}
+
+export const Container = styled.nav<ContainerProps>`
+  width: 100%;
+  height: 66px;
   margin: 0 auto;
-  padding: 16px 0;
+  transition: all 0.3s;
+  position: fixed;
+  top: ${({ show }) => (show ? 126 : -66)}px;
+  left: 0;
+  background: ${({ theme }) => theme.white};
+  z-index: 100;
 `;
 
 export const Menu = styled.ul`
-  width: 100%;
+  width: 60%;
+  height: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   list-style: none;
+  margin: 0 auto;
 `;

@@ -24,9 +24,15 @@ interface TextProps {
   textAlign?: 'left' | 'center' | 'right';
 }
 
-export const Container = styled.div`
+interface ContainerProps {
+  hasTopOffset: boolean;
+}
+
+export const Container = styled.div<ContainerProps>`
   width: 100%;
   height: 100%;
+  margin-top: ${({ hasTopOffset }) => (hasTopOffset ? 192 : 0)}px;
+  transition: all 0.3s;
 `;
 
 export const CoverImageContainer = styled.div`
@@ -53,13 +59,14 @@ export const ImageLabel = styled.h1`
   color: ${({ theme }) => theme.white};
   font-size: 100px;
   font-weight: 400;
-  margin-bottom: 64px;
+  margin-bottom: 50px;
 `;
 
 export const ImageUpperLabel = styled.span`
   font-family: 'Volkhov', serif;
   color: ${({ theme }) => theme.white};
   font-size: 28px;
+  margin-bottom: 10px;
 `;
 
 export const CountdownGradient = styled.div`

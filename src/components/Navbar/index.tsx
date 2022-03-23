@@ -1,5 +1,7 @@
 import { NavbarItem } from 'components/NavbarItem';
 
+import { useShowHeader } from 'hooks';
+
 import { Container, Menu } from './styles';
 
 const items = [
@@ -26,8 +28,10 @@ const items = [
 ];
 
 const Navbar = () => {
+  const { showHeader } = useShowHeader();
+
   return (
-    <Container>
+    <Container show={showHeader}>
       <Menu>
         {items.map(item => (
           <NavbarItem key={item.label} link={item.link} label={item.label} />

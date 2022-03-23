@@ -15,7 +15,7 @@ import { ReactComponent as InstagramIcon } from 'assets/icons/instagram.svg';
 
 import { Button } from 'components';
 
-import { useTheme } from 'hooks';
+import { useShowHeader, useTheme } from 'hooks';
 
 import {
   AboutUsContainer,
@@ -45,6 +45,7 @@ import {
 
 const Home = () => {
   const theme = useTheme();
+  const { showHeader } = useShowHeader();
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -132,7 +133,7 @@ const Home = () => {
   }, [location]);
 
   return (
-    <Container>
+    <Container hasTopOffset={showHeader}>
       <CoverImageContainer>
         <ImageBackdrop>
           <ImageUpperLabel>Nosso Casamento</ImageUpperLabel>

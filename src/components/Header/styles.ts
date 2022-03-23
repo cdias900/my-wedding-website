@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+interface ContainerProps {
+  show: boolean;
+}
+
+export const Container = styled.div<ContainerProps>`
   width: 100%;
   margin: 0 auto;
   display: flex;
@@ -8,8 +12,14 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   position: relative;
-  padding: 32px 0;
+  height: 126px;
   border-bottom: 1px solid ${({ theme }) => theme.lightGray};
+  transition: all 0.3s;
+  position: fixed;
+  top: ${({ show }) => (show ? 0 : -192)}px;
+  left: 0;
+  background: ${({ theme }) => theme.white};
+  z-index: 100;
 `;
 
 export const TitleContainer = styled.div`

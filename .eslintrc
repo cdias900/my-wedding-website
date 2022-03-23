@@ -94,7 +94,8 @@
     ],
     "no-console": "off",
     "prefer-regex-literals": "off",
-    "react/button-has-type": "off"
+    "react/button-has-type": "off",
+    "react/jsx-no-constructed-context-values": "off"
   },
   "settings": {
     "import/resolver": {

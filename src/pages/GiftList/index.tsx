@@ -1,7 +1,11 @@
+import { useShowHeader } from 'hooks';
+
 import { Container } from './styles';
 
 const GiftList = () => {
-  return <Container>Gift List</Container>;
+  const { showHeader } = useShowHeader();
+
+  return <Container hasTopOffset={showHeader}>Gift List</Container>;
 };
 
 export { GiftList };

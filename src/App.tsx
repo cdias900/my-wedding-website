@@ -2,12 +2,16 @@ import { GlobalStyle } from 'styles/global';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from 'styles/themes/default';
 
-import { Routes } from 'routes/index';
+import { Routes } from 'routes';
+
+import { ShowHeaderProvider } from 'hooks';
 
 const App = () => (
   <ThemeProvider theme={defaultTheme}>
-    <GlobalStyle />
-    <Routes />
+    <ShowHeaderProvider>
+      <GlobalStyle />
+      <Routes />
+    </ShowHeaderProvider>
   </ThemeProvider>
 );
 
