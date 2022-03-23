@@ -27,6 +27,7 @@ const CountdownSection = () => {
     minutes: 0,
     seconds: 0,
   });
+
   useEffect(() => {
     const interval = setInterval(() => {
       const weddingDate = new Date('2022-12-16T19:30:00.000Z');
@@ -78,11 +79,12 @@ const CountdownSection = () => {
 
     return () => clearInterval(interval);
   }, []);
+
   return (
     <>
       <CountdownGradient>
         <Subtitle>Dia do Casamento</Subtitle>
-        <Title style={{ marginBottom: 32 }}>Contagem Regressiva</Title>
+        <Title>Contagem Regressiva</Title>
         <Text>
           Nulla facilisi. Nunc in ligula augue. Sed mollis massa nec lorem
           scelerisque, eu condimentum sapien euismod.

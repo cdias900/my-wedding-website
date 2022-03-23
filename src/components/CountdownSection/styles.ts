@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const CountdownGradient = styled.div`
   margin-top: 96px;
   padding: 48px 0 200px;
-  background-image: linear-gradient(#ffffff80, #ffffff20);
+  background: ${({ theme }) => theme.darkWhite};
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -17,7 +17,7 @@ export const CountdownContainer = styled.div`
   justify-content: center;
   margin: 0 auto;
   width: 40vw;
-  margin-top: -96px;
+  margin-top: -106px;
 `;
 
 export const Countdown = styled.div`

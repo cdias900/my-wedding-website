@@ -5,6 +5,7 @@ const defaultTheme: DefaultTheme = {
   lightBlue: '#BBD3E6',
   pink: '#DDBFF7',
   white: '#FFFFFF',
+  darkWhite: '#FBFBFB',
   black: '#322F3D',
   gray: '#5F6E7F',
   lightGray: '#ddd',

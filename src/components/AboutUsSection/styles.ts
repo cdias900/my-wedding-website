@@ -2,14 +2,6 @@ import styled from 'styled-components';
 
 import PedroGabi01 from 'assets/images/pedro-gabi-01.jpg';
 
-interface ProfilePictureProps {
-  image: string;
-}
-
-interface ProfilePictureFrameProps {
-  borderColor: string;
-}
-
 interface AboutUsPictureContainerProps {
   orientation?: 'left' | 'right';
 }
@@ -37,22 +29,6 @@ export const AboutUsPictureContainer = styled.div<AboutUsPictureContainerProps>`
   width: 80%;
 `;
 
-export const ProfilePicture = styled.div<ProfilePictureProps>`
-  background-image: url(${({ image }) => image});
-  background-position: center 30%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 360px;
-  height: 360px;
-  padding: 16px;
-`;
-
-export const ProfilePictureFrame = styled.div<ProfilePictureFrameProps>`
-  width: 100%;
-  height: 100%;
-  border: 1px solid ${({ borderColor }) => borderColor};
-`;
-
 export const ProfileName = styled.p`
   font-family: 'Volkhov', serif;
   font-style: italic;
@@ -63,7 +39,7 @@ export const ProfileName = styled.p`
 `;
 
 export const ProfileDetails = styled.div<ProfileDetailsProps>`
-  width: 50%;
+  width: 60%;
   margin: 0 48px;
   display: flex;
   flex-direction: column;

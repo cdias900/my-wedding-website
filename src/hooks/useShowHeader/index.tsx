@@ -19,7 +19,7 @@ export const ShowHeaderProvider: React.FC = ({ children }) => {
   const [showHeader, setShowHeader] = useState(true);
 
   const handleShowHeader = useCallback(() => {
-    setShowHeader(window.scrollY <= lastScrollY);
+    setShowHeader(window.scrollY < lastScrollY);
     setLastScrollY(window.scrollY);
   }, [lastScrollY]);
 

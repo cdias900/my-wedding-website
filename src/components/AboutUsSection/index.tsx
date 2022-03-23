@@ -8,6 +8,7 @@ import { ReactComponent as InstagramIcon } from 'assets/icons/instagram.svg';
 import { Subtitle } from 'components/Subtitle';
 import { Text } from 'components/Text';
 import { Title } from 'components/Title';
+import { FramedPicture } from 'components/FramedPicture';
 
 import { useTheme } from 'hooks';
 
@@ -17,8 +18,6 @@ import {
   CenterProfileImage,
   ProfileDetails,
   ProfileName,
-  ProfilePicture,
-  ProfilePictureFrame,
   SocialContainer,
   SocialIconContainer,
 } from './styles';
@@ -29,11 +28,9 @@ const AboutUsSection = forwardRef<HTMLDivElement>((_, ref) => {
   return (
     <AboutUsContainer ref={ref}>
       <Subtitle>Casal</Subtitle>
-      <Title style={{ marginBottom: 32 }}>Sobre Nós</Title>
+      <Title>Sobre Nós</Title>
       <AboutUsPictureContainer>
-        <ProfilePicture image={Pedro01}>
-          <ProfilePictureFrame borderColor={theme.lightBlue} />
-        </ProfilePicture>
+        <FramedPicture image={Pedro01} frameColor={theme.lightBlue} />
         <ProfileDetails>
           <ProfileName color={theme.blue}>
             Pedro Henrique Campos Dias
@@ -62,9 +59,7 @@ const AboutUsSection = forwardRef<HTMLDivElement>((_, ref) => {
       </AboutUsPictureContainer>
       <CenterProfileImage />
       <AboutUsPictureContainer orientation="right">
-        <ProfilePicture image={Gabi01}>
-          <ProfilePictureFrame borderColor={theme.pink} />
-        </ProfilePicture>
+        <FramedPicture image={Gabi01} frameColor={theme.pink} />
         <ProfileDetails orientation="right" position="bottom">
           <ProfileName color={theme.pink}>Gabriella Vidal</ProfileName>
           <Text style={{ marginBottom: 24 }} textAlign="right">

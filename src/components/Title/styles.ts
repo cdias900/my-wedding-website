@@ -5,4 +5,5 @@ export const StyledTitle = styled.h2`
   font-size: 56px;
   font-weight: 700;
   color: ${({ theme }) => theme.blue};
+  margin-bottom: 50px;
 `;
