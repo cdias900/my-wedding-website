@@ -45,12 +45,14 @@ const AboutUsSection = forwardRef<HTMLDivElement>((_, ref) => {
               style={{ marginLeft: 0 }}
               href="https://www.facebook.com/PedroHCD/"
               color={theme.lightBlue}
+              aria-label="Facebook"
             >
               <FacebookIcon color={theme.lightBlue} />
             </SocialIconContainer>
             <SocialIconContainer
               href="https://www.instagram.com/phcd0/"
               color={theme.lightBlue}
+              aria-label="Instagram"
             >
               <InstagramIcon color={theme.lightBlue} />
             </SocialIconContainer>
@@ -72,18 +74,17 @@ const AboutUsSection = forwardRef<HTMLDivElement>((_, ref) => {
               style={{ marginLeft: 0 }}
               href="https://www.facebook.com/marciagabriella.dantasvidal"
               color={theme.pink}
+              aria-label="Facebook"
             >
               <FacebookIcon color={theme.pink} />
             </SocialIconContainer>
             <SocialIconContainer
               href="https://www.instagram.com/gabividal18/"
               color={theme.pink}
+              aria-label="Instagram"
             >
               <InstagramIcon color={theme.pink} />
             </SocialIconContainer>
-            {/* <SocialIconContainer>
-          <TwitterIcon color={theme.lightBlue} />
-        </SocialIconContainer> */}
           </SocialContainer>
         </ProfileDetails>
       </AboutUsPictureContainer>

@@ -8,7 +8,9 @@ interface NavbarItemProps {
 const NavbarItem = ({ link, label }: NavbarItemProps) => {
   return (
     <Item>
-      <NavbarLink to={link}>{label}</NavbarLink>
+      <NavbarLink to={link} aria-label={label}>
+        {label}
+      </NavbarLink>
     </Item>
   );
 };
