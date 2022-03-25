@@ -2,14 +2,9 @@ import styled from 'styled-components';
 
 import coverImg from 'assets/images/cover.png';
 
-interface ContainerProps {
-  hasTopOffset: boolean;
-}
-
-export const Container = styled.div<ContainerProps>`
+export const Container = styled.div`
   width: 100%;
   height: 100%;
-  margin-top: ${({ hasTopOffset }) => (hasTopOffset ? 192 : 0)}px;
   transition: all 0.3s;
 `;
 
@@ -18,11 +13,11 @@ export const CoverImageContainer = styled.div`
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  width: 100%;
+  height: 100vh;
 `;
 
 export const ImageBackdrop = styled.div`
-  padding: 400px 0 80px;
+  padding-bottom: 80px;
   background-image: linear-gradient(#00000020, #00000080);
   width: 100%;
   height: 100%;

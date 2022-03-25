@@ -8,8 +8,6 @@ import {
   HistorySection,
 } from 'components';
 
-import { useShowHeader } from 'hooks';
-
 import {
   Container,
   CoverImageContainer,
@@ -19,17 +17,17 @@ import {
 } from './styles';
 
 const Home = () => {
-  const { showHeader } = useShowHeader();
-
   const location = useLocation();
   const navigate = useNavigate();
 
+  const indexRef = useRef<HTMLDivElement>(null);
   const aboutUsRef = useRef<HTMLDivElement>(null);
   const historyRef = useRef<HTMLDivElement>(null);
 
   const scrollToRef = useCallback((ref: RefObject<HTMLDivElement>) => {
+    const scrollTarget = ref.current?.offsetTop || 0;
     window.scrollTo({
-      top: (ref.current?.offsetTop || 0) - 200,
+      top: scrollTarget - (window.scrollY > scrollTarget ? 200 : 10),
       behavior: 'smooth',
     });
   }, []);
@@ -37,10 +35,7 @@ const Home = () => {
   useEffect(() => {
     switch (location.pathname) {
       case '/':
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth',
-        });
+        scrollToRef(indexRef);
         break;
       case '/about-us':
         scrollToRef(aboutUsRef);
@@ -54,7 +49,7 @@ const Home = () => {
   }, [location, scrollToRef]);
 
   return (
-    <Container hasTopOffset={showHeader}>
+    <Container ref={indexRef}>
       <CoverImageContainer>
         <ImageBackdrop>
           <ImageUpperLabel>Nosso Casamento</ImageUpperLabel>

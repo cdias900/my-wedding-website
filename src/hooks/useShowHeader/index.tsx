@@ -15,7 +15,7 @@ export const ShowHeaderContext = createContext<IShowHeaderContextData>(
 );
 
 export const ShowHeaderProvider: React.FC = ({ children }) => {
-  const [lastScrollY, setLastScrollY] = useState(0);
+  const [lastScrollY, setLastScrollY] = useState(window.scrollY);
   const [showHeader, setShowHeader] = useState(true);
 
   const handleShowHeader = useCallback(() => {

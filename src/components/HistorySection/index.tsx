@@ -83,7 +83,7 @@ const HistorySection = forwardRef<HTMLDivElement>((_, ref) => {
             }
           >
             {rows.map(history => (
-              <PostContainer>
+              <PostContainer key={String(uuid.v4())}>
                 <PostInfoContainer>
                   <PostDate>{history.date}</PostDate>
                   <PostTitle>{history.title}</PostTitle>
