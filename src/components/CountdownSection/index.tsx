@@ -85,10 +85,7 @@ const CountdownSection = () => {
       <CountdownGradient>
         <Subtitle>Dia do Casamento</Subtitle>
         <Title>Contagem Regressiva</Title>
-        <Text>
-          Nulla facilisi. Nunc in ligula augue. Sed mollis massa nec lorem
-          scelerisque, eu condimentum sapien euismod.
-        </Text>
+        <Text>Acompanhe a chegada do nosso grande dia!</Text>
       </CountdownGradient>
       <CountdownContainer>
         {timeLeft.months > 0 && (

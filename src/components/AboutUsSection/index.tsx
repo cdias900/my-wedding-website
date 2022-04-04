@@ -1,4 +1,5 @@
 import { forwardRef } from 'react';
+import { differenceInYears } from 'date-fns';
 
 import Pedro01 from 'assets/images/pedro-01.jpg';
 import Gabi01 from 'assets/images/gabi-01.jpg';
@@ -36,9 +37,10 @@ const AboutUsSection = forwardRef<HTMLDivElement>((_, ref) => {
             Pedro Henrique Campos Dias
           </ProfileName>
           <Text style={{ marginBottom: 24 }} textAlign="left">
-            Aenean eget mi ullamicorper, vestibulum enim in, fermentum massa.
-            Aenean sit amet velit ligula. Curabitur at scelerisque elit.
-            Maecenas vel tincidunt neque.
+            Tenho {differenceInYears(new Date(), new Date('07/03/2000'))} anos,
+            sou formado em Ciência da Computação no IESB e trabalho como
+            desenvolvedor Web/Mobile, faço parte da igreja Sara Nossa Terra Sede
+            e gosto de programar, assistir animes e jogar videogame.
           </Text>
           <SocialContainer>
             <SocialIconContainer
@@ -65,9 +67,9 @@ const AboutUsSection = forwardRef<HTMLDivElement>((_, ref) => {
         <ProfileDetails orientation="right" position="bottom">
           <ProfileName color={theme.pink}>Gabriella Vidal</ProfileName>
           <Text style={{ marginBottom: 24 }} textAlign="right">
-            Aenean eget mi ullamicorper, vestibulum enim in, fermentum massa.
-            Aenean sit amet velit ligula. Curabitur at scelerisque elit.
-            Maecenas vel tincidunt neque.
+            Tenho {differenceInYears(new Date(), new Date('02/19/1999'))} anos,
+            estou cursando Biomedicina no IESB, faço parte da igreja Sara Nossa
+            Terra do Guará II e amo dormir, fazer compras e dar risadas.
           </Text>
           <SocialContainer>
             <SocialIconContainer
