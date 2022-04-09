@@ -1,10 +1,11 @@
-import { RefObject, useCallback, useEffect, useRef } from 'react';
+import { RefObject, useCallback, useEffect, useMemo, useRef } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 import {
   AboutUsSection,
   Button,
   CountdownSection,
+  GallerySection,
   HistorySection,
 } from 'components';
 
@@ -23,6 +24,7 @@ const Home = () => {
   const indexRef = useRef<HTMLDivElement>(null);
   const aboutUsRef = useRef<HTMLDivElement>(null);
   const historyRef = useRef<HTMLDivElement>(null);
+  const galleryRef = useRef<HTMLDivElement>(null);
 
   const scrollToRef = useCallback((ref: RefObject<HTMLDivElement>) => {
     const scrollTarget = ref.current?.offsetTop || 0;
@@ -32,21 +34,20 @@ const Home = () => {
     });
   }, []);
 
+  const sections = useMemo(
+    () => ({
+      '/': indexRef,
+      '/about-us': aboutUsRef,
+      '/history': historyRef,
+      '/gallery': galleryRef,
+    }),
+    [],
+  );
+
   useEffect(() => {
-    switch (location.pathname) {
-      case '/':
-        scrollToRef(indexRef);
-        break;
-      case '/about-us':
-        scrollToRef(aboutUsRef);
-        break;
-      case '/history':
-        scrollToRef(historyRef);
-        break;
-      default:
-        break;
-    }
-  }, [location, scrollToRef]);
+    const sectionRef = sections[location.pathname as keyof typeof sections];
+    if (sectionRef) scrollToRef(sectionRef);
+  }, [location, sections, scrollToRef]);
 
   return (
     <Container ref={indexRef}>
@@ -60,6 +61,7 @@ const Home = () => {
       <CountdownSection />
       <AboutUsSection ref={aboutUsRef} />
       <HistorySection ref={historyRef} />
+      <GallerySection ref={galleryRef} />
     </Container>
   );
 };

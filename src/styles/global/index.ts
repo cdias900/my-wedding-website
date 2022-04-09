@@ -10,6 +10,11 @@ const GlobalStyle = createGlobalStyle`
 
   html {
     font-size: 62.5%;
+    overflow-x: hidden;
+  }
+
+  .carousel .slider-wrapper.axis-horizontal .slider {
+    align-items: center;
   }
 `;
 

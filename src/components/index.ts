@@ -10,3 +10,4 @@ export * from './FramedPicture';
 export * from './CountdownSection';
 export * from './AboutUsSection';
 export * from './HistorySection';
+export * from './GallerySection';
