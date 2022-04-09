@@ -36,7 +36,7 @@ const AboutUsSection = forwardRef<HTMLDivElement>((_, ref) => {
           <ProfileName color={theme.blue}>
             Pedro Henrique Campos Dias
           </ProfileName>
-          <Text style={{ marginBottom: 24 }} textAlign="left">
+          <Text style={{ marginBottom: '2.4rem' }} textAlign="left">
             Tenho {differenceInYears(new Date(), new Date('07/03/2000'))} anos,
             sou formado em Ciência da Computação no IESB e trabalho como
             desenvolvedor Web/Mobile, faço parte da igreja Sara Nossa Terra Sede
@@ -66,7 +66,7 @@ const AboutUsSection = forwardRef<HTMLDivElement>((_, ref) => {
         <FramedPicture image={Gabi01} frameColor={theme.pink} />
         <ProfileDetails orientation="right" position="bottom">
           <ProfileName color={theme.pink}>Gabriella Vidal</ProfileName>
-          <Text style={{ marginBottom: 24 }} textAlign="right">
+          <Text style={{ marginBottom: '2.4rem' }} textAlign="right">
             Tenho {differenceInYears(new Date(), new Date('02/19/1999'))} anos,
             estou cursando Biomedicina no IESB, faço parte da igreja Sara Nossa
             Terra do Guará II e amo dormir, fazer compras e dar risadas.

@@ -13,13 +13,13 @@ export const Picture = styled.div<PictureProps>`
   background-position: center 30%;
   background-size: cover;
   background-repeat: no-repeat;
-  width: 360px;
-  height: 360px;
-  padding: 16px;
+  width: 36rem;
+  height: 36rem;
+  padding: 1.6rem;
 `;
 
 export const PictureFrame = styled.div<PictureFrameProps>`
   width: 100%;
   height: 100%;
-  border: 1px solid ${({ borderColor }) => borderColor};
+  border: 0.1rem solid ${({ borderColor }) => borderColor};
 `;

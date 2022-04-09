@@ -6,7 +6,7 @@ interface StyledTextProps {
 
 export const StyledText = styled.p<StyledTextProps>`
   font-family: 'Nunito', sans-serif;
-  font-size: 17px;
+  font-size: 1.7rem;
   color: ${({ theme }) => theme.black};
   text-align: ${({ textAlign }) => textAlign};
 `;

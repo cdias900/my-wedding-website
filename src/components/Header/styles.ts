@@ -11,11 +11,11 @@ export const Container = styled.div<ContainerProps>`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  height: 126px;
-  border-bottom: 1px solid ${({ theme }) => theme.lightGray};
+  height: 12.6rem;
+  border-bottom: 0.1rem solid ${({ theme }) => theme.lightGray};
   transition: all 0.3s;
   position: fixed;
-  top: ${({ show }) => (show ? 0 : -192)}px;
+  top: ${({ show }) => (show ? 0 : -19.2)}rem;
   left: 0;
   background: ${({ theme }) => theme.white};
   z-index: 100;
@@ -31,7 +31,7 @@ export const TitleContainer = styled.div`
 export const Title = styled.h1`
   font-family: 'Pinyon Script', cursive;
   color: ${({ theme }) => theme.blue};
-  font-size: 34px;
+  font-size: 3.4rem;
   font-weight: 400;
-  margin-bottom: -8px;
+  margin-bottom: -0.8rem;
 `;

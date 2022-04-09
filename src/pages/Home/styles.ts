@@ -17,7 +17,7 @@ export const CoverImageContainer = styled.div`
 `;
 
 export const ImageBackdrop = styled.div`
-  padding-bottom: 80px;
+  padding-bottom: 8rem;
   background-image: linear-gradient(#00000020, #00000080);
   width: 100%;
   height: 100%;
@@ -30,14 +30,14 @@ export const ImageBackdrop = styled.div`
 export const ImageLabel = styled.h1`
   font-family: 'Volkhov', serif;
   color: ${({ theme }) => theme.white};
-  font-size: 100px;
+  font-size: 10rem;
   font-weight: 400;
-  margin-bottom: 50px;
+  margin-bottom: 5rem;
 `;
 
 export const ImageUpperLabel = styled.span`
   font-family: 'Volkhov', serif;
   color: ${({ theme }) => theme.white};
-  font-size: 28px;
-  margin-bottom: 10px;
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
 `;

@@ -6,16 +6,16 @@ export const Item = styled.li``;
 export const NavbarLink = styled(NavLink)`
   text-decoration: none;
   color: green;
-  font-size: 20px;
+  font-size: 2rem;
   color: ${({ theme }) => theme.blue};
   font-family: 'Volkhov', serif;
   position: relative;
 
   ::before {
     content: '';
-    width: 0px;
-    height: 3px;
-    border-radius: 1.5px;
+    width: 0;
+    height: 0.3rem;
+    border-radius: 0.15rem;
     background-color: ${({ theme }) => theme.pink};
     position: absolute;
     bottom: 0;
@@ -26,6 +26,6 @@ export const NavbarLink = styled(NavLink)`
   &.active::before,
   :active::before,
   :hover::before {
-    width: 30px;
+    width: 3rem;
   }
 `;

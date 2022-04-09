@@ -12,7 +12,7 @@ interface ProfileDetailsProps {
 }
 
 export const AboutUsContainer = styled.div`
-  margin: 96px auto 0;
+  margin: 9.6rem auto 0;
   width: 60%;
   display: flex;
   flex-direction: column;
@@ -34,13 +34,13 @@ export const ProfileName = styled.p`
   font-style: italic;
   font-weight: 400;
   color: ${({ color }) => color};
-  font-size: 26px;
-  margin-bottom: 16px;
+  font-size: 2.6rem;
+  margin-bottom: 1.6rem;
 `;
 
 export const ProfileDetails = styled.div<ProfileDetailsProps>`
   width: 60%;
-  margin: 0 48px;
+  margin: 0 4.8rem;
   display: flex;
   flex-direction: column;
   align-self: ${({ position }) =>
@@ -65,10 +65,10 @@ export const SocialIconContainer = styled.a.attrs({
   justify-content: center;
   background-color: ${({ theme }) => theme.white};
   border-radius: 50%;
-  width: 36px;
-  height: 36px;
-  box-shadow: 0 3px 10px ${({ color }) => color};
-  margin: 0 8px;
+  width: 3.6rem;
+  height: 3.6rem;
+  box-shadow: 0 0.3rem 1rem ${({ color }) => color};
+  margin: 0 0.8rem;
   cursor: pointer;
 
   :hover {
@@ -85,10 +85,10 @@ export const CenterProfileImage = styled.div`
   background-position: center 30%;
   background-size: cover;
   background-repeat: no-repeat;
-  width: 435px;
-  height: 435px;
+  width: 43.5rem;
+  height: 43.5rem;
   margin: -12% 0;
   z-index: 2;
-  border: 15px solid ${({ theme }) => theme.white};
-  box-shadow: 0 3px 10px ${({ theme }) => theme.lightGray};
+  border: 1.5rem solid ${({ theme }) => theme.white};
+  box-shadow: 0 0.3rem 1rem ${({ theme }) => theme.lightGray};
 `;

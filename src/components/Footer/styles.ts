@@ -8,8 +8,8 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   position: relative;
-  padding: 32px 0;
-  border-top: 1px solid ${({ theme }) => theme.lightGray};
+  padding: 3.2rem 0;
+  border-top: 0.1rem solid ${({ theme }) => theme.lightGray};
 `;
 
 export const TitleContainer = styled.div`
@@ -22,22 +22,22 @@ export const TitleContainer = styled.div`
 export const Title = styled.h1`
   font-family: 'Pinyon Script', cursive;
   color: ${({ theme }) => theme.blue};
-  font-size: 34px;
+  font-size: 3.4rem;
   font-weight: 400;
-  margin-bottom: -8px;
+  margin-bottom: -0.8rem;
 `;
 
 export const Subtitle = styled.span`
   font-family: 'Volkhov', serif;
-  font-size: 16px;
+  font-size: 1.6rem;
   font-weight: 700;
   font-style: italic;
   color: ${({ theme }) => theme.blue};
-  margin: 14px 0 20px;
+  margin: 1.4rem 0 2rem;
 `;
 
 export const CopyrightText = styled.span`
   font-family: 'Nunito', sans-serif;
-  font-size: 10px;
+  font-size: 1rem;
   color: ${({ theme }) => theme.black};
 `;

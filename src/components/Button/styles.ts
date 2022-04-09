@@ -3,10 +3,10 @@ import styled from 'styled-components';
 export const Btn = styled.button`
   font-family: 'Volkhov', serif;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 1.4rem;
   color: ${({ theme }) => theme.white};
   background-color: ${({ theme }) => theme.pink};
-  padding: 16px 32px;
+  padding: 1.6rem 3.2rem;
   outline: none;
   border: none;
   cursor: pointer;

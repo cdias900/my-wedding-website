@@ -6,7 +6,7 @@ interface PostContainerProps {
 
 export const HistoryContainer = styled.div`
   width: 60%;
-  margin: 96px auto 170px;
+  margin: 9.6rem auto 17rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -38,19 +38,19 @@ export const PostContainer = styled.div<PostContainerProps>`
 
 export const PostDate = styled.span`
   font-family: 'Volkhov', serif;
-  font-size: 18px;
+  font-size: 1.8rem;
   font-weight: 700;
   font-style: italic;
   color: ${({ theme }) => theme.pink};
-  margin-bottom: 5px;
+  margin-bottom: 0.5rem;
 `;
 
 export const PostTitle = styled.h3`
   font-family: 'Volkhov', serif;
-  font-size: 26px;
+  font-size: 2.6rem;
   font-weight: 400;
   color: ${({ theme }) => theme.blue};
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
 `;
 
 export const PostInfoContainer = styled.div`
@@ -58,5 +58,5 @@ export const PostInfoContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  margin: 30px 0;
+  margin: 3rem 0;
 `;
