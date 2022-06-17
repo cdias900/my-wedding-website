@@ -1,0 +1,70 @@
+diff --git a/node_modules/cz-conventional-changelog/engine.js b/node_modules/cz-conventional-changelog/engine.js
+index 24a42b7..2a4f45a 100644
+--- a/node_modules/cz-conventional-changelog/engine.js
++++ b/node_modules/cz-conventional-changelog/engine.js
+@@ -80,6 +80,7 @@ module.exports = function(options) {
+           name: 'scope',
+           message:
+             'What is the scope of this change (e.g. component or file name): (press enter to skip)',
++          when: () => false,
+           default: options.defaultScope,
+           filter: function(value) {
+             return options.disableScopeLowerCase
+@@ -127,12 +128,14 @@ module.exports = function(options) {
+           name: 'body',
+           message:
+             'Provide a longer description of the change: (press enter to skip)\n',
+-          default: options.defaultBody
++          when: () => false,
++          default: options.defaultBody,
+         },
+         {
+           type: 'confirm',
+           name: 'isBreaking',
+           message: 'Are there any breaking changes?',
++          when: () => false,
+           default: false
+         },
+         {
+@@ -164,6 +167,7 @@ module.exports = function(options) {
+           type: 'confirm',
+           name: 'isIssueAffected',
+           message: 'Does this change affect any open issues?',
++          when: () => false,
+           default: options.defaultIssues ? true : false
+         },
+         {
+@@ -182,9 +186,7 @@ module.exports = function(options) {
+           type: 'input',
+           name: 'issues',
+           message: 'Add issue references (e.g. "fix #123", "re #123".):\n',
+-          when: function(answers) {
+-            return answers.isIssueAffected;
+-          },
++          when: () => false,
+           default: options.defaultIssues ? options.defaultIssues : undefined
+         }
+       ]).then(function(answers) {
+@@ -199,8 +201,10 @@ module.exports = function(options) {
+         // parentheses are only needed when a scope is present
+         var scope = answers.scope ? '(' + answers.scope + ')' : '';
+
++        var issues = answers.issues ? answers.issues + ' ' : '';
++
+         // Hard limit this line in the validate
+-        var head = answers.type + scope + ': ' + answers.subject;
++        var head = issues + answers.type + scope + ': ' + answers.subject;
+
+         // Wrap these lines at options.maxLineWidth characters
+         var body = answers.body ? wrap(answers.body, wrapOptions) : false;
+@@ -212,9 +216,7 @@ module.exports = function(options) {
+           : '';
+         breaking = breaking ? wrap(breaking, wrapOptions) : false;
+
+-        var issues = answers.issues ? wrap(answers.issues, wrapOptions) : false;
+-
+-        commit(filter([head, body, breaking, issues]).join('\n\n'));
++        commit(filter([head, body, breaking]).join('\n\n'));
+       });
+     }
+   };

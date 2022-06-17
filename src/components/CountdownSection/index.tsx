@@ -30,22 +30,23 @@ const CountdownSection = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      const weddingDate = new Date('2022-12-16T19:30:00.000Z');
+      const weddingDate = new Date('2022-12-16T19:00:00.000Z');
       const currentDate = new Date();
+      const monthDays = 365 / 12;
       const monthDiff = differenceInMonths(weddingDate, currentDate);
-      const dayDiff = differenceInDays(weddingDate, currentDate) % 30.5;
+      const dayDiff = differenceInDays(weddingDate, currentDate) % monthDays;
       const hourDiff =
         differenceInHours(weddingDate, currentDate) -
-        monthDiff * 30.5 * 24 -
+        monthDiff * monthDays * 24 -
         dayDiff * 24;
       const minutesDiff =
         differenceInMinutes(weddingDate, currentDate) -
-        monthDiff * 30.5 * 24 * 60 -
+        monthDiff * monthDays * 24 * 60 -
         dayDiff * 24 * 60 -
         hourDiff * 60;
       const secondsDiff =
         differenceInSeconds(weddingDate, currentDate) -
-        monthDiff * 30.5 * 24 * 60 * 60 -
+        monthDiff * monthDays * 24 * 60 * 60 -
         dayDiff * 24 * 60 * 60 -
         hourDiff * 60 * 60 -
         minutesDiff * 60;
@@ -69,11 +70,11 @@ const CountdownSection = () => {
       }
 
       setTimeLeft({
-        months: monthDiff,
-        days: dayDiff,
-        hours: hourDiff,
-        minutes: minutesDiff,
-        seconds: secondsDiff,
+        months: Math.round(monthDiff),
+        days: Math.round(dayDiff),
+        hours: Math.round(hourDiff),
+        minutes: Math.round(minutesDiff),
+        seconds: Math.round(secondsDiff),
       });
     }, 1000);
 
