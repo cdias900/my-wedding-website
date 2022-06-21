@@ -79,14 +79,7 @@ const HistorySection = forwardRef<HTMLDivElement>((_, ref) => {
       <Title>Nossa História de Amor</Title>
       <HistoryRow>
         {columns.map((rows, index) => (
-          <HistoryColumn
-            key={String(uuid.v4())}
-            style={
-              index % 2 !== 0
-                ? { transform: 'translateY(170px)', margin: '0 20px' }
-                : undefined
-            }
-          >
+          <HistoryColumn key={String(uuid.v4())} index={index}>
             {rows.map(history => (
               <PostContainer key={String(uuid.v4())}>
                 <PostInfoContainer>
@@ -97,7 +90,7 @@ const HistorySection = forwardRef<HTMLDivElement>((_, ref) => {
                 <FramedPicture
                   image={history.image}
                   frameColor={theme.white}
-                  style={{ margin: '10px 0', backgroundPosition: '1px 30%' }}
+                  style={{ margin: '1rem 0', backgroundPosition: '1px 30%' }}
                 />
               </PostContainer>
             ))}

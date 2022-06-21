@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { DEVICES } from 'styles/global';
 
 export const Btn = styled.button`
   font-family: 'Volkhov', serif;
@@ -11,6 +12,7 @@ export const Btn = styled.button`
   border: none;
   cursor: pointer;
   transition: all 0.2s;
+  min-width: 18rem;
 
   :hover {
     filter: brightness(0.9);
@@ -18,5 +20,10 @@ export const Btn = styled.button`
 
   :active {
     filter: brightness(1.1);
+  }
+
+  @media (max-width: ${DEVICES.mobile}) {
+    font-size: 1.2rem;
+    padding: 1.2rem 2.4rem;
   }
 `;

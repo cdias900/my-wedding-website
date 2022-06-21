@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { DEVICES } from 'styles/global';
 
 interface StyledTextProps {
   textAlign?: 'left' | 'center' | 'right';
@@ -9,4 +10,8 @@ export const StyledText = styled.p<StyledTextProps>`
   font-size: 1.7rem;
   color: ${({ theme }) => theme.black};
   text-align: ${({ textAlign }) => textAlign};
+
+  @media (max-width: ${DEVICES.mobile}) {
+    font-size: 1.2rem;
+  }
 `;

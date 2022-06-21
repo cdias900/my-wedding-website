@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { DEVICES } from 'styles/global';
 
 export const CountdownGradient = styled.div`
   margin-top: 9.6rem;
@@ -9,7 +10,13 @@ export const CountdownGradient = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: ${DEVICES.mobile}) {
+    margin-top: 4.8rem;
+    padding: 2.4rem 0 10rem;
+  }
 `;
+
 export const CountdownContainer = styled.div`
   display: flex;
   flex-direction: row;
@@ -18,6 +25,11 @@ export const CountdownContainer = styled.div`
   margin: 0 auto;
   width: 40vw;
   margin-top: -10.6rem;
+
+  @media (max-width: ${DEVICES.mobile}) {
+    width: 85vw;
+    margin-top: -5.6rem;
+  }
 `;
 
 export const Countdown = styled.div`
@@ -31,13 +43,23 @@ export const Countdown = styled.div`
   margin: 0 1rem;
   width: 18rem;
   height: 19.5rem;
+
+  @media (max-width: ${DEVICES.mobile}) {
+    margin: 0 0.5rem;
+    width: 9rem;
+    height: 9.75rem;
+  }
 `;
 
 export const CountdownNumber = styled.span`
-font-family: 'Volkhov', serif;
-font-size: 8rem;
-font-weight: 700;
-color ${({ theme }) => theme.blue};
+  font-family: 'Volkhov', serif;
+  font-size: 8rem;
+  font-weight: 700;
+  color ${({ theme }) => theme.blue};
+
+  @media (max-width: ${DEVICES.mobile}) {
+    font-size: 4rem;
+  }
 `;
 
 export const CountdownLabel = styled.span`
@@ -45,4 +67,8 @@ export const CountdownLabel = styled.span`
   font-style: italic;
   font-size: 2rem;
   color: ${({ theme }) => theme.gray};
+
+  @media (max-width: ${DEVICES.mobile}) {
+    font-size: 1.5rem;
+  }
 `;

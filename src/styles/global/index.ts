@@ -18,4 +18,11 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-export { GlobalStyle };
+const DEVICES = {
+  mobile: '480px',
+  tablet: '768px',
+  small: '1024px',
+  desktop: '1200px',
+};
+
+export { GlobalStyle, DEVICES };

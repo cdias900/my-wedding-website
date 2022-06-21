@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { DEVICES } from 'styles/global';
 
 interface PictureProps {
   image: string;
@@ -16,6 +17,12 @@ export const Picture = styled.div<PictureProps>`
   width: 36rem;
   height: 36rem;
   padding: 1.6rem;
+
+  @media (max-width: ${DEVICES.mobile}) {
+    width: ${undefined};
+    height: 18rem;
+    padding: 0.8rem;
+  }
 `;
 
 export const PictureFrame = styled.div<PictureFrameProps>`

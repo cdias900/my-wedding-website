@@ -7,7 +7,6 @@ import { ReactComponent as FacebookIcon } from 'assets/icons/facebook.svg';
 import { ReactComponent as InstagramIcon } from 'assets/icons/instagram.svg';
 
 import { Subtitle } from 'components/Subtitle';
-import { Text } from 'components/Text';
 import { Title } from 'components/Title';
 import { FramedPicture } from 'components/FramedPicture';
 
@@ -16,6 +15,7 @@ import { useTheme } from 'hooks';
 import {
   AboutUsContainer,
   AboutUsPictureContainer,
+  AboutUsText,
   CenterProfileImage,
   ProfileDetails,
   ProfileName,
@@ -36,12 +36,12 @@ const AboutUsSection = forwardRef<HTMLDivElement>((_, ref) => {
           <ProfileName color={theme.blue}>
             Pedro Henrique Campos Dias
           </ProfileName>
-          <Text style={{ marginBottom: '2.4rem' }} textAlign="left">
+          <AboutUsText textAlign="left">
             Tenho {differenceInYears(new Date(), new Date('07/03/2000'))} anos,
             sou formado em Ciência da Computação no IESB e trabalho como
             desenvolvedor Web/Mobile, faço parte da igreja Sara Nossa Terra Sede
             e gosto de programar, assistir animes e jogar videogame.
-          </Text>
+          </AboutUsText>
           <SocialContainer>
             <SocialIconContainer
               style={{ marginLeft: 0 }}
@@ -66,11 +66,11 @@ const AboutUsSection = forwardRef<HTMLDivElement>((_, ref) => {
         <FramedPicture image={Gabi01} frameColor={theme.pink} />
         <ProfileDetails orientation="right" position="bottom">
           <ProfileName color={theme.pink}>Gabriella Vidal</ProfileName>
-          <Text style={{ marginBottom: '2.4rem' }} textAlign="right">
+          <AboutUsText style={{ marginBottom: '2.4rem' }} textAlign="right">
             Tenho {differenceInYears(new Date(), new Date('02/19/1999'))} anos,
             estou cursando Biomedicina no IESB, faço parte da igreja Sara Nossa
             Terra do Guará II e amo dormir, fazer compras e dar risadas.
-          </Text>
+          </AboutUsText>
           <SocialContainer>
             <SocialIconContainer
               style={{ marginLeft: 0 }}

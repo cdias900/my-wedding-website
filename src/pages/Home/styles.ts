@@ -1,9 +1,10 @@
 import styled from 'styled-components';
+import { DEVICES } from 'styles/global';
 
 import coverImg from 'assets/images/cover.png';
 
 export const Container = styled.div`
-  width: 100%;
+  width: 100vw;
   height: 100%;
   transition: all 0.3s;
 `;
@@ -19,7 +20,7 @@ export const CoverImageContainer = styled.div`
 export const ImageBackdrop = styled.div`
   padding-bottom: 8rem;
   background-image: linear-gradient(#00000020, #00000080);
-  width: 100%;
+  width: 100vw;
   height: 100%;
   display: flex;
   align-items: center;
@@ -33,6 +34,11 @@ export const ImageLabel = styled.h1`
   font-size: 10rem;
   font-weight: 400;
   margin-bottom: 5rem;
+
+  @media (max-width: ${DEVICES.mobile}) {
+    font-size: 5rem;
+    margin-bottom: 2.5rem;
+  }
 `;
 
 export const ImageUpperLabel = styled.span`
@@ -40,4 +46,9 @@ export const ImageUpperLabel = styled.span`
   color: ${({ theme }) => theme.white};
   font-size: 2.8rem;
   margin-bottom: 1rem;
+
+  @media (max-width: ${DEVICES.mobile}) {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
 `;

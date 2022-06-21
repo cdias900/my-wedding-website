@@ -1,11 +1,12 @@
 import styled from 'styled-components';
+import { DEVICES } from 'styles/global';
 
 interface ContainerProps {
   show: boolean;
 }
 
 export const Container = styled.div<ContainerProps>`
-  width: 100%;
+  width: 100vw;
   margin: 0 auto;
   display: flex;
   flex-direction: row;
@@ -19,6 +20,10 @@ export const Container = styled.div<ContainerProps>`
   left: 0;
   background: ${({ theme }) => theme.white};
   z-index: 100;
+
+  @media (max-width: ${DEVICES.mobile}) {
+    height: 7rem;
+  }
 `;
 
 export const TitleContainer = styled.div`

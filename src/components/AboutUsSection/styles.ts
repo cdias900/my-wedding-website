@@ -1,6 +1,9 @@
 import styled from 'styled-components';
+import { DEVICES } from 'styles/global';
 
 import PedroGabi01 from 'assets/images/pedro-gabi-01.jpg';
+
+import { Text } from 'components/Text';
 
 interface AboutUsPictureContainerProps {
   orientation?: 'left' | 'right';
@@ -18,6 +21,11 @@ export const AboutUsContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: ${DEVICES.mobile}) {
+    margin: 4.8rem auto 0;
+    width: 95vw;
+  }
 `;
 
 export const AboutUsPictureContainer = styled.div<AboutUsPictureContainerProps>`
@@ -27,6 +35,10 @@ export const AboutUsPictureContainer = styled.div<AboutUsPictureContainerProps>`
   align-items: center;
   justify-content: flex-start;
   width: 80%;
+
+  @media (max-width: ${DEVICES.mobile}) {
+    width: 90%;
+  }
 `;
 
 export const ProfileName = styled.p`
@@ -36,6 +48,11 @@ export const ProfileName = styled.p`
   color: ${({ color }) => color};
   font-size: 2.6rem;
   margin-bottom: 1.6rem;
+
+  @media (max-width: ${DEVICES.mobile}) {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+  }
 `;
 
 export const ProfileDetails = styled.div<ProfileDetailsProps>`
@@ -48,6 +65,11 @@ export const ProfileDetails = styled.div<ProfileDetailsProps>`
   align-items: ${({ orientation }) =>
     orientation === 'right' ? 'flex-end' : 'flex-start'};
   justify-content: center;
+
+  @media (max-width: ${DEVICES.mobile}) {
+    width: 100vw;
+    margin: 0 1.2rem;
+  }
 `;
 
 export const SocialContainer = styled.div`
@@ -55,6 +77,14 @@ export const SocialContainer = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
+`;
+
+export const AboutUsText = styled(Text)`
+  margin-bottom: 2.4rem;
+
+  @media (max-width: ${DEVICES.mobile}) {
+    margin-bottom: 1.2rem;
+  }
 `;
 
 export const SocialIconContainer = styled.a.attrs({
@@ -78,6 +108,10 @@ export const SocialIconContainer = styled.a.attrs({
   :active {
     filter: brightness(1.1);
   }
+
+  @media (max-width: ${DEVICES.mobile}) {
+    margin: 0 0.4rem;
+  }
 `;
 
 export const CenterProfileImage = styled.div`
@@ -91,4 +125,11 @@ export const CenterProfileImage = styled.div`
   z-index: 2;
   border: 1.5rem solid ${({ theme }) => theme.white};
   box-shadow: 0 0.3rem 1rem ${({ theme }) => theme.lightGray};
+
+  @media (max-width: ${DEVICES.mobile}) {
+    width: 20rem;
+    height: 20rem;
+    margin: 1rem 0;
+    border: 0.75rem solid ${({ theme }) => theme.white};
+  }
 `;

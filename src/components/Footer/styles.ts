@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { DEVICES } from 'styles/global';
 
 export const Container = styled.div`
   width: 100%;
@@ -10,6 +11,10 @@ export const Container = styled.div`
   position: relative;
   padding: 3.2rem 0;
   border-top: 0.1rem solid ${({ theme }) => theme.lightGray};
+
+  @media (max-width: ${DEVICES.mobile}) {
+    padding: 1.2rem 0;
+  }
 `;
 
 export const TitleContainer = styled.div`
@@ -34,6 +39,11 @@ export const Subtitle = styled.span`
   font-style: italic;
   color: ${({ theme }) => theme.blue};
   margin: 1.4rem 0 2rem;
+
+  @media (max-width: ${DEVICES.mobile}) {
+    font-size: 1.2rem;
+    margin: 0.7rem 0 1rem;
+  }
 `;
 
 export const CopyrightText = styled.span`

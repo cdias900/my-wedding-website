@@ -1,7 +1,12 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { DEVICES } from 'styles/global';
 
 interface PostContainerProps {
   infoPosition?: 'top' | 'bottom';
+}
+
+interface HistoryColumnProps {
+  index: number;
 }
 
 export const HistoryContainer = styled.div`
@@ -11,6 +16,11 @@ export const HistoryContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: ${DEVICES.mobile}) {
+    width: 85vw;
+    margin: 4.3rem auto;
+  }
 `;
 
 export const HistoryRow = styled.div`
@@ -18,14 +28,30 @@ export const HistoryRow = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: ${DEVICES.mobile}) {
+    flex-direction: column;
+  }
 `;
 
-export const HistoryColumn = styled.div`
+export const HistoryColumn = styled.div<HistoryColumnProps>`
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  ${({ index }) =>
+    index % 2 !== 0 &&
+    css`
+      transform: translateY(170px);
+      margin: 0 20px;
+
+      @media (max-width: ${DEVICES.mobile}) {
+        transform: translateY(0);
+        margin: 0;
+      }
+    `}
 `;
 
 export const PostContainer = styled.div<PostContainerProps>`
@@ -43,6 +69,11 @@ export const PostDate = styled.span`
   font-style: italic;
   color: ${({ theme }) => theme.pink};
   margin-bottom: 0.5rem;
+
+  @media (max-width: ${DEVICES.mobile}) {
+    font-size: 1.2rem;
+    margin-bottom: 0.25rem;
+  }
 `;
 
 export const PostTitle = styled.h3`
@@ -51,6 +82,11 @@ export const PostTitle = styled.h3`
   font-weight: 400;
   color: ${({ theme }) => theme.blue};
   margin-bottom: 2rem;
+
+  @media (max-width: ${DEVICES.mobile}) {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
 `;
 
 export const PostInfoContainer = styled.div`
@@ -59,4 +95,8 @@ export const PostInfoContainer = styled.div`
   align-items: flex-start;
   justify-content: flex-start;
   margin: 3rem 0;
+
+  @media (max-width: ${DEVICES.mobile}) {
+    margin: 1.5rem 0;
+  }
 `;

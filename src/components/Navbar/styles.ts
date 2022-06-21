@@ -1,11 +1,12 @@
 import styled from 'styled-components';
+import { DEVICES } from 'styles/global';
 
 interface ContainerProps {
   show: boolean;
 }
 
 export const Container = styled.nav<ContainerProps>`
-  width: 100%;
+  width: 100vw;
   height: 6.6rem;
   margin: 0 auto;
   transition: all 0.3s;
@@ -14,6 +15,10 @@ export const Container = styled.nav<ContainerProps>`
   left: 0;
   background: ${({ theme }) => theme.white};
   z-index: 100;
+
+  @media (max-width: ${DEVICES.mobile}) {
+    display: none;
+  }
 `;
 
 export const Menu = styled.ul`
