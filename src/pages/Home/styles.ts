@@ -33,11 +33,10 @@ export const ImageLabel = styled.h1`
   color: ${({ theme }) => theme.white};
   font-size: 10rem;
   font-weight: 400;
-  margin-bottom: 5rem;
+  margin-bottom: 2.5rem;
 
   @media (max-width: ${DEVICES.mobile}) {
     font-size: 5rem;
-    margin-bottom: 2.5rem;
   }
 `;
 
@@ -45,7 +44,7 @@ export const ImageUpperLabel = styled.span`
   font-family: 'Volkhov', serif;
   color: ${({ theme }) => theme.white};
   font-size: 2.8rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.7rem;
 
   @media (max-width: ${DEVICES.mobile}) {
     font-size: 2rem;
