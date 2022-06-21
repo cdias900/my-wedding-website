@@ -13,7 +13,7 @@ export const GalleryContainer = styled.div`
   align-items: center;
   justify-content: center;
 
-  @media (max-width: ${DEVICES.mobile}) {
+  @media ${DEVICES.mobile} {
     width: 85vw;
     margin: 4.3rem auto;
   }
@@ -23,7 +23,7 @@ export const GalleryImageContainer = styled.div<GalleryImageContainerProps>`
   margin: 0 1.5rem;
   height: ${({ isSelected }) => (isSelected ? '75vh' : '65vh')};
 
-  @media (max-width: ${DEVICES.mobile}) {
+  @media ${DEVICES.mobile} {
     margin: 0 0.75rem;
   }
 `;

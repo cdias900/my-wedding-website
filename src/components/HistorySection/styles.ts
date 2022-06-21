@@ -17,7 +17,7 @@ export const HistoryContainer = styled.div`
   align-items: center;
   justify-content: center;
 
-  @media (max-width: ${DEVICES.mobile}) {
+  @media ${DEVICES.mobile} {
     width: 85vw;
     margin: 4.3rem auto;
   }
@@ -29,7 +29,7 @@ export const HistoryRow = styled.div`
   align-items: center;
   justify-content: center;
 
-  @media (max-width: ${DEVICES.mobile}) {
+  @media ${DEVICES.mobile} {
     flex-direction: column;
   }
 `;
@@ -47,7 +47,7 @@ export const HistoryColumn = styled.div<HistoryColumnProps>`
       transform: translateY(170px);
       margin: 0 20px;
 
-      @media (max-width: ${DEVICES.mobile}) {
+      @media ${DEVICES.mobile} {
         transform: translateY(0);
         margin: 0;
       }
@@ -70,7 +70,7 @@ export const PostDate = styled.span`
   color: ${({ theme }) => theme.pink};
   margin-bottom: 0.5rem;
 
-  @media (max-width: ${DEVICES.mobile}) {
+  @media ${DEVICES.mobile} {
     font-size: 1.2rem;
     margin-bottom: 0.25rem;
   }
@@ -83,7 +83,7 @@ export const PostTitle = styled.h3`
   color: ${({ theme }) => theme.blue};
   margin-bottom: 2rem;
 
-  @media (max-width: ${DEVICES.mobile}) {
+  @media ${DEVICES.mobile} {
     font-size: 1.8rem;
     margin-bottom: 1rem;
   }
@@ -96,7 +96,7 @@ export const PostInfoContainer = styled.div`
   justify-content: flex-start;
   margin: 3rem 0;
 
-  @media (max-width: ${DEVICES.mobile}) {
+  @media ${DEVICES.mobile} {
     margin: 1.5rem 0;
   }
 `;

@@ -11,7 +11,7 @@ export const CountdownGradient = styled.div`
   align-items: center;
   justify-content: center;
 
-  @media (max-width: ${DEVICES.mobile}) {
+  @media ${DEVICES.mobile} {
     margin-top: 4.8rem;
     padding: 2.4rem 0 10rem;
   }
@@ -26,7 +26,7 @@ export const CountdownContainer = styled.div`
   width: 40vw;
   margin-top: -10.6rem;
 
-  @media (max-width: ${DEVICES.mobile}) {
+  @media ${DEVICES.mobile} {
     width: 85vw;
     margin-top: -5.6rem;
   }
@@ -44,7 +44,7 @@ export const Countdown = styled.div`
   width: 18rem;
   height: 19.5rem;
 
-  @media (max-width: ${DEVICES.mobile}) {
+  @media ${DEVICES.mobile} {
     margin: 0 0.5rem;
     width: 9rem;
     height: 9.75rem;
@@ -57,7 +57,7 @@ export const CountdownNumber = styled.span`
   font-weight: 700;
   color ${({ theme }) => theme.blue};
 
-  @media (max-width: ${DEVICES.mobile}) {
+  @media ${DEVICES.mobile} {
     font-size: 4rem;
   }
 `;
@@ -68,7 +68,7 @@ export const CountdownLabel = styled.span`
   font-size: 2rem;
   color: ${({ theme }) => theme.gray};
 
-  @media (max-width: ${DEVICES.mobile}) {
+  @media ${DEVICES.mobile} {
     font-size: 1.5rem;
   }
 `;

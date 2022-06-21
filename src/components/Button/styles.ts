@@ -22,7 +22,7 @@ export const Btn = styled.button`
     filter: brightness(1.1);
   }
 
-  @media (max-width: ${DEVICES.mobile}) {
+  @media ${DEVICES.mobile} {
     font-size: 1.2rem;
     padding: 1.2rem 2.4rem;
   }

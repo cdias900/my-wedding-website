@@ -11,7 +11,7 @@ export const StyledText = styled.p<StyledTextProps>`
   color: ${({ theme }) => theme.black};
   text-align: ${({ textAlign }) => textAlign};
 
-  @media (max-width: ${DEVICES.mobile}) {
+  @media ${DEVICES.mobile} {
     font-size: 1.2rem;
   }
 `;

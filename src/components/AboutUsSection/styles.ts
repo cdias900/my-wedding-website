@@ -22,7 +22,7 @@ export const AboutUsContainer = styled.div`
   align-items: center;
   justify-content: center;
 
-  @media (max-width: ${DEVICES.mobile}) {
+  @media ${DEVICES.mobile} {
     margin: 4.8rem auto 0;
     width: 95vw;
   }
@@ -36,7 +36,7 @@ export const AboutUsPictureContainer = styled.div<AboutUsPictureContainerProps>`
   justify-content: flex-start;
   width: 80%;
 
-  @media (max-width: ${DEVICES.mobile}) {
+  @media ${DEVICES.mobile} {
     width: 90%;
   }
 `;
@@ -49,7 +49,7 @@ export const ProfileName = styled.p`
   font-size: 2.6rem;
   margin-bottom: 1.6rem;
 
-  @media (max-width: ${DEVICES.mobile}) {
+  @media ${DEVICES.mobile} {
     font-size: 1.3rem;
     margin-bottom: 0.8rem;
   }
@@ -66,7 +66,7 @@ export const ProfileDetails = styled.div<ProfileDetailsProps>`
     orientation === 'right' ? 'flex-end' : 'flex-start'};
   justify-content: center;
 
-  @media (max-width: ${DEVICES.mobile}) {
+  @media ${DEVICES.mobile} {
     width: 100vw;
     margin: 0 1.2rem;
   }
@@ -82,7 +82,7 @@ export const SocialContainer = styled.div`
 export const AboutUsText = styled(Text)`
   margin-bottom: 2.4rem;
 
-  @media (max-width: ${DEVICES.mobile}) {
+  @media ${DEVICES.mobile} {
     margin-bottom: 1.2rem;
   }
 `;
@@ -109,7 +109,7 @@ export const SocialIconContainer = styled.a.attrs({
     filter: brightness(1.1);
   }
 
-  @media (max-width: ${DEVICES.mobile}) {
+  @media ${DEVICES.mobile} {
     margin: 0 0.4rem;
   }
 `;
@@ -126,7 +126,7 @@ export const CenterProfileImage = styled.div`
   border: 1.5rem solid ${({ theme }) => theme.white};
   box-shadow: 0 0.3rem 1rem ${({ theme }) => theme.lightGray};
 
-  @media (max-width: ${DEVICES.mobile}) {
+  @media ${DEVICES.mobile} {
     width: 20rem;
     height: 20rem;
     margin: 1rem 0;

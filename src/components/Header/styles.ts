@@ -21,7 +21,7 @@ export const Container = styled.div<ContainerProps>`
   background: ${({ theme }) => theme.white};
   z-index: 100;
 
-  @media (max-width: ${DEVICES.mobile}) {
+  @media ${DEVICES.mobile} {
     height: 7rem;
   }
 `;

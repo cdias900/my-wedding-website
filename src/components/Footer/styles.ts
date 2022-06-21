@@ -12,7 +12,7 @@ export const Container = styled.div`
   padding: 3.2rem 0;
   border-top: 0.1rem solid ${({ theme }) => theme.lightGray};
 
-  @media (max-width: ${DEVICES.mobile}) {
+  @media ${DEVICES.mobile} {
     padding: 1.2rem 0;
   }
 `;
@@ -40,7 +40,7 @@ export const Subtitle = styled.span`
   color: ${({ theme }) => theme.blue};
   margin: 1.4rem 0 2rem;
 
-  @media (max-width: ${DEVICES.mobile}) {
+  @media ${DEVICES.mobile} {
     font-size: 1.2rem;
     margin: 0.7rem 0 1rem;
   }

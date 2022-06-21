@@ -35,7 +35,7 @@ export const ImageLabel = styled.h1`
   font-weight: 400;
   margin-bottom: 2.5rem;
 
-  @media (max-width: ${DEVICES.mobile}) {
+  @media ${DEVICES.mobile} {
     font-size: 5rem;
   }
 `;
@@ -46,7 +46,7 @@ export const ImageUpperLabel = styled.span`
   font-size: 2.8rem;
   margin-bottom: 0.7rem;
 
-  @media (max-width: ${DEVICES.mobile}) {
+  @media ${DEVICES.mobile} {
     font-size: 2rem;
     margin-bottom: 0.5rem;
   }

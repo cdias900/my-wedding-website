@@ -6,7 +6,7 @@ export const StyledSubtitle = styled.span`
   font-size: 3.4rem;
   color: ${({ theme }) => theme.blue};
 
-  @media (max-width: ${DEVICES.mobile}) {
+  @media ${DEVICES.mobile} {
     font-size: 1.7rem;
   }
 `;

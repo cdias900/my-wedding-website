@@ -9,7 +9,7 @@ export const StyledTitle = styled.h2`
   margin-bottom: 5rem;
   text-align: center;
 
-  @media (max-width: ${DEVICES.mobile}) {
+  @media ${DEVICES.mobile} {
     font-size: 2.8rem;
     margin-bottom: 2.5rem;
   }

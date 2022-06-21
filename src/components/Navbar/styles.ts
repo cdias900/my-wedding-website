@@ -16,7 +16,7 @@ export const Container = styled.nav<ContainerProps>`
   background: ${({ theme }) => theme.white};
   z-index: 100;
 
-  @media (max-width: ${DEVICES.mobile}) {
+  @media ${DEVICES.mobile} {
     display: none;
   }
 `;
