@@ -9,6 +9,16 @@ export const StyledTitle = styled.h2`
   margin-bottom: 5rem;
   text-align: center;
 
+  @media ${DEVICES.small} {
+    font-size: 5rem;
+    margin-bottom: 4rem;
+  }
+
+  @media ${DEVICES.tablet} {
+    font-size: 4rem;
+    margin-bottom: 3.5rem;
+  }
+
   @media ${DEVICES.mobile} {
     font-size: 2.8rem;
     margin-bottom: 2.5rem;

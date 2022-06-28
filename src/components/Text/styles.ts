@@ -11,6 +11,14 @@ export const StyledText = styled.p<StyledTextProps>`
   color: ${({ theme }) => theme.black};
   text-align: ${({ textAlign }) => textAlign};
 
+  @media ${DEVICES.small} {
+    font-size: 1.6rem;
+  }
+
+  @media ${DEVICES.tablet} {
+    font-size: 1.5rem;
+  }
+
   @media ${DEVICES.mobile} {
     font-size: 1.2rem;
   }

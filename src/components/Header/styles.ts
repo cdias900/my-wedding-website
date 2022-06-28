@@ -21,6 +21,10 @@ export const Container = styled.div<ContainerProps>`
   background: ${({ theme }) => theme.white};
   z-index: 100;
 
+  @media ${DEVICES.tablet} {
+    height: 10rem;
+  }
+
   @media ${DEVICES.mobile} {
     height: 7rem;
   }

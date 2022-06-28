@@ -19,10 +19,10 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const DEVICES = {
-  mobile: '(max-width: 480px)',
-  tablet: '(max-width: 768px)',
-  small: '(max-width: 1024px)',
-  desktop: '(max-width: 1200px)',
+  mobile: '(max-width: 680px)',
+  tablet: '(max-width: 860px)',
+  small: '(max-width: 1150px)',
+  desktop: '(max-width: 1600px)',
 };
 
 export { GlobalStyle, DEVICES };

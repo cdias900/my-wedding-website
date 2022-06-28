@@ -12,6 +12,10 @@ export const Container = styled.div`
   padding: 3.2rem 0;
   border-top: 0.1rem solid ${({ theme }) => theme.lightGray};
 
+  @media ${DEVICES.tablet} {
+    padding: 2.4rem 0;
+  }
+
   @media ${DEVICES.mobile} {
     padding: 1.2rem 0;
   }
@@ -39,6 +43,11 @@ export const Subtitle = styled.span`
   font-style: italic;
   color: ${({ theme }) => theme.blue};
   margin: 1.4rem 0 2rem;
+
+  @media ${DEVICES.tablet} {
+    font-size: 1.4rem;
+    margin: 1rem 0 1.5rem;
+  }
 
   @media ${DEVICES.mobile} {
     font-size: 1.2rem;

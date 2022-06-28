@@ -35,6 +35,10 @@ export const ImageLabel = styled.h1`
   font-weight: 400;
   margin-bottom: 2.5rem;
 
+  @media ${DEVICES.tablet} {
+    font-size: 7rem;
+  }
+
   @media ${DEVICES.mobile} {
     font-size: 5rem;
   }
@@ -45,6 +49,10 @@ export const ImageUpperLabel = styled.span`
   color: ${({ theme }) => theme.white};
   font-size: 2.8rem;
   margin-bottom: 0.7rem;
+
+  @media ${DEVICES.tablet} {
+    font-size: 2.4rem;
+  }
 
   @media ${DEVICES.mobile} {
     font-size: 2rem;

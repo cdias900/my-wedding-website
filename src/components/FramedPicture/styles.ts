@@ -18,8 +18,13 @@ export const Picture = styled.div<PictureProps>`
   height: 36rem;
   padding: 1.6rem;
 
-  @media ${DEVICES.mobile} {
+  @media ${DEVICES.tablet} {
     width: ${undefined};
+    height: 28rem;
+    padding: 1.2rem;
+  }
+
+  @media ${DEVICES.mobile} {
     height: 18rem;
     padding: 0.8rem;
   }
