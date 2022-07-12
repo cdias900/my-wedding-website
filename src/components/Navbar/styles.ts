@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 import { DEVICES } from 'styles/global';
 
-interface ContainerProps {
+interface Props {
   show: boolean;
 }
 
-export const Container = styled.nav<ContainerProps>`
+export const Container = styled.nav<Props>`
   width: 100vw;
   height: 6.6rem;
   margin: 0 auto;
@@ -30,4 +30,22 @@ export const Menu = styled.ul`
   justify-content: space-between;
   list-style: none;
   margin: 0 auto;
+`;
+
+export const Backdrop = styled.div<Props>`
+  opacity: 0;
+  pointer-events: none;
+
+  @media ${DEVICES.tablet} {
+    opacity: ${({ show }) => (show ? 1 : 0)};
+    pointer-events: ${({ show }) => (show ? 'auto' : 'none')};
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: ${({ theme }) => theme.black}50;
+    z-index: 1000;
+    transition: all 0.2s;
+  }
 `;

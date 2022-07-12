@@ -44,3 +44,39 @@ export const Title = styled.h1`
   font-weight: 400;
   margin-bottom: -0.8rem;
 `;
+
+export const BurgerContainer = styled.button`
+  display: none;
+
+  :hover {
+    filter: brightness(0.9);
+  }
+
+  :active {
+    filter: brightness(1.1);
+  }
+
+  @media ${DEVICES.tablet} {
+    display: flex;
+    flex-direction: column;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background: transparent;
+    position: absolute;
+    left: 3.6rem;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  @media ${DEVICES.mobile} {
+    left: 2.6rem;
+  }
+`;
+
+export const BurgerBar = styled.div`
+  width: 2.4rem;
+  border: 0.1rem solid ${({ theme }) => theme.black};
+  border-radius: 0.5rem;
+  margin: 0.3rem 0;
+`;

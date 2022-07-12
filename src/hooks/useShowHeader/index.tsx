@@ -8,6 +8,8 @@ import React, {
 
 export interface IShowHeaderContextData {
   showHeader: boolean;
+  showVerticalNavBar: boolean;
+  setShowVerticalNavBar: (show: boolean) => void;
 }
 
 export const ShowHeaderContext = createContext<IShowHeaderContextData>(
@@ -17,6 +19,7 @@ export const ShowHeaderContext = createContext<IShowHeaderContextData>(
 export const ShowHeaderProvider: React.FC = ({ children }) => {
   const [lastScrollY, setLastScrollY] = useState(window.scrollY);
   const [showHeader, setShowHeader] = useState(true);
+  const [showVerticalNavBar, setShowVerticalNavBar] = useState(false);
 
   const handleShowHeader = useCallback(() => {
     setShowHeader(window.scrollY < lastScrollY);
@@ -32,7 +35,9 @@ export const ShowHeaderProvider: React.FC = ({ children }) => {
   }, [handleShowHeader]);
 
   return (
-    <ShowHeaderContext.Provider value={{ showHeader }}>
+    <ShowHeaderContext.Provider
+      value={{ showHeader, showVerticalNavBar, setShowVerticalNavBar }}
+    >
       {children}
     </ShowHeaderContext.Provider>
   );

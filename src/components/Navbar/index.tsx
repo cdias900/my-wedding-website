@@ -2,7 +2,7 @@ import { NavbarItem } from 'components/NavbarItem';
 
 import { useShowHeader } from 'hooks';
 
-import { Container, Menu } from './styles';
+import { Backdrop, Container, Menu } from './styles';
 
 const items = [
   {
@@ -28,16 +28,23 @@ const items = [
 ];
 
 const Navbar = () => {
-  const { showHeader } = useShowHeader();
+  const { showHeader, showVerticalNavBar, setShowVerticalNavBar } =
+    useShowHeader();
 
   return (
-    <Container show={showHeader}>
-      <Menu>
-        {items.map(item => (
-          <NavbarItem key={item.label} link={item.link} label={item.label} />
-        ))}
-      </Menu>
-    </Container>
+    <>
+      <Container show={showHeader}>
+        <Menu>
+          {items.map(item => (
+            <NavbarItem key={item.label} link={item.link} label={item.label} />
+          ))}
+        </Menu>
+      </Container>
+      <Backdrop
+        show={showVerticalNavBar}
+        onClick={() => setShowVerticalNavBar(false)}
+      />
+    </>
   );
 };
 
