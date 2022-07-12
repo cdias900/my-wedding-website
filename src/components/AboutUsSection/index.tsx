@@ -31,7 +31,11 @@ const AboutUsSection = forwardRef<HTMLDivElement>((_, ref) => {
       <Subtitle>Casal</Subtitle>
       <Title>Sobre Nós</Title>
       <AboutUsPictureContainer>
-        <FramedPicture image={Pedro01} frameColor={theme.lightBlue} />
+        <FramedPicture
+          image={Pedro01}
+          frameColor={theme.lightBlue}
+          pictureHeight={45}
+        />
         <ProfileDetails>
           <ProfileName color={theme.blue}>
             Pedro Henrique Campos Dias
@@ -63,7 +67,11 @@ const AboutUsSection = forwardRef<HTMLDivElement>((_, ref) => {
       </AboutUsPictureContainer>
       <CenterProfileImage />
       <AboutUsPictureContainer orientation="right">
-        <FramedPicture image={Gabi01} frameColor={theme.pink} />
+        <FramedPicture
+          image={Gabi01}
+          frameColor={theme.pink}
+          pictureHeight={45}
+        />
         <ProfileDetails orientation="right" position="bottom">
           <ProfileName color={theme.pink}>Gabriella Vidal</ProfileName>
           <AboutUsText style={{ marginBottom: '2.4rem' }} textAlign="right">
