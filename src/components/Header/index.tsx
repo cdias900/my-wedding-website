@@ -11,7 +11,7 @@ import {
 } from './styles';
 
 const Header = () => {
-  const { showHeader, setShowVerticalNavBar } = useShowHeader();
+  const { showHeader, toggleVerticalNavBar } = useShowHeader();
 
   return (
     <Container show={showHeader}>
@@ -19,7 +19,7 @@ const Header = () => {
         <Title>Pedro & Gabi</Title>
         <img src={Plant} alt="Plant" />
       </TitleContainer>
-      <BurgerContainer onClick={() => setShowVerticalNavBar(show => !show)}>
+      <BurgerContainer onClick={toggleVerticalNavBar}>
         <BurgerBar />
         <BurgerBar />
         <BurgerBar />

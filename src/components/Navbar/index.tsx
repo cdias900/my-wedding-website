@@ -2,7 +2,7 @@ import { NavbarItem } from 'components/NavbarItem';
 
 import { useShowHeader } from 'hooks';
 
-import { Backdrop, Container, HtmlStyle, Menu } from './styles';
+import { Backdrop, Container, Menu } from './styles';
 
 const items = [
   {
@@ -28,12 +28,11 @@ const items = [
 ];
 
 const Navbar = () => {
-  const { showHeader, showVerticalNavBar, setShowVerticalNavBar } =
+  const { showHeader, showVerticalNavBar, toggleVerticalNavBar } =
     useShowHeader();
 
   return (
     <>
-      <HtmlStyle preventScroll={showVerticalNavBar} />
       <Container show={showHeader} showVertical={showVerticalNavBar}>
         <Menu>
           {items.map(item => (
@@ -41,10 +40,7 @@ const Navbar = () => {
           ))}
         </Menu>
       </Container>
-      <Backdrop
-        show={showVerticalNavBar}
-        onClick={() => setShowVerticalNavBar(false)}
-      />
+      <Backdrop show={showVerticalNavBar} onClick={toggleVerticalNavBar} />
     </>
   );
 };

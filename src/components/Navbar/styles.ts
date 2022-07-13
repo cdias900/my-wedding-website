@@ -1,10 +1,9 @@
-import styled, { createGlobalStyle, css } from 'styled-components';
+import styled from 'styled-components';
 import { DEVICES } from 'styles/global';
 
 interface Props {
   show?: boolean;
   showVertical?: boolean;
-  preventScroll?: boolean;
 }
 
 export const Container = styled.nav<Props>`
@@ -70,14 +69,4 @@ export const Backdrop = styled.div<Props>`
     z-index: 99;
     transition: all 0.2s;
   }
-`;
-
-export const HtmlStyle = createGlobalStyle<Props>`
-    ${({ preventScroll }) =>
-      preventScroll &&
-      css`
-        html {
-          overflow-y: hidden;
-        }
-      `}
 `;

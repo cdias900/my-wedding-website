@@ -8,10 +8,10 @@ interface NavbarItemProps {
 }
 
 const NavbarItem = ({ link, label }: NavbarItemProps) => {
-  const { setShowVerticalNavBar } = useShowHeader();
+  const { toggleVerticalNavBar } = useShowHeader();
 
   return (
-    <Item onClick={() => setShowVerticalNavBar(false)}>
+    <Item onClick={toggleVerticalNavBar}>
       <NavbarLink to={link} aria-label={label}>
         {label}
       </NavbarLink>
