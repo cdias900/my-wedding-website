@@ -29,7 +29,6 @@ export const ShowHeaderProvider: React.FC = ({ children }) => {
   }, []);
 
   const toggleVerticalNavBar = useCallback(() => {
-    console.log('AAAAA', document.body.offsetWidth, DEVICES_WIDTH.tablet);
     if (document.body.offsetWidth > DEVICES_WIDTH.tablet) return;
 
     setShowVerticalNavBar(show => {
@@ -39,7 +38,7 @@ export const ShowHeaderProvider: React.FC = ({ children }) => {
         document.body.style.position = '';
         document.body.style.overflowY = '';
         document.getElementsByTagName('html')[0].style.overflowY = '';
-        window.scrollTo(0, bodyTop * -1);
+        window.scrollTo({ top: bodyTop * -1 });
       } else {
         document.body.style.position = 'fixed';
         document.body.style.overflowY = 'hidden';
