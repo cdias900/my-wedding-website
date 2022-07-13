@@ -22,6 +22,7 @@ export const Container = styled.div<ContainerProps>`
   z-index: 100;
 
   @media ${DEVICES.tablet} {
+    top: 0;
     height: 10rem;
   }
 
