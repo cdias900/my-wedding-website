@@ -18,11 +18,18 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const DEVICES = {
-  mobile: '(max-width: 680px)',
-  tablet: '(max-width: 860px)',
-  small: '(max-width: 1150px)',
-  desktop: '(max-width: 1600px)',
+const DEVICES_WIDTH = {
+  mobile: 680,
+  tablet: 860,
+  small: 1150,
+  desktop: 1600,
 };
 
-export { GlobalStyle, DEVICES };
+const DEVICES = {
+  mobile: `(max-width: ${DEVICES_WIDTH.mobile}px)`,
+  tablet: `(max-width: ${DEVICES_WIDTH.tablet}px)`,
+  small: `(max-width: ${DEVICES_WIDTH.small}px)`,
+  desktop: `(max-width: ${DEVICES_WIDTH.desktop}px)`,
+};
+
+export { GlobalStyle, DEVICES, DEVICES_WIDTH };

@@ -6,8 +6,7 @@ import React, {
   useCallback,
   useRef,
 } from 'react';
-
-import { BodyStyle } from './styles';
+import { DEVICES_WIDTH } from 'styles/global';
 
 export interface IShowHeaderContextData {
   showHeader: boolean;
@@ -21,7 +20,6 @@ export const ShowHeaderContext = createContext<IShowHeaderContextData>(
 
 export const ShowHeaderProvider: React.FC = ({ children }) => {
   const lastScrollY = useRef(window.scrollY);
-  const bodyTop = useRef(0);
   const [showHeader, setShowHeader] = useState(true);
   const [showVerticalNavBar, setShowVerticalNavBar] = useState(false);
 
@@ -31,9 +29,23 @@ export const ShowHeaderProvider: React.FC = ({ children }) => {
   }, []);
 
   const toggleVerticalNavBar = useCallback(() => {
+    console.log('AAAAA', document.body.offsetWidth, DEVICES_WIDTH.tablet);
+    if (document.body.offsetWidth > DEVICES_WIDTH.tablet) return;
+
     setShowVerticalNavBar(show => {
-      if (show) bodyTop.current = parseInt(document.body.style.top, 10);
-      else document.body.style.top = `-${lastScrollY.current}px`;
+      if (show) {
+        const bodyTop = parseInt(document.body.style.top, 10);
+        document.body.style.top = '';
+        document.body.style.position = '';
+        document.body.style.overflowY = '';
+        document.getElementsByTagName('html')[0].style.overflowY = '';
+        window.scrollTo(0, bodyTop * -1);
+      } else {
+        document.body.style.position = 'fixed';
+        document.body.style.overflowY = 'hidden';
+        document.getElementsByTagName('html')[0].style.overflowY = 'hidden';
+        document.body.style.top = `-${lastScrollY.current}px`;
+      }
 
       return !show;
     });
@@ -47,17 +59,10 @@ export const ShowHeaderProvider: React.FC = ({ children }) => {
     };
   }, [handleShowHeader]);
 
-  useEffect(() => {
-    console.log('BODY TOP', bodyTop.current);
-
-    window.scrollTo(0, bodyTop.current * -1);
-  }, [showVerticalNavBar]);
-
   return (
     <ShowHeaderContext.Provider
       value={{ showHeader, showVerticalNavBar, toggleVerticalNavBar }}
     >
-      <BodyStyle preventScroll={showVerticalNavBar} />
       {children}
     </ShowHeaderContext.Provider>
   );

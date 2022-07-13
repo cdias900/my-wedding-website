@@ -1,4 +1,4 @@
-import { HTMLAttributes } from 'react';
+import { HTMLAttributes, memo } from 'react';
 
 import { Picture, PictureContainer, PictureFrame } from './styles';
 
@@ -8,11 +8,13 @@ interface FramedPictureProps extends HTMLAttributes<HTMLImageElement> {
   pictureHeight?: number;
 }
 
-const FramedPicture = ({ image, frameColor, ...rest }: FramedPictureProps) => (
-  <PictureContainer>
-    <Picture src={image} {...rest} />
-    <PictureFrame frameColor={frameColor} />
-  </PictureContainer>
+const FramedPicture = memo(
+  ({ image, frameColor, ...rest }: FramedPictureProps) => (
+    <PictureContainer>
+      <Picture src={image} {...rest} />
+      <PictureFrame frameColor={frameColor} />
+    </PictureContainer>
+  ),
 );
 
 export { FramedPicture };

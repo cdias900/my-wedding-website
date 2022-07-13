@@ -1,5 +1,12 @@
-import { RefObject, useCallback, useEffect, useMemo, useRef } from 'react';
+import {
+  RefObject,
+  useCallback,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+} from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { DEVICES_WIDTH } from 'styles/global';
 
 import {
   AboutUsSection,
@@ -29,7 +36,13 @@ const Home = () => {
   const scrollToRef = useCallback((ref: RefObject<HTMLDivElement>) => {
     const scrollTarget = ref.current?.offsetTop || 0;
     window.scrollTo({
-      top: scrollTarget - (window.scrollY > scrollTarget ? 200 : 10),
+      top:
+        scrollTarget -
+        (document.body.offsetWidth <= DEVICES_WIDTH.tablet
+          ? 110
+          : window.scrollY > scrollTarget
+          ? 200
+          : 10),
       behavior: 'smooth',
     });
   }, []);
@@ -44,7 +57,7 @@ const Home = () => {
     [],
   );
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const sectionRef = sections[location.pathname as keyof typeof sections];
     if (sectionRef) scrollToRef(sectionRef);
   }, [location, sections, scrollToRef]);
