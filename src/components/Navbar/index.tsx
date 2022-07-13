@@ -33,7 +33,7 @@ const Navbar = () => {
 
   return (
     <>
-      <Container show={showHeader}>
+      <Container show={showHeader} showVertical={showVerticalNavBar}>
         <Menu>
           {items.map(item => (
             <NavbarItem key={item.label} link={item.link} label={item.label} />

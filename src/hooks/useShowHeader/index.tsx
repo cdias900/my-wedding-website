@@ -9,7 +9,7 @@ import React, {
 export interface IShowHeaderContextData {
   showHeader: boolean;
   showVerticalNavBar: boolean;
-  setShowVerticalNavBar: (show: boolean) => void;
+  setShowVerticalNavBar: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export const ShowHeaderContext = createContext<IShowHeaderContextData>(

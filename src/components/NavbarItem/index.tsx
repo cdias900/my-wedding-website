@@ -1,3 +1,5 @@
+import { useShowHeader } from 'hooks';
+
 import { Item, NavbarLink } from './styles';
 
 interface NavbarItemProps {
@@ -6,8 +8,10 @@ interface NavbarItemProps {
 }
 
 const NavbarItem = ({ link, label }: NavbarItemProps) => {
+  const { setShowVerticalNavBar } = useShowHeader();
+
   return (
-    <Item>
+    <Item onClick={() => setShowVerticalNavBar(false)}>
       <NavbarLink to={link} aria-label={label}>
         {label}
       </NavbarLink>

@@ -2,7 +2,8 @@ import styled from 'styled-components';
 import { DEVICES } from 'styles/global';
 
 interface Props {
-  show: boolean;
+  show?: boolean;
+  showVertical?: boolean;
 }
 
 export const Container = styled.nav<Props>`
@@ -17,7 +18,16 @@ export const Container = styled.nav<Props>`
   z-index: 100;
 
   @media ${DEVICES.tablet} {
-    display: none;
+    opacity: ${({ showVertical }) => (showVertical ? 1 : 0)};
+    pointer-events: ${({ showVertical }) => (showVertical ? 'auto' : 'none')};
+    height: 100vh;
+    width: 40vw;
+    top: 10rem;
+  }
+
+  @media ${DEVICES.mobile} {
+    width: 60vw;
+    top: 7rem;
   }
 `;
 
@@ -30,6 +40,17 @@ export const Menu = styled.ul`
   justify-content: space-between;
   list-style: none;
   margin: 0 auto;
+
+  @media ${DEVICES.tablet} {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-top: 3rem;
+
+    li {
+      margin-bottom: 4rem;
+    }
+  }
 `;
 
 export const Backdrop = styled.div<Props>`
@@ -45,7 +66,7 @@ export const Backdrop = styled.div<Props>`
     right: 0;
     bottom: 0;
     background-color: ${({ theme }) => theme.black}50;
-    z-index: 1000;
+    z-index: 99;
     transition: all 0.2s;
   }
 `;

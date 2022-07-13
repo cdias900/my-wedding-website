@@ -19,7 +19,7 @@ const Header = () => {
         <Title>Pedro & Gabi</Title>
         <img src={Plant} alt="Plant" />
       </TitleContainer>
-      <BurgerContainer onClick={() => setShowVerticalNavBar(true)}>
+      <BurgerContainer onClick={() => setShowVerticalNavBar(show => !show)}>
         <BurgerBar />
         <BurgerBar />
         <BurgerBar />
