@@ -1,48 +1,250 @@
-import History01 from 'assets/images/history-01.jpeg';
-import History02 from 'assets/images/history-02.jpeg';
-import History03 from 'assets/images/history-03.jpeg';
-import History04 from 'assets/images/history-04.jpeg';
+import Gallery01 from 'assets/images/gallery/gallery-00001.jpg';
+import Gallery02 from 'assets/images/gallery/gallery-00002.jpg';
+import Gallery03 from 'assets/images/gallery/gallery-00003.jpg';
+import Gallery04 from 'assets/images/gallery/gallery-00004.jpg';
+import Gallery05 from 'assets/images/gallery/gallery-00005.jpg';
+import Gallery06 from 'assets/images/gallery/gallery-00006.jpg';
+import Gallery07 from 'assets/images/gallery/gallery-00007.jpg';
+import Gallery08 from 'assets/images/gallery/gallery-00008.jpg';
+import Gallery09 from 'assets/images/gallery/gallery-00009.jpg';
+import Gallery10 from 'assets/images/gallery/gallery-00010.jpg';
+import Gallery11 from 'assets/images/gallery/gallery-00011.jpg';
+import Gallery12 from 'assets/images/gallery/gallery-00012.jpg';
+import Gallery13 from 'assets/images/gallery/gallery-00013.jpg';
+import Gallery14 from 'assets/images/gallery/gallery-00014.jpg';
+import Gallery15 from 'assets/images/gallery/gallery-00015.jpg';
+import Gallery16 from 'assets/images/gallery/gallery-00016.jpg';
+import Gallery17 from 'assets/images/gallery/gallery-00017.jpg';
+import Gallery18 from 'assets/images/gallery/gallery-00018.jpg';
+import Gallery19 from 'assets/images/gallery/gallery-00019.jpg';
+import Gallery20 from 'assets/images/gallery/gallery-00020.jpg';
+import Gallery21 from 'assets/images/gallery/gallery-00021.jpg';
+import Gallery22 from 'assets/images/gallery/gallery-00022.jpg';
+import Gallery23 from 'assets/images/gallery/gallery-00023.jpg';
+import Gallery24 from 'assets/images/gallery/gallery-00024.jpg';
+import Gallery25 from 'assets/images/gallery/gallery-00025.jpg';
+import Gallery26 from 'assets/images/gallery/gallery-00026.jpg';
+import Gallery27 from 'assets/images/gallery/gallery-00027.jpg';
+import Gallery28 from 'assets/images/gallery/gallery-00028.jpg';
+import Gallery29 from 'assets/images/gallery/gallery-00029.jpg';
+import Gallery30 from 'assets/images/gallery/gallery-00030.jpg';
+import Gallery31 from 'assets/images/gallery/gallery-00031.jpg';
+import Gallery32 from 'assets/images/gallery/gallery-00032.jpg';
+import Gallery33 from 'assets/images/gallery/gallery-00033.jpg';
+import Gallery34 from 'assets/images/gallery/gallery-00034.jpg';
+import Gallery35 from 'assets/images/gallery/gallery-00035.jpg';
+import Gallery36 from 'assets/images/gallery/gallery-00036.jpg';
+import Gallery37 from 'assets/images/gallery/gallery-00037.jpg';
+import Gallery38 from 'assets/images/gallery/gallery-00038.jpg';
+import Gallery39 from 'assets/images/gallery/gallery-00039.jpg';
+import Gallery40 from 'assets/images/gallery/gallery-00040.jpg';
+import Gallery41 from 'assets/images/gallery/gallery-00041.jpg';
 
 const photos = [
   {
-    src: History01,
+    src: Gallery01,
+    width: 9,
+    height: 16,
+  },
+  {
+    src: Gallery02,
+    width: 9,
+    height: 16,
+  },
+  {
+    src: Gallery03,
+    width: 3,
+    height: 4,
+  },
+  {
+    src: Gallery04,
+    width: 3,
+    height: 4,
+  },
+  {
+    src: Gallery05,
     width: 4,
     height: 3,
   },
   {
-    src: History02,
+    src: Gallery06,
+    width: 3,
+    height: 4,
+  },
+  {
+    src: Gallery07,
     width: 9,
     height: 16,
   },
   {
-    src: History03,
-    width: 9,
-    height: 16,
+    src: Gallery08,
+    width: 3,
+    height: 4,
   },
   {
-    src: History04,
-    width: 9,
-    height: 16,
+    src: Gallery09,
+    width: 3,
+    height: 4,
   },
   {
-    src: History01,
+    src: Gallery10,
     width: 4,
     height: 3,
   },
   {
-    src: History02,
+    src: Gallery11,
+    width: 3,
+    height: 4,
+  },
+  {
+    src: Gallery12,
+    width: 3,
+    height: 4,
+  },
+  {
+    src: Gallery13,
+    width: 3,
+    height: 4,
+  },
+  {
+    src: Gallery14,
+    width: 3,
+    height: 4,
+  },
+  {
+    src: Gallery15,
+    width: 3,
+    height: 4,
+  },
+  {
+    src: Gallery16,
+    width: 4,
+    height: 3,
+  },
+  {
+    src: Gallery17,
+    width: 3,
+    height: 4,
+  },
+  {
+    src: Gallery18,
+    width: 3,
+    height: 4,
+  },
+  {
+    src: Gallery19,
+    width: 3,
+    height: 4,
+  },
+  {
+    src: Gallery20,
+    width: 3,
+    height: 4,
+  },
+  {
+    src: Gallery21,
+    width: 3,
+    height: 4,
+  },
+  {
+    src: Gallery22,
+    width: 4,
+    height: 3,
+  },
+  {
+    src: Gallery23,
+    width: 3,
+    height: 4,
+  },
+  {
+    src: Gallery24,
+    width: 3,
+    height: 4,
+  },
+  {
+    src: Gallery25,
+    width: 16,
+    height: 9,
+  },
+  {
+    src: Gallery26,
     width: 9,
     height: 16,
   },
   {
-    src: History03,
+    src: Gallery27,
     width: 9,
     height: 16,
   },
   {
-    src: History04,
+    src: Gallery28,
+    width: 16,
+    height: 9,
+  },
+  {
+    src: Gallery29,
     width: 9,
     height: 16,
+  },
+  {
+    src: Gallery30,
+    width: 16,
+    height: 9,
+  },
+  {
+    src: Gallery31,
+    width: 16,
+    height: 9,
+  },
+  {
+    src: Gallery32,
+    width: 16,
+    height: 9,
+  },
+  {
+    src: Gallery33,
+    width: 9,
+    height: 16,
+  },
+  {
+    src: Gallery34,
+    width: 9,
+    height: 16,
+  },
+  {
+    src: Gallery35,
+    width: 9,
+    height: 16,
+  },
+  {
+    src: Gallery36,
+    width: 16,
+    height: 9,
+  },
+  {
+    src: Gallery37,
+    width: 9,
+    height: 16,
+  },
+  {
+    src: Gallery38,
+    width: 9,
+    height: 16,
+  },
+  {
+    src: Gallery39,
+    width: 9,
+    height: 16,
+  },
+  {
+    src: Gallery40,
+    width: 9,
+    height: 16,
+  },
+  {
+    src: Gallery41,
+    width: 4,
+    height: 3,
   },
 ];
 
