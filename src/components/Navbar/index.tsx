@@ -2,7 +2,7 @@ import { NavbarItem } from 'components/NavbarItem';
 
 import { useShowHeader } from 'hooks';
 
-import { Backdrop, Container, Menu } from './styles';
+import { Backdrop, Container, HtmlStyle, Menu } from './styles';
 
 const items = [
   {
@@ -33,6 +33,7 @@ const Navbar = () => {
 
   return (
     <>
+      <HtmlStyle preventScroll={showVerticalNavBar} />
       <Container show={showHeader} showVertical={showVerticalNavBar}>
         <Menu>
           {items.map(item => (
