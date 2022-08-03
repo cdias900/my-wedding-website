@@ -25,10 +25,17 @@ const AudioPermissionModal = () => {
 
   return (
     <Container show={showModal}>
-      <Text>Este site possui música.</Text>
+      <Text
+        style={{
+          textAlign: 'center',
+        }}
+      >
+        Este site possui música.
+      </Text>
       <Text
         style={{
           marginBottom: '1rem',
+          textAlign: 'center',
         }}
       >
         Deseja reproduzir enquanto navega?

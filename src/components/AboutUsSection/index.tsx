@@ -43,8 +43,8 @@ const AboutUsSection = forwardRef<HTMLDivElement>((_, ref) => {
           <AboutUsText textAlign="left">
             Tenho {differenceInYears(new Date(), new Date('07/03/2000'))} anos,
             sou formado em Ciência da Computação no IESB e trabalho como
-            desenvolvedor Web/Mobile, faço parte da igreja Sara Nossa Terra Sede
-            e gosto de programar, assistir animes e jogar videogame.
+            desenvolvedor Web/Mobile, faço parte da igreja Sara Nossa Terra e
+            gosto de programar, assistir animes e jogar videogame.
           </AboutUsText>
           <SocialContainer>
             <SocialIconContainer
@@ -76,8 +76,8 @@ const AboutUsSection = forwardRef<HTMLDivElement>((_, ref) => {
           <ProfileName color={theme.pink}>Gabriella Vidal</ProfileName>
           <AboutUsText style={{ marginBottom: '2.4rem' }} textAlign="right">
             Tenho {differenceInYears(new Date(), new Date('02/19/1999'))} anos,
-            estou cursando Biomedicina no IESB, faço parte da igreja Sara Nossa
-            Terra do Guará II e amo dormir, fazer compras e dar risadas.
+            estou no quarto semestre de Biomedicina no IESB, faço parte da
+            igreja Sara Nossa Terra e amo dormir, fazer compras e dar risadas.
           </AboutUsText>
           <SocialContainer>
             <SocialIconContainer
