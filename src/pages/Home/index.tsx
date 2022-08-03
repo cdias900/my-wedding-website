@@ -1,9 +1,11 @@
 import {
   RefObject,
   useCallback,
+  useEffect,
   useLayoutEffect,
   useMemo,
   useRef,
+  useState,
 } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { DEVICES_WIDTH } from 'styles/global';
@@ -13,6 +15,7 @@ import {
   Button,
   CountdownSection,
   GallerySection,
+  GiftPopUp,
   HistorySection,
 } from 'components';
 
@@ -27,6 +30,8 @@ import {
 const Home = () => {
   const location = useLocation();
   const navigate = useNavigate();
+
+  const [showGiftPopUp, setShowGiftPopUp] = useState(false);
 
   const indexRef = useRef<HTMLDivElement>(null);
   const aboutUsRef = useRef<HTMLDivElement>(null);
@@ -62,6 +67,14 @@ const Home = () => {
     if (sectionRef) scrollToRef(sectionRef);
   }, [location, sections, scrollToRef]);
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowGiftPopUp(true);
+    }, 5000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <Container ref={indexRef}>
       <CoverImageContainer>
@@ -75,6 +88,7 @@ const Home = () => {
       <AboutUsSection ref={aboutUsRef} />
       <HistorySection ref={historyRef} />
       <GallerySection ref={galleryRef} />
+      {showGiftPopUp && <GiftPopUp />}
     </Container>
   );
 };

@@ -12,3 +12,4 @@ export * from './AboutUsSection';
 export * from './HistorySection';
 export * from './GallerySection';
 export * from './GiftListItem';
+export * from './GiftPopUp';
