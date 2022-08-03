@@ -12,6 +12,7 @@ import { DEVICES_WIDTH } from 'styles/global';
 
 import {
   AboutUsSection,
+  AudioPermissionModal,
   Button,
   CountdownSection,
   GallerySection,
@@ -69,6 +70,14 @@ const Home = () => {
 
   useEffect(() => {
     const timer = setTimeout(() => {
+      indexRef.current?.click();
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
       setShowGiftPopUp(true);
     }, 5000);
 
@@ -77,6 +86,7 @@ const Home = () => {
 
   return (
     <Container ref={indexRef}>
+      <AudioPermissionModal />
       <CoverImageContainer>
         <ImageBackdrop>
           <ImageUpperLabel>Nosso Casamento</ImageUpperLabel>

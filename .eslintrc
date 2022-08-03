@@ -96,7 +96,8 @@
     "prefer-regex-literals": "off",
     "react/button-has-type": "off",
     "react/jsx-no-constructed-context-values": "off",
-    "react/require-default-props": "off"
+    "react/require-default-props": "off",
+    "jsx-a11y/media-has-caption": "off"
   },
   "settings": {
     "import/resolver": {
