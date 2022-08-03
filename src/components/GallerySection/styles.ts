@@ -3,7 +3,7 @@ import { DEVICES } from 'styles/global';
 
 export const GalleryContainer = styled.div`
   width: 60%;
-  margin: 24rem auto 9.6rem;
+  margin: 9.6rem auto;
   display: flex;
   flex-direction: column;
   align-items: center;

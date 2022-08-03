@@ -12,6 +12,7 @@ import { DEVICES_WIDTH } from 'styles/global';
 
 import {
   AboutUsSection,
+  BeforeAndAfterSection,
   Button,
   CountdownSection,
   GallerySection,
@@ -95,6 +96,7 @@ const Home = () => {
       <CountdownSection />
       <AboutUsSection ref={aboutUsRef} />
       <HistorySection ref={historyRef} />
+      <BeforeAndAfterSection />
       <GallerySection ref={galleryRef} />
       {showGiftPopUp && <GiftPopUp />}
     </Container>

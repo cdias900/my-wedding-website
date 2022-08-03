@@ -11,7 +11,7 @@ interface HistoryColumnProps {
 
 export const HistoryContainer = styled.div`
   width: 60%;
-  margin: 9.6rem auto 17rem;
+  margin: 9.6rem auto 22rem;
   display: flex;
   flex-direction: column;
   align-items: center;
