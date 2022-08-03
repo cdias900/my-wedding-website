@@ -11,3 +11,4 @@ export * from './CountdownSection';
 export * from './AboutUsSection';
 export * from './HistorySection';
 export * from './GallerySection';
+export * from './GiftListItem';

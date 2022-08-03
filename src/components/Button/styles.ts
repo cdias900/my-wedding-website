@@ -1,15 +1,22 @@
 import styled from 'styled-components';
 import { DEVICES } from 'styles/global';
 
-export const Btn = styled.button`
+interface BtnProps {
+  textColor?: string;
+  bgColor?: string;
+  borderColor?: string;
+}
+
+export const Btn = styled.button<BtnProps>`
   font-family: 'Volkhov', serif;
   font-weight: 700;
   font-size: 1.4rem;
-  color: ${({ theme }) => theme.white};
-  background-color: ${({ theme }) => theme.pink};
+  color: ${({ theme, textColor }) => textColor || theme.white};
+  background-color: ${({ theme, bgColor }) => bgColor || theme.pink};
   padding: 1.6rem 3.2rem;
   outline: none;
-  border: none;
+  border: ${({ borderColor }) =>
+    borderColor ? `0.2rem solid ${borderColor}` : 'none'};
   cursor: pointer;
   transition: all 0.2s;
   min-width: 18rem;
