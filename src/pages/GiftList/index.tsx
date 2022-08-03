@@ -1,3 +1,5 @@
+import { useLayoutEffect } from 'react';
+
 import { Subtitle, Title, GiftListItem } from 'components';
 
 import { giftLists } from './constants';
@@ -12,6 +14,13 @@ import {
 } from './styles';
 
 const GiftList = () => {
+  useLayoutEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }, []);
+
   return (
     <Container>
       <GiftGradient>

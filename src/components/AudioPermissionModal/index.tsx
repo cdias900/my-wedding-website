@@ -19,7 +19,10 @@ const AudioPermissionModal = () => {
   const hideModal = useCallback(() => setShowModal(false), []);
 
   const playSong = useCallback(() => {
-    audioRef.current?.play();
+    if (audioRef.current) {
+      audioRef.current.play();
+      audioRef.current.loop = true;
+    }
     hideModal();
   }, [hideModal]);
 
