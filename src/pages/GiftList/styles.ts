@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { DEVICES } from 'styles/global';
 
+import PixQrCode from 'assets/images/pix-qrcode.png';
+
 import { Text } from 'components';
 
 export const Container = styled.div`
@@ -18,8 +20,16 @@ export const Container = styled.div`
 `;
 
 export const DescriptionText = styled(Text)`
-  width: 40vw;
+  width: 55vw;
   text-align: center;
+
+  @media ${DEVICES.tablet} {
+    width: 70vw;
+  }
+
+  @media ${DEVICES.mobile} {
+    width: 80vw;
+  }
 `;
 
 export const GiftGradient = styled.div`
@@ -50,4 +60,16 @@ export const ListsContainer = styled.div`
   @media ${DEVICES.mobile} {
     margin-top: -10rem;
   }
+`;
+
+export const PixImage = styled.img.attrs({
+  src: PixQrCode,
+  alt: 'Pix QRCode',
+})`
+  width: 32rem;
+`;
+
+export const PixKeyText = styled.span`
+  font-weight: bold;
+  color: ${({ theme }) => theme.blue};
 `;

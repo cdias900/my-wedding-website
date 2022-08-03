@@ -1,4 +1,4 @@
-import { /* Subtitle, */ Title, GiftListItem } from 'components';
+import { Subtitle, Title, GiftListItem } from 'components';
 
 import { giftLists } from './constants';
 
@@ -7,6 +7,8 @@ import {
   DescriptionText,
   GiftGradient,
   ListsContainer,
+  PixImage,
+  PixKeyText,
 } from './styles';
 
 const GiftList = () => {
@@ -24,7 +26,7 @@ const GiftList = () => {
           <GiftListItem key={list.title} {...list} />
         ))}
       </ListsContainer>
-      {/* <GiftGradient>
+      <GiftGradient>
         <Subtitle>Pix</Subtitle>
         <Title>Aqui aceitas PIX</Title>
         <DescriptionText>
@@ -32,7 +34,13 @@ const GiftList = () => {
           esteja sem ideias, também aceitamos contribuições de qualquer valor,
           via PIX.
         </DescriptionText>
-      </GiftGradient> */}
+        <PixImage />
+        <DescriptionText>
+          Basta escanear o QRCode acima com o aplicativo de seu banco ou
+          transferir diretamente para a chave PIX:{' '}
+          <PixKeyText>casamentogabiepedro@cdias.dev</PixKeyText>
+        </DescriptionText>
+      </GiftGradient>
     </Container>
   );
 };
