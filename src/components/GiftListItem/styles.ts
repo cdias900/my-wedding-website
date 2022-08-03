@@ -9,7 +9,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 1.6rem;
+  margin: 1.6rem;
 `;
 
 export const LogoImage = styled.img.attrs({

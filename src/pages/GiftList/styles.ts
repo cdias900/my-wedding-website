@@ -7,6 +7,14 @@ export const Container = styled.div`
   width: 100vw;
   transition: all 0.3s;
   padding-top: 20rem;
+
+  @media ${DEVICES.tablet} {
+    padding-top: 10rem;
+  }
+
+  @media ${DEVICES.mobile} {
+    padding-top: 7rem;
+  }
 `;
 
 export const DescriptionText = styled(Text)`
@@ -36,5 +44,10 @@ export const ListsContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   padding: 3.6rem;
+
+  @media ${DEVICES.mobile} {
+    margin-top: -10rem;
+  }
 `;
