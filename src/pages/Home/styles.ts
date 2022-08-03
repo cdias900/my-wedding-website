@@ -1,7 +1,8 @@
 import styled from 'styled-components';
-import { DEVICES } from 'styles/global';
 
 import coverImg from 'assets/images/cover.png';
+
+import { DEVICES } from 'styles/global';
 
 export const Container = styled.div`
   width: 100vw;

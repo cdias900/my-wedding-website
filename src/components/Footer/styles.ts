@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 import { DEVICES } from 'styles/global';
 
 export const Container = styled.div`

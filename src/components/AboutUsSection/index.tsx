@@ -1,5 +1,6 @@
 import { forwardRef } from 'react';
 import { differenceInYears } from 'date-fns';
+import { useTranslation } from 'react-i18next';
 
 import Pedro01 from 'assets/images/pedro-01.jpg';
 import Gabi01 from 'assets/images/gabi-01.jpg';
@@ -25,11 +26,12 @@ import {
 
 const AboutUsSection = forwardRef<HTMLDivElement>((_, ref) => {
   const theme = useTheme();
+  const { t } = useTranslation();
 
   return (
     <AboutUsContainer ref={ref}>
-      <Subtitle>Casal</Subtitle>
-      <Title>Sobre Nós</Title>
+      <Subtitle>{t('subtitle.couple')}</Subtitle>
+      <Title>{t('title.aboutUs')}</Title>
       <AboutUsPictureContainer>
         <FramedPicture
           image={Pedro01}
@@ -41,10 +43,9 @@ const AboutUsSection = forwardRef<HTMLDivElement>((_, ref) => {
             Pedro Henrique Campos Dias
           </ProfileName>
           <AboutUsText textAlign="left">
-            Tenho {differenceInYears(new Date(), new Date('07/03/2000'))} anos,
-            sou formado em Ciência da Computação no IESB e trabalho como
-            desenvolvedor Web/Mobile, faço parte da igreja Sara Nossa Terra e
-            gosto de programar, assistir animes e jogar videogame.
+            {t('text.aboutPedro', {
+              age: differenceInYears(new Date(), new Date('07/03/2000')),
+            })}
           </AboutUsText>
           <SocialContainer>
             <SocialIconContainer
@@ -75,9 +76,9 @@ const AboutUsSection = forwardRef<HTMLDivElement>((_, ref) => {
         <ProfileDetails orientation="right" position="bottom">
           <ProfileName color={theme.pink}>Gabriella Vidal</ProfileName>
           <AboutUsText style={{ marginBottom: '2.4rem' }} textAlign="right">
-            Tenho {differenceInYears(new Date(), new Date('02/19/1999'))} anos,
-            estou no quarto semestre de Biomedicina no IESB, faço parte da
-            igreja Sara Nossa Terra e amo dormir, fazer compras e dar risadas.
+            {t('text.aboutGabi', {
+              age: differenceInYears(new Date(), new Date('02/19/1999')),
+            })}
           </AboutUsText>
           <SocialContainer>
             <SocialIconContainer

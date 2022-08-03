@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+
 import { DEVICES } from 'styles/global';
 
 interface PictureFrameProps {

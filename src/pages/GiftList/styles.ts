@@ -1,9 +1,10 @@
 import styled from 'styled-components';
-import { DEVICES } from 'styles/global';
 
 import PixQrCode from 'assets/images/pix-qrcode.png';
 
 import { Text } from 'components';
+
+import { DEVICES } from 'styles/global';
 
 export const Container = styled.div`
   width: 100vw;

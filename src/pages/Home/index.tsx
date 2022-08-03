@@ -8,7 +8,7 @@ import {
   useState,
 } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { DEVICES_WIDTH } from 'styles/global';
+import { useTranslation } from 'react-i18next';
 
 import {
   AboutUsSection,
@@ -20,6 +20,7 @@ import {
   HistorySection,
 } from 'components';
 
+import { DEVICES_WIDTH } from 'styles/global';
 import {
   Container,
   CoverImageContainer,
@@ -31,6 +32,7 @@ import {
 const Home = () => {
   const location = useLocation();
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const [showGiftPopUp, setShowGiftPopUp] = useState(false);
 
@@ -88,9 +90,12 @@ const Home = () => {
     <Container ref={indexRef}>
       <CoverImageContainer>
         <ImageBackdrop>
-          <ImageUpperLabel>Nosso Casamento</ImageUpperLabel>
+          <ImageUpperLabel>{t('title.wedding')}</ImageUpperLabel>
           <ImageLabel>Pedro & Gabi</ImageLabel>
-          <Button label="Nossa História" onClick={() => navigate('/history')} />
+          <Button
+            label={t('text.history')}
+            onClick={() => navigate('/history')}
+          />
         </ImageBackdrop>
       </CoverImageContainer>
       <CountdownSection />

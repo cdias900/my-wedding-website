@@ -1,4 +1,5 @@
 import { useLayoutEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { Subtitle, Title, GiftListItem } from 'components';
 
@@ -14,6 +15,8 @@ import {
 } from './styles';
 
 const GiftList = () => {
+  const { t } = useTranslation();
+
   useLayoutEffect(() => {
     window.scrollTo({
       top: 0,
@@ -24,11 +27,8 @@ const GiftList = () => {
   return (
     <Container>
       <GiftGradient>
-        <Title>Lista de Presentes</Title>
-        <DescriptionText>
-          Caso queira nos presentear, temos algumas sugestões de coisas que
-          seriam bem úteis para nós.
-        </DescriptionText>
+        <Title>{t('title.giftList')}</Title>
+        <DescriptionText>{t('text.giftList')}</DescriptionText>
       </GiftGradient>
       <ListsContainer>
         {giftLists.map(list => (
@@ -37,16 +37,11 @@ const GiftList = () => {
       </ListsContainer>
       <GiftGradient>
         <Subtitle>Pix</Subtitle>
-        <Title>Aqui aceitas PIX</Title>
-        <DescriptionText>
-          Caso nenhuma de nossas sugestões de presentes seja interessante, ou
-          esteja sem ideias, também aceitamos contribuições de qualquer valor,
-          via PIX.
-        </DescriptionText>
+        <Title>{t('title.pix')}</Title>
+        <DescriptionText>{t('text.pix1')}</DescriptionText>
         <PixImage />
         <DescriptionText>
-          Basta escanear o QRCode acima com o aplicativo de seu banco ou
-          transferir diretamente para a chave PIX:{' '}
+          {t('text.pix2')}{' '}
           <PixKeyText>casamentogabiepedro@cdias.dev</PixKeyText>
         </DescriptionText>
       </GiftGradient>

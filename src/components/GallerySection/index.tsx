@@ -1,6 +1,7 @@
 import { forwardRef, useCallback, useState } from 'react';
 import Gallery, { PhotoClickHandler } from 'react-photo-gallery';
 import Carousel, { Modal, ModalGateway } from 'react-images';
+import { useTranslation } from 'react-i18next';
 
 import { Subtitle } from 'components/Subtitle';
 import { Title } from 'components/Title';
@@ -10,6 +11,8 @@ import { photos } from './constans';
 import { GalleryContainer } from './styles';
 
 const GallerySection = forwardRef<HTMLDivElement>((_, ref) => {
+  const { t } = useTranslation();
+
   const [currentImage, setCurrentImage] = useState(0);
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
 
@@ -21,8 +24,8 @@ const GallerySection = forwardRef<HTMLDivElement>((_, ref) => {
 
   return (
     <GalleryContainer ref={ref}>
-      <Subtitle>Galeria de Fotos</Subtitle>
-      <Title>Nossa Galeria</Title>
+      <Subtitle>{t('subtitle.gallery')}</Subtitle>
+      <Title>{t('title.gallery')}</Title>
       <Gallery onClick={openPreview} photos={photos} />
       <ModalGateway>
         {isPreviewOpen ? (

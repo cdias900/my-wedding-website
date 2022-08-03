@@ -1,8 +1,9 @@
 import styled from 'styled-components';
-import { DEVICES } from 'styles/global';
 
 import { FramedPicture } from 'components/FramedPicture';
 import { Text } from 'components/Text';
+
+import { DEVICES } from 'styles/global';
 
 export const BeforeAndAfterContainer = styled.div`
   margin: 2rem auto 0;

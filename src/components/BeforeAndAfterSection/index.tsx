@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next';
+
 import BeforeImage from 'assets/images/before.png';
 import AfterImage from 'assets/images/after.png';
 
@@ -17,16 +19,14 @@ import {
 
 const BeforeAndAfterSection = () => {
   const theme = useTheme();
+  const { t } = useTranslation();
 
   return (
     <BeforeAndAfterContainer>
-      <Subtitle>Before & After</Subtitle>
-      <Title>O Bem Que a Morena Me Fez</Title>
-      <Text>
-        Antes de conhecê-la, eu era magrelo, esquelético, triste. Mas com a
-        chegada dela, tudo mudou!
-      </Text>
-      <Text>Confira abaixo o antes e o depois:</Text>
+      <Subtitle>{t('subtitle.beforeAndAfter')}</Subtitle>
+      <Title>{t('title.beforeAndAfter')}</Title>
+      <Text>{t('text.beforeAndAfter1')}</Text>
+      <Text>{t('text.beforeAndAfter2')}</Text>
       <ImagesContainer>
         <ImageContainer>
           <Image image={BeforeImage} frameColor={theme.white} />

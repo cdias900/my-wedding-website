@@ -1,9 +1,10 @@
 import styled from 'styled-components';
-import { DEVICES } from 'styles/global';
 
 import PedroGabi01 from 'assets/images/pedro-gabi-01.jpg';
 
 import { Text } from 'components/Text';
+
+import { DEVICES } from 'styles/global';
 
 interface AboutUsPictureContainerProps {
   orientation?: 'left' | 'right';

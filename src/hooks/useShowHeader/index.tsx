@@ -6,6 +6,7 @@ import React, {
   useCallback,
   useRef,
 } from 'react';
+
 import { DEVICES_WIDTH } from 'styles/global';
 
 export interface IShowHeaderContextData {

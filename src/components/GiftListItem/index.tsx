@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { Button } from 'components/Button';
 import { Text } from 'components/Text';
@@ -15,15 +16,17 @@ interface GiftListItemProps {
 
 const GiftListItem: FC<GiftListItemProps> = ({ title, url, logo }) => {
   const theme = useTheme();
+  const { t } = useTranslation();
+
   return (
     <Container>
       <LogoImage src={logo} />
       <Text style={{ marginBottom: '2rem', marginTop: 'auto' }}>
-        Lista de presentes na {title}
+        {t('text.giftListLabel')} {title}
       </Text>
       <ListLink href={url}>
         <Button
-          label="Acessar"
+          label={t('text.open')}
           textColor={theme.black}
           bgColor={theme.white}
           borderColor={theme.black}

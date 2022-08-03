@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { Text } from 'components/Text';
+
 interface ContainerProps {
   show?: boolean;
 }
@@ -18,4 +20,8 @@ export const Container = styled.div<ContainerProps>`
   justify-content: center;
   padding: 3rem 5rem;
   z-index: 999;
+`;
+
+export const PermissionText = styled(Text)`
+  text-align: center;
 `;

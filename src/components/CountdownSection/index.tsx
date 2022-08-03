@@ -6,6 +6,7 @@ import {
   differenceInMinutes,
   differenceInSeconds,
 } from 'date-fns';
+import { useTranslation } from 'react-i18next';
 
 import { Subtitle } from 'components/Subtitle';
 import { Title } from 'components/Title';
@@ -20,6 +21,8 @@ import {
 } from './styles';
 
 const CountdownSection = () => {
+  const { t } = useTranslation();
+
   const [timeLeft, setTimeLeft] = useState({
     months: 0,
     days: 0,
@@ -84,34 +87,38 @@ const CountdownSection = () => {
   return (
     <>
       <CountdownGradient>
-        <Subtitle>Dia do Casamento</Subtitle>
-        <Title>Contagem Regressiva</Title>
-        <Text>Acompanhe a chegada do nosso grande dia!</Text>
+        <Subtitle>{t('subtitle.weddingDay')}</Subtitle>
+        <Title>{t('title.countdown')}</Title>
+        <Text>{t('text.countdown')}</Text>
       </CountdownGradient>
       <CountdownContainer>
         {timeLeft.months > 0 && (
           <Countdown>
             <CountdownNumber>{timeLeft.months}</CountdownNumber>
             <CountdownLabel>
-              {timeLeft.months === 1 ? 'Mês' : 'Meses'}
+              {t('text.month', { count: timeLeft.months })}
             </CountdownLabel>
           </Countdown>
         )}
         {timeLeft.days > 0 && (
           <Countdown>
             <CountdownNumber>{timeLeft.days}</CountdownNumber>
-            <CountdownLabel>Dia{timeLeft.days === 1 ? '' : 's'}</CountdownLabel>
+            <CountdownLabel>
+              {t('text.day', { count: timeLeft.days })}
+            </CountdownLabel>
           </Countdown>
         )}
         <Countdown>
           <CountdownNumber>{timeLeft.hours}</CountdownNumber>
-          <CountdownLabel>Hora{timeLeft.hours === 1 ? '' : 's'}</CountdownLabel>
+          <CountdownLabel>
+            {t('text.hour', { count: timeLeft.hours })}
+          </CountdownLabel>
         </Countdown>
         {timeLeft.months <= 0 && (
           <Countdown>
             <CountdownNumber>{timeLeft.minutes}</CountdownNumber>
             <CountdownLabel>
-              Minuto{timeLeft.minutes === 1 ? '' : 's'}
+              {t('text.minute', { count: timeLeft.minutes })}
             </CountdownLabel>
           </Countdown>
         )}
@@ -119,7 +126,7 @@ const CountdownSection = () => {
           <Countdown>
             <CountdownNumber>{timeLeft.seconds}</CountdownNumber>
             <CountdownLabel>
-              Segundo{timeLeft.seconds === 1 ? '' : 's'}
+              {t('text.second', { count: timeLeft.seconds })}
             </CountdownLabel>
           </Countdown>
         )}

@@ -86,8 +86,9 @@
               "/^services/",
               "/^store/",
               "/^util/",
+              "/^locales/",
               ["parent", "sibling", "index"],
-              ["/^@styles/",
+              ["/^styles/",
                 "//style/"]
           ]
       }
