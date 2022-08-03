@@ -31,11 +31,11 @@ const pt = {
       second: 'Segundo',
       second_plural: 'Segundos',
       aboutPedro:
-        'Tenho {{age}} anos, sou formado em Ciência da Computação no IESB e trabalho como desenvolvedor Web/Mobile, faço parte da igreja Sara Nossa Terra e gosto de programar, assistir animes e jogar videogame.',
+        'Tenho {{age}} anos, sou formado em Ciência da Computação no IESB e trabalho como desenvolvedor Web/Mobile. Faço parte da igreja Sara Nossa Terra e gosto de programar, assistir animes e jogar videogame.',
       aboutGabi:
         'Tenho {{age}} anos, estou no quarto semestre de Biomedicina no IESB, faço parte da igreja Sara Nossa Terra e amo dormir, fazer compras e dar risadas.',
       beforeAndAfter1:
-        'Antes de conhecê-la, eu era magrelo, esquelético, triste.Mas com a chegada dela, tudo mudou!',
+        'Antes de conhecê-la, eu era magrelo, esquelético, triste. Mas com a chegada dela, tudo mudou!',
       beforeAndAfter2: 'Confira abaixo o antes e o depois:',
       giftList:
         'Caso queira nos presentear, temos algumas sugestões de coisas que seriam bem úteis para nós.',
@@ -84,7 +84,7 @@ const pt = {
     footer: {
       subtitle: 'Casamento de Pedro & Gabi',
       copyright:
-        'Designed by Douglas Biagi Grana - Lupim. All rights reserved {{year}}',
+        'Projetado por Douglas Biagi Grana - Lupim. Todos os direitos reservados {{year}}',
     },
   },
 };
