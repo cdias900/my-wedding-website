@@ -6,4 +6,9 @@ const locales = {
   en,
 };
 
+export const languages = [
+  { name: 'pt', title: 'Português' },
+  { name: 'en', title: 'English' },
+];
+
 export { locales };

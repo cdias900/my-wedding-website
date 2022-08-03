@@ -15,3 +15,4 @@ export * from './GiftListItem';
 export * from './GiftPopUp';
 export * from './AudioPermissionModal';
 export * from './BeforeAndAfterSection';
+export * from './LanguageSwitch';
