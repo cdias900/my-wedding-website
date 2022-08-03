@@ -12,7 +12,6 @@ import { DEVICES_WIDTH } from 'styles/global';
 
 import {
   AboutUsSection,
-  AudioPermissionModal,
   Button,
   CountdownSection,
   GallerySection,
@@ -86,7 +85,6 @@ const Home = () => {
 
   return (
     <Container ref={indexRef}>
-      <AudioPermissionModal />
       <CoverImageContainer>
         <ImageBackdrop>
           <ImageUpperLabel>Nosso Casamento</ImageUpperLabel>
