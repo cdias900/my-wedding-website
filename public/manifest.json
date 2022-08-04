@@ -1,6 +1,7 @@
 {
   "short_name": "Gabi e Pedro",
   "name": "Casamento Gabi e Pedro",
+  "description": "Site do Casamento da Gabi e Pedro",
   "icons": [
     {
       "src": "favicon.ico",
@@ -21,5 +22,32 @@
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#ffffff",
-  "background_color": "#ffffff"
+  "background_color": "#ffffff",
+  "shortcuts" : [
+    {
+      "name": "Início",
+      "url": "/"
+    },
+    {
+      "name": "Sobre nós",
+      "url": "/about-us",
+      "description": "Acesse nossas informações"
+    },
+    {
+      "name": "História",
+      "url": "/history",
+      "description": "Acesse nossa história"
+    },
+    {
+      "name": "Galeria",
+      "url": "/gallery",
+      "description": "Acesse nossa galeria de fotos"
+    },
+    {
+      "name": "Presentes",
+      "url": "/gift-list",
+      "description": "Acesse nossas listas de presentes"
+
+    }
+  ]
 }
