@@ -47,6 +47,10 @@ const pt = {
       song2: 'Deseja reproduzir enquanto navega?',
       yes: 'Sim',
       no: 'Não',
+      contentCached:
+        'O conteúdo da página foi salvo e está pronto para uso offline.',
+      newContentAvailable:
+        'Uma nova versão do conteúdo da página está disponível. Clique aqui para atualizar.',
     },
     post: {
       beginning: {

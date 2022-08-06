@@ -16,3 +16,4 @@ export * from './GiftPopUp';
 export * from './AudioPermissionModal';
 export * from './BeforeAndAfterSection';
 export * from './LanguageSwitch';
+export * from './Toast';

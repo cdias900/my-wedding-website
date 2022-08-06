@@ -47,6 +47,10 @@ const en = {
       song2: 'Do you want to hear it while browsing?',
       yes: 'Yes',
       no: 'No',
+      contentCached:
+        'The page content has been chached and is ready for offline use.',
+      newContentAvailable:
+        'A new version of the page content is available. Click here to update.',
     },
     post: {
       beginning: {
