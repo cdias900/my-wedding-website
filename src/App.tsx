@@ -1,5 +1,6 @@
 import { ThemeProvider } from 'styled-components';
 
+import 'config/analytics';
 import 'config/i18n';
 
 import { Routes } from 'routes';

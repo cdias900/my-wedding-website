@@ -7,6 +7,8 @@ import { Button } from 'components/Button';
 
 import { useTheme } from 'hooks';
 
+import { trackEvent } from 'utils/analytics';
+
 import { Container, PermissionText } from './styles';
 
 const AudioPermissionModal = () => {
@@ -20,6 +22,7 @@ const AudioPermissionModal = () => {
   const hideModal = useCallback(() => setShowModal(false), []);
 
   const playSong = useCallback(() => {
+    trackEvent('play_song_yes');
     if (audioRef.current) {
       audioRef.current.play();
       audioRef.current.loop = true;
@@ -48,7 +51,10 @@ const AudioPermissionModal = () => {
         bgColor={theme.white}
         textColor={theme.pink}
         borderColor={theme.pink}
-        onClick={hideModal}
+        onClick={() => {
+          trackEvent('play_song_no');
+          hideModal();
+        }}
       />
       <audio ref={audioRef} src={WholeNewWorld} />
     </Container>

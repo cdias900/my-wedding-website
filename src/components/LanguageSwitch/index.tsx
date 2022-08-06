@@ -3,6 +3,8 @@ import { useTranslation } from 'react-i18next';
 
 import { Text } from 'components/Text';
 
+import { trackEvent } from 'utils/analytics';
+
 import { languages } from 'locales';
 
 import {
@@ -36,7 +38,10 @@ const LanguageSwitch = () => {
           .filter(lang => lang.name !== i18n.resolvedLanguage)
           .map(lang => (
             <Text
-              onClick={() => i18n.changeLanguage(lang.name)}
+              onClick={() => {
+                trackEvent('language_switched', { lang: lang.name });
+                i18n.changeLanguage(lang.name);
+              }}
               key={lang.name}
             >
               {lang.title}

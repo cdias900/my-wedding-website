@@ -6,6 +6,8 @@ import { useTranslation } from 'react-i18next';
 import { Subtitle } from 'components/Subtitle';
 import { Title } from 'components/Title';
 
+import { trackEvent } from 'utils/analytics';
+
 import { photos } from './constans';
 
 import { GalleryContainer } from './styles';
@@ -18,6 +20,7 @@ const GallerySection = forwardRef<HTMLDivElement>((_, ref) => {
 
   // eslint-disable-next-line no-shadow
   const openPreview: PhotoClickHandler = useCallback((_, { index }) => {
+    trackEvent('gallery_photo_clicked', { photo: index });
     setCurrentImage(index);
     setIsPreviewOpen(true);
   }, []);

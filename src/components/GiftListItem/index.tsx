@@ -6,6 +6,8 @@ import { Text } from 'components/Text';
 
 import { useTheme } from 'hooks';
 
+import { trackEvent } from 'utils/analytics';
+
 import { Container, ListLink, LogoImage } from './styles';
 
 interface GiftListItemProps {
@@ -24,7 +26,10 @@ const GiftListItem: FC<GiftListItemProps> = ({ title, url, logo }) => {
       <Text style={{ marginBottom: '2rem', marginTop: 'auto' }}>
         {t('text.giftListLabel')} {title}
       </Text>
-      <ListLink href={url}>
+      <ListLink
+        href={url}
+        onClick={() => trackEvent('gift_list_clicked', { list: title })}
+      >
         <Button
           label={t('text.open')}
           textColor={theme.black}

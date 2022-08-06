@@ -13,6 +13,8 @@ import { FramedPicture } from 'components/FramedPicture';
 
 import { useTheme } from 'hooks';
 
+import { trackEvent } from 'utils/analytics';
+
 import {
   AboutUsContainer,
   AboutUsPictureContainer,
@@ -53,6 +55,12 @@ const AboutUsSection = forwardRef<HTMLDivElement>((_, ref) => {
               href="https://www.facebook.com/PedroHCD/"
               color={theme.lightBlue}
               aria-label="Facebook"
+              onClick={() =>
+                trackEvent('social_link_clicked', {
+                  link: 'facebook',
+                  name: 'Pedro',
+                })
+              }
             >
               <FacebookIcon color={theme.lightBlue} />
             </SocialIconContainer>
@@ -60,6 +68,12 @@ const AboutUsSection = forwardRef<HTMLDivElement>((_, ref) => {
               href="https://www.instagram.com/phcd0/"
               color={theme.lightBlue}
               aria-label="Instagram"
+              onClick={() =>
+                trackEvent('social_link_clicked', {
+                  link: 'instagram',
+                  name: 'Pedro',
+                })
+              }
             >
               <InstagramIcon color={theme.lightBlue} />
             </SocialIconContainer>
@@ -86,6 +100,12 @@ const AboutUsSection = forwardRef<HTMLDivElement>((_, ref) => {
               href="https://www.facebook.com/marciagabriella.dantasvidal"
               color={theme.pink}
               aria-label="Facebook"
+              onClick={() =>
+                trackEvent('social_link_clicked', {
+                  link: 'facebook',
+                  name: 'Gabi',
+                })
+              }
             >
               <FacebookIcon color={theme.pink} />
             </SocialIconContainer>
@@ -93,6 +113,12 @@ const AboutUsSection = forwardRef<HTMLDivElement>((_, ref) => {
               href="https://www.instagram.com/gabividal18/"
               color={theme.pink}
               aria-label="Instagram"
+              onClick={() =>
+                trackEvent('social_link_clicked', {
+                  link: 'instagram',
+                  name: 'Gabi',
+                })
+              }
             >
               <InstagramIcon color={theme.pink} />
             </SocialIconContainer>

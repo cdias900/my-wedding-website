@@ -20,6 +20,8 @@ import {
   HistorySection,
 } from 'components';
 
+import { trackEvent } from 'utils/analytics';
+
 import { DEVICES_WIDTH } from 'styles/global';
 import {
   Container,
@@ -68,6 +70,8 @@ const Home = () => {
   useLayoutEffect(() => {
     const sectionRef = sections[location.pathname as keyof typeof sections];
     if (sectionRef) scrollToRef(sectionRef);
+
+    trackEvent('page_changed', { page: location.pathname });
   }, [location, sections, scrollToRef]);
 
   useEffect(() => {
@@ -94,7 +98,10 @@ const Home = () => {
           <ImageLabel>Pedro & Gabi</ImageLabel>
           <Button
             label={t('text.history')}
-            onClick={() => navigate('/history')}
+            onClick={() => {
+              trackEvent('history_button_clicked');
+              navigate('/history');
+            }}
           />
         </ImageBackdrop>
       </CoverImageContainer>

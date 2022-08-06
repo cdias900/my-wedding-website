@@ -2,6 +2,8 @@ import Plant from 'assets/icons/plant.svg';
 
 import { useShowHeader } from 'hooks';
 
+import { trackEvent } from 'utils/analytics';
+
 import {
   BurgerBar,
   BurgerContainer,
@@ -19,7 +21,12 @@ const Header = () => {
         <Title>Pedro & Gabi</Title>
         <img src={Plant} alt="Plant" />
       </TitleContainer>
-      <BurgerContainer onClick={toggleVerticalNavBar}>
+      <BurgerContainer
+        onClick={() => {
+          trackEvent('burger_menu_clicked');
+          toggleVerticalNavBar();
+        }}
+      >
         <BurgerBar />
         <BurgerBar />
         <BurgerBar />

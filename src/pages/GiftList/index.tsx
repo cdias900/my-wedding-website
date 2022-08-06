@@ -1,7 +1,10 @@
-import { useLayoutEffect } from 'react';
+import { useEffect, useLayoutEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useLocation } from 'react-router-dom';
 
 import { Subtitle, Title, GiftListItem } from 'components';
+
+import { trackEvent } from 'utils/analytics';
 
 import { giftLists } from './constants';
 
@@ -16,6 +19,7 @@ import {
 
 const GiftList = () => {
   const { t } = useTranslation();
+  const location = useLocation();
 
   useLayoutEffect(() => {
     window.scrollTo({
@@ -23,6 +27,10 @@ const GiftList = () => {
       behavior: 'smooth',
     });
   }, []);
+
+  useEffect(() => {
+    trackEvent('page_changed', { page: location.pathname });
+  }, [location.pathname]);
 
   return (
     <Container>
