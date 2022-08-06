@@ -5,6 +5,8 @@ import { Button } from 'components/Button';
 
 import { useShowHeader } from 'hooks';
 
+import { trackEvent } from 'utils/analytics';
+
 import { Container } from './styles';
 
 interface MessageProps {
@@ -76,6 +78,10 @@ const Toast = () => {
         onClick={() => {
           actions[act as keyof typeof actions]?.();
           setShow(false);
+          trackEvent('toast_clicked', {
+            message: msg,
+            action: act,
+          });
         }}
       />
     </Container>
