@@ -1,4 +1,4 @@
-import { FormEventHandler, useRef, useState } from 'react';
+import { FormEventHandler, useEffect, useRef, useState } from 'react';
 import { ref, onValue, set } from 'firebase/database';
 import { nanoid } from 'nanoid';
 
@@ -12,11 +12,15 @@ import {
   FormContainer,
   Input,
   InputContainer,
+  Table,
 } from './styles';
 
 const Admin = () => {
   const [isSigned, setIsSigned] = useState(false);
   const [guests, setGuests] = useState([{ name: '' }]);
+  const [invites, setInvites] = useState<
+    { code: string; guests: { name: string }[] }[]
+  >([]);
   const passwordRef = useRef<HTMLInputElement>(null);
 
   const handleLogin: FormEventHandler<HTMLFormElement> = e => {
@@ -54,6 +58,24 @@ const Admin = () => {
 
     setGuests([{ name: '' }]);
   };
+
+  useEffect(() => {
+    if (isSigned) {
+      const unsubscribe = onValue(ref(database, 'guests'), snapshot => {
+        const data = snapshot.val();
+        setInvites(
+          Object.entries(data).map(([key, value]) => ({
+            code: key,
+            guests: value as { name: string }[],
+          })),
+        );
+      });
+
+      return unsubscribe;
+    }
+
+    return () => null;
+  }, [isSigned]);
 
   return (
     <Container>
@@ -115,6 +137,30 @@ const Admin = () => {
           </ButtonsContainer>
         )}
       </FormContainer>
+      {isSigned && (
+        <Container>
+          <Table>
+            <thead>
+              <tr>
+                <th>Código</th>
+                <th>Convidados</th>
+              </tr>
+            </thead>
+            <tbody>
+              {invites.map(invite => (
+                <tr key={invite.code}>
+                  <td>{invite.code}</td>
+                  <td>
+                    {invite.guests.map(guest => (
+                      <Text key={guest.name}>{guest.name}</Text>
+                    ))}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </Table>
+        </Container>
+      )}
     </Container>
   );
 };
