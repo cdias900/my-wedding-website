@@ -1,10 +1,13 @@
 import { FormEventHandler, useEffect, useRef, useState } from 'react';
 import { ref, onValue, set } from 'firebase/database';
 import { nanoid } from 'nanoid';
+import { useLocation } from 'react-router-dom';
 
 import { database } from 'config/firebase';
 
 import { Button, Text } from 'components';
+
+import { trackEvent } from 'utils/analytics';
 
 import {
   ButtonsContainer,
@@ -16,6 +19,8 @@ import {
 } from './styles';
 
 const Admin = () => {
+  const location = useLocation();
+
   const [isSigned, setIsSigned] = useState(false);
   const [guests, setGuests] = useState([{ name: '' }]);
   const [invites, setInvites] = useState<
@@ -31,11 +36,14 @@ const Admin = () => {
       snapshot => {
         const password = snapshot.val() as string | undefined;
 
-        setIsSigned(
+        const canSign =
           !!password &&
-            !!passwordRef.current?.value &&
-            passwordRef.current.value === password,
-        );
+          !!passwordRef.current?.value &&
+          passwordRef.current.value === password;
+
+        trackEvent(canSign ? 'admin_login_succeeded' : 'admin_login_failed');
+
+        setIsSigned(canSign);
       },
       {
         onlyOnce: true,
@@ -49,6 +57,10 @@ const Admin = () => {
     const code = nanoid(4);
 
     set(ref(database, `guests/${code}`), guests).then(() => {
+      trackEvent('guest_added', {
+        code,
+        guests,
+      });
       window.postMessage({
         type: 'serviceWorkerMessage',
         message: `Convite adicionado com código: ${code}`,
@@ -76,6 +88,10 @@ const Admin = () => {
 
     return () => null;
   }, [isSigned]);
+
+  useEffect(() => {
+    trackEvent('page_changed', { page: location.pathname });
+  }, [location.pathname]);
 
   return (
     <Container>

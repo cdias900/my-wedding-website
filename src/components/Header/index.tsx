@@ -27,6 +27,7 @@ const Header = () => {
     if (clickCount >= 3) {
       setClickCount(0);
       navigate('/admin');
+      trackEvent('admin_page_unlocked');
     }
   }, [clickCount, navigate]);
 
@@ -37,7 +38,14 @@ const Header = () => {
         <img
           src={Plant}
           alt="Plant"
-          onClick={() => setClickCount(c => c + 1)}
+          onClick={() =>
+            setClickCount(c => {
+              trackEvent('admin_plant_clicked', {
+                count: c + 1,
+              });
+              return c + 1;
+            })
+          }
         />
       </TitleContainer>
       <BurgerContainer
