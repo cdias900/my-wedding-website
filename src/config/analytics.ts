@@ -1,4 +1,9 @@
 import { initializeApp } from 'firebase/app';
+import { AnalyticsBrowser } from '@segment/analytics-next';
+
+const analytics = AnalyticsBrowser.load({
+  writeKey: process.env.REACT_APP_SEGMENT_KEY || '',
+});
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_API_KEY,
@@ -12,4 +17,4 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 
-export { app };
+export { app, analytics };
