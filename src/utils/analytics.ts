@@ -1,15 +1,15 @@
-import { getAnalytics, logEvent } from 'firebase/analytics';
+import { logEvent } from 'firebase/analytics';
 
-import { analytics, app } from 'config/analytics';
+import { analytics as firebaseAnalytics } from 'config/firebase';
+import { analytics as segmentAnalytics } from 'config/segment';
 
 export const trackEvent = (event: string, params?: { [key: string]: any }) => {
   if (process.env.NODE_ENV === 'development') return;
 
-  const firebaseAnalytics = getAnalytics(app);
   logEvent(firebaseAnalytics, event, params);
   if (event === 'page_changed') {
-    analytics.page();
+    segmentAnalytics.page();
   } else {
-    analytics.track(event, params);
+    segmentAnalytics.track(event, params);
   }
 };

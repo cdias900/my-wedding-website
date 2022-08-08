@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes as RouterRoutes, Route } from 'react-router-dom';
 
-import { Home, GiftList } from 'pages';
+import { Home, GiftList, Admin } from 'pages';
 
 import {
   AudioPermissionModal,
@@ -18,6 +18,7 @@ const Routes = () => (
     <Toast />
     <RouterRoutes>
       <Route path="gift-list" element={<GiftList />} />
+      <Route path="admin" element={<Admin />} />
       <Route path="*" element={<Home />} />
     </RouterRoutes>
     <Footer />

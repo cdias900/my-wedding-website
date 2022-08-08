@@ -1,9 +1,6 @@
+import { getAnalytics } from 'firebase/analytics';
 import { initializeApp } from 'firebase/app';
-import { AnalyticsBrowser } from '@segment/analytics-next';
-
-const analytics = AnalyticsBrowser.load({
-  writeKey: process.env.REACT_APP_SEGMENT_KEY || '',
-});
+import { getDatabase } from 'firebase/database';
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_API_KEY,
@@ -13,8 +10,13 @@ const firebaseConfig = {
   messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
   appId: process.env.REACT_APP_APP_ID,
   measurementId: process.env.REACT_APP_MEASUREMENT_ID,
+  databaseURL: process.env.REACT_APP_DATABASE_URL,
 };
 
 const app = initializeApp(firebaseConfig);
 
-export { app, analytics };
+const analytics = getAnalytics(app);
+
+const database = getDatabase(app);
+
+export { app, analytics, database };
