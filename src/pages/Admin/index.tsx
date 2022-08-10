@@ -57,7 +57,18 @@ const Admin = () => {
 
     const code = nanoid(4);
 
-    set(ref(database, `guests/${code}`), guests).then(() => {
+    const validGuests = guests.filter(guest => guest.name !== '');
+    if (validGuests.length < 1) {
+      window.postMessage({
+        type: 'serviceWorkerMessage',
+        message:
+          'Digite o nome do(s) convidado(s) antes de adicionar o convite',
+        timeout: 5000,
+      });
+      return;
+    }
+
+    set(ref(database, `guests/${code}`), validGuests).then(() => {
       trackEvent('guest_added', {
         code,
         guests,
