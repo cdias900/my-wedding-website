@@ -185,7 +185,11 @@ const Admin = () => {
             <tbody>
               {invites
                 .filter(invite =>
-                  search !== '' ? invite.code.startsWith(search) : true,
+                  search !== ''
+                    ? invite.code
+                        .toLowerCase()
+                        .startsWith(search.toLocaleLowerCase())
+                    : true,
                 )
                 .map(invite => (
                   <tr key={invite.code}>
