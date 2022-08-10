@@ -26,6 +26,7 @@ const Admin = () => {
   const [invites, setInvites] = useState<
     { code: string; guests: { name: string }[] }[]
   >([]);
+  const [search, setSearch] = useState('');
   const passwordRef = useRef<HTMLInputElement>(null);
 
   const handleLogin: FormEventHandler<HTMLFormElement> = e => {
@@ -155,6 +156,14 @@ const Admin = () => {
       </FormContainer>
       {isSigned && (
         <Container>
+          <InputContainer>
+            <Text>Pesquisar código:</Text>
+            <Input
+              type="text"
+              value={search}
+              onChange={e => setSearch(e.target.value)}
+            />
+          </InputContainer>
           <Table>
             <thead>
               <tr>
@@ -163,16 +172,20 @@ const Admin = () => {
               </tr>
             </thead>
             <tbody>
-              {invites.map(invite => (
-                <tr key={invite.code}>
-                  <td>{invite.code}</td>
-                  <td>
-                    {invite.guests.map(guest => (
-                      <Text key={guest.name}>{guest.name}</Text>
-                    ))}
-                  </td>
-                </tr>
-              ))}
+              {invites
+                .filter(invite =>
+                  search !== '' ? invite.code.startsWith(search) : true,
+                )
+                .map(invite => (
+                  <tr key={invite.code}>
+                    <td>{invite.code}</td>
+                    <td>
+                      {invite.guests.map(guest => (
+                        <Text key={guest.name}>{guest.name}</Text>
+                      ))}
+                    </td>
+                  </tr>
+                ))}
             </tbody>
           </Table>
         </Container>
