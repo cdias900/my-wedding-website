@@ -5,6 +5,10 @@ import { useLocation } from 'react-router-dom';
 
 import { database } from 'config/firebase';
 
+import { ReactComponent as ConfirmedIcon } from 'assets/icons/check-mark.svg';
+import { ReactComponent as NotConfirmedIcon } from 'assets/icons/x-mark.svg';
+import { ReactComponent as UnknownIcon } from 'assets/icons/doubts-button.svg';
+
 import { Button, Text } from 'components';
 
 import { trackEvent } from 'utils/analytics';
@@ -13,8 +17,10 @@ import {
   ButtonsContainer,
   Container,
   FormContainer,
+  GuestNameContainer,
   Input,
   InputContainer,
+  Separator,
   Table,
 } from './styles';
 
@@ -24,7 +30,10 @@ const Admin = () => {
   const [isSigned, setIsSigned] = useState(false);
   const [guests, setGuests] = useState([{ name: '' }]);
   const [invites, setInvites] = useState<
-    { code: string; guests: { name: string }[] }[]
+    {
+      code: string;
+      guests: { name: string; confirmed?: boolean; reason?: string }[];
+    }[]
   >([]);
   const [search, setSearch] = useState('');
   const passwordRef = useRef<HTMLInputElement>(null);
@@ -81,6 +90,15 @@ const Admin = () => {
     });
 
     setGuests([{ name: '' }]);
+  };
+
+  const getConfirmationIcon = (status?: boolean) => {
+    if (status) return <ConfirmedIcon width={16} height={16} color="green" />;
+
+    if (status === false)
+      return <NotConfirmedIcon width={16} height={16} color="red" />;
+
+    return <UnknownIcon width={16} height={16} />;
   };
 
   useEffect(() => {
@@ -194,7 +212,11 @@ const Admin = () => {
                     <td>{invite.code}</td>
                     <td>
                       {invite.guests.map(guest => (
-                        <Text key={guest.name}>{guest.name}</Text>
+                        <GuestNameContainer key={guest.name}>
+                          <Text>{guest.name}</Text>
+                          <Separator />
+                          {getConfirmationIcon(guest.confirmed)}
+                        </GuestNameContainer>
                       ))}
                     </td>
                   </tr>

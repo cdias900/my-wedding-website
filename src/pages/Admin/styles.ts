@@ -87,3 +87,13 @@ export const Table = styled.table.attrs({
     background-color: ${({ theme }) => theme.lightBlue};
   }
 `;
+
+export const Separator = styled.div`
+  margin: 0 0.4rem;
+`;
+
+export const GuestNameContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
