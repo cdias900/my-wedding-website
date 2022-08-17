@@ -51,6 +51,20 @@ const en = {
         'The page content has been chached and is ready for offline use.',
       newContentAvailable:
         'A new version of the page content is available. Click here to update.',
+      confirmPresence: 'Confirm Presence',
+      invitationCode: 'Invitation Code',
+      invitation: 'Invitation',
+      presenceConfirmation: 'Will you attend?',
+      confirm: 'Confirm',
+      reason: 'Reason',
+      willAttend: "Yes, I'll attend",
+      willNotAttend: "Sorry, I won't be able to attend",
+      presenceConfirmationUpdated: 'Presence confirmation updated!',
+    },
+    error: {
+      invalidCode:
+        "Invalid Code! Please write the code the same way it's written on the invitation, including UPPERCASE and lowercase letters.",
+      emptyConfirmation: 'The confirmation cannot be empty.',
     },
     post: {
       beginning: {

@@ -17,3 +17,4 @@ export * from './AudioPermissionModal';
 export * from './BeforeAndAfterSection';
 export * from './LanguageSwitch';
 export * from './Toast';
+export * from './ConfirmPresenceModal';

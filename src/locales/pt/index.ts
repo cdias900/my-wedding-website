@@ -51,6 +51,20 @@ const pt = {
         'O conteúdo da página foi salvo e está pronto para uso offline.',
       newContentAvailable:
         'Uma nova versão do conteúdo da página está disponível. Clique aqui para atualizar.',
+      confirmPresence: 'Confirmar Presença',
+      invitationCode: 'Código do Convite',
+      invitation: 'Convite',
+      presenceConfirmation: 'Você irá comparecer?',
+      confirm: 'Confirmar',
+      reason: 'Motivo',
+      willAttend: 'Sim, irei comparecer',
+      willNotAttend: 'Desculpe, não poderei',
+      presenceConfirmationUpdated: 'Confirmação de presença atualizada!',
+    },
+    error: {
+      invalidCode:
+        'Código Inválido! Por favor digite o código exatamente como está no convite, incluindo letras MAIÚSCULAS e minúsculas.',
+      emptyConfirmation: 'A confirmação não pode ser enviada em branco.',
     },
     post: {
       beginning: {

@@ -7,13 +7,15 @@ import {
   useRef,
   useState,
 } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 import {
   AboutUsSection,
   BeforeAndAfterSection,
   Button,
+  ConfirmPresenceModal,
+  ConfirmPresenceRef,
   CountdownSection,
   GallerySection,
   GiftPopUp,
@@ -33,7 +35,6 @@ import {
 
 const Home = () => {
   const location = useLocation();
-  const navigate = useNavigate();
   const { t } = useTranslation();
 
   const [showGiftPopUp, setShowGiftPopUp] = useState(false);
@@ -42,6 +43,7 @@ const Home = () => {
   const aboutUsRef = useRef<HTMLDivElement>(null);
   const historyRef = useRef<HTMLDivElement>(null);
   const galleryRef = useRef<HTMLDivElement>(null);
+  const confirmPresenceRef = useRef<ConfirmPresenceRef>(null);
 
   const scrollToRef = useCallback((ref: RefObject<HTMLDivElement>) => {
     const scrollTarget = ref.current?.offsetTop || 0;
@@ -92,15 +94,16 @@ const Home = () => {
 
   return (
     <Container ref={indexRef}>
+      <ConfirmPresenceModal ref={confirmPresenceRef} />
       <CoverImageContainer>
         <ImageBackdrop>
           <ImageUpperLabel>{t('title.wedding')}</ImageUpperLabel>
           <ImageLabel>Pedro & Gabi</ImageLabel>
           <Button
-            label={t('text.history')}
+            label={t('text.confirmPresence')}
             onClick={() => {
-              trackEvent('history_button_clicked');
-              navigate('/history');
+              trackEvent('confirm_presence_button_clicked');
+              confirmPresenceRef.current?.show();
             }}
           />
         </ImageBackdrop>

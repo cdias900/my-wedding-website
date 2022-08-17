@@ -22,11 +22,16 @@ export const Btn = styled.button<BtnProps>`
   transition: all 0.2s;
   min-width: 18rem;
 
-  :hover {
+  :disabled {
+    cursor: not-allowed;
+    filter: brightness(0.8);
+  }
+
+  :hover not:disabled {
     filter: brightness(0.9);
   }
 
-  :active {
+  :active not:disabled {
     filter: brightness(1.1);
   }
 
