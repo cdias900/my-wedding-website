@@ -2,6 +2,10 @@ import styled from 'styled-components';
 
 import { DEVICES } from 'styles/global';
 
+interface IconButtonProps {
+  active?: boolean;
+}
+
 export const Container = styled.div`
   width: 100vw;
   transition: all 0.3s;
@@ -68,6 +72,7 @@ export const Table = styled.table.attrs({
   font-size: 1.7rem;
   width: 40vw;
   text-align: center;
+  margin-bottom: 1.6rem;
 
   @media ${DEVICES.tablet} {
     width: 70vw;
@@ -96,4 +101,13 @@ export const GuestNameContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+`;
+
+export const IconButton = styled.button<IconButtonProps>`
+  outline: none;
+  border: 1px solid ${({ theme }) => theme.black};
+  background-color: ${({ theme, active }) =>
+    active ? theme.gray : theme.white}50;
+  padding: 0.8rem 1.6rem;
+  margin: 0 0.8rem;
 `;
