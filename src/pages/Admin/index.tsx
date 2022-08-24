@@ -55,7 +55,7 @@ const Admin = () => {
   const [guests, setGuests] = useState([{ name: '' }]);
   const [invites, setInvites] = useState<Invite[]>([]);
   const [statusFilter, setStatusFilter] = useState<StatusFilter>({
-    confirmed: false,
+    confirmed: true,
     notConfirmed: true,
     unknown: true,
   });
