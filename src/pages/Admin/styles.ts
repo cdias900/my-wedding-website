@@ -110,4 +110,13 @@ export const IconButton = styled.button<IconButtonProps>`
     active ? theme.gray : theme.white}50;
   padding: 0.8rem 1.6rem;
   margin: 0 0.8rem;
+  cursor: pointer;
+
+  :hover {
+    filter: brightness(0.9);
+  }
+
+  :active {
+    filter: brightness(1.1);
+  }
 `;
