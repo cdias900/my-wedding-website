@@ -6,7 +6,7 @@ This is the website that I created for my wedding. In it you can find all the in
 
 # Technologies
 
-Here is a list of some of the technologies use in this project:
+Here is a list of some of the technologies used in this project:
 
 - Core:
   - React
