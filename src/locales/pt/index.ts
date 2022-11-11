@@ -41,7 +41,7 @@ const pt = {
       giftList:
         'Caso queira nos presentear, temos algumas sugestões de coisas que seriam bem úteis para nós.',
       standaloneGifts:
-        'Você também pode contribuir com o valor total ou parcial de um de nossos presentes avulsos, via PIX',
+        'Você também pode contribuir com o valor total ou parcial de um de nossos presentes avulsos.',
       contribute: 'Contribuir',
       giftTarget: 'Alcançado: {{reached}} de {{target}}',
       pix1: 'Caso nenhuma de nossas sugestões de presentes seja interessante, ou esteja sem ideias, também aceitamos contribuições de qualquer valor, via PIX.',

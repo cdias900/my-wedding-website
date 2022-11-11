@@ -41,7 +41,7 @@ const en = {
       giftList:
         'If you want to give us a gift, we have some suggestions of things that would be very useful for us.',
       standaloneGifts:
-        'You can also contribute with the full or partial value of one of our standalone gifts, via PIX',
+        'You can also contribute with the full or partial value of one of our standalone gifts.',
       contribute: 'Contribute',
       giftTarget: 'Reached: {{reached}} of {{target}}',
       pix1: 'If none of our gift suggestions are interesting, or you are out of ideas, we also accept contributions of any value, via PIX.',
