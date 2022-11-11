@@ -71,6 +71,7 @@ const en = {
       bed: 'Queen Bed',
       rack: 'TV Rack',
       tv: "70' TV",
+      table: 'Dinner Table',
     },
     error: {
       invalidCode:

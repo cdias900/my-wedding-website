@@ -1,10 +1,11 @@
 import HavanLogo from 'assets/images/gift-list/havan-logo.png';
 import DularLogo from 'assets/images/gift-list/dular-logo.png';
 import CasaComfortLogo from 'assets/images/gift-list/casa-comfort-logo.png';
-import FridgeImage from 'assets/images/gift-list/fridge.png';
-import BedImage from 'assets/images/gift-list/bed.png';
+// import FridgeImage from 'assets/images/gift-list/fridge.png';
+// import BedImage from 'assets/images/gift-list/bed.png';
 import RackImage from 'assets/images/gift-list/rack.png';
 import TvImage from 'assets/images/gift-list/tv.png';
+import TableImage from 'assets/images/gift-list/table.png';
 
 export const giftLists = [
   {
@@ -25,14 +26,14 @@ export const giftLists = [
 ];
 
 export const standaloneGifts = [
-  {
-    title: 'fridge',
-    logo: FridgeImage,
-  },
-  {
-    title: 'bed',
-    logo: BedImage,
-  },
+  // {
+  //   title: 'fridge',
+  //   logo: FridgeImage,
+  // },
+  // {
+  //   title: 'bed',
+  //   logo: BedImage,
+  // },
   {
     title: 'rack',
     logo: RackImage,
@@ -40,5 +41,9 @@ export const standaloneGifts = [
   {
     title: 'tv',
     logo: TvImage,
+  },
+  {
+    title: 'table',
+    logo: TableImage,
   },
 ];

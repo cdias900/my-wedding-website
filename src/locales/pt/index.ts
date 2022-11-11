@@ -71,6 +71,7 @@ const pt = {
       bed: 'Cama Box Queen',
       rack: 'Rack para TV',
       tv: 'TV de 70 polegadas',
+      table: 'Mesa de Jantar',
     },
     error: {
       invalidCode:
