@@ -1,12 +1,15 @@
-import { useEffect, useLayoutEffect } from 'react';
+import { useEffect, useLayoutEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLocation } from 'react-router-dom';
+import { onValue, ref } from 'firebase/database';
 
-import { Subtitle, Title, GiftListItem } from 'components';
+import { database } from 'config/firebase';
+
+import { Subtitle, Title, GiftListItem, GiftItem } from 'components';
 
 import { trackEvent } from 'utils/analytics';
 
-import { giftLists } from './constants';
+import { giftLists, standaloneGifts } from './constants';
 
 import {
   Container,
@@ -21,6 +24,10 @@ const GiftList = () => {
   const { t } = useTranslation();
   const location = useLocation();
 
+  const [giftValues, setGiftValues] = useState<{
+    [key: string]: { target: number; reached: number; url: string };
+  }>({});
+
   useLayoutEffect(() => {
     window.scrollTo({
       top: 0,
@@ -32,6 +39,15 @@ const GiftList = () => {
     trackEvent('page_changed', { page: location.pathname });
   }, [location.pathname]);
 
+  useEffect(() => {
+    const unsubscribe = onValue(ref(database, 'standaloneGifts'), snapshot => {
+      const data = snapshot.val();
+      setGiftValues(data);
+    });
+
+    return unsubscribe;
+  }, []);
+
   return (
     <Container>
       <GiftGradient>
@@ -41,6 +57,15 @@ const GiftList = () => {
       <ListsContainer>
         {giftLists.map(list => (
           <GiftListItem key={list.title} {...list} />
+        ))}
+      </ListsContainer>
+      <GiftGradient>
+        <Title>{t('title.standaloneGifts')}</Title>
+        <DescriptionText>{t('text.standaloneGifts')}</DescriptionText>
+      </GiftGradient>
+      <ListsContainer>
+        {standaloneGifts.map(gift => (
+          <GiftItem key={gift.title} {...gift} {...giftValues[gift.title]} />
         ))}
       </ListsContainer>
       <GiftGradient>

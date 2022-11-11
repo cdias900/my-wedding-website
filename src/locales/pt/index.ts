@@ -8,6 +8,7 @@ const pt = {
       beforeAndAfter: 'O Bem Que a Morena Me Fez',
       gallery: 'Nossa Galeria',
       giftList: 'Lista de Presentes',
+      standaloneGifts: 'Presentes Avulsos',
       pix: 'Aqui aceitas PIX',
     },
     subtitle: {
@@ -39,6 +40,10 @@ const pt = {
       beforeAndAfter2: 'Confira abaixo o antes e o depois:',
       giftList:
         'Caso queira nos presentear, temos algumas sugestões de coisas que seriam bem úteis para nós.',
+      standaloneGifts:
+        'Você também pode contribuir com o valor total ou parcial de um de nossos presentes avulsos, via PIX',
+      contribute: 'Contribuir',
+      giftTarget: 'Alcançado: {{reached}} de {{target}}',
       pix1: 'Caso nenhuma de nossas sugestões de presentes seja interessante, ou esteja sem ideias, também aceitamos contribuições de qualquer valor, via PIX.',
       pix2: 'Basta escanear o QRCode acima com o aplicativo de seu banco ou transferir diretamente para a chave PIX:',
       open: 'Acessar',
@@ -60,6 +65,12 @@ const pt = {
       willAttend: 'Sim, irei comparecer',
       willNotAttend: 'Desculpe, não poderei',
       presenceConfirmationUpdated: 'Confirmação de presença atualizada!',
+    },
+    gifts: {
+      fridge: 'Geladeira Inox',
+      bed: 'Cama Box Queen',
+      rack: 'Rack para TV',
+      tv: 'TV de 70 polegadas',
     },
     error: {
       invalidCode:

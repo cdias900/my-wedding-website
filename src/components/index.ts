@@ -12,6 +12,7 @@ export * from './AboutUsSection';
 export * from './HistorySection';
 export * from './GallerySection';
 export * from './GiftListItem';
+export * from './GiftItem';
 export * from './GiftPopUp';
 export * from './AudioPermissionModal';
 export * from './BeforeAndAfterSection';

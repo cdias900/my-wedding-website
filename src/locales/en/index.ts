@@ -8,6 +8,7 @@ const en = {
       beforeAndAfter: 'How Good She Has Been to Me',
       gallery: 'Our Gallery',
       giftList: 'Gifts List',
+      standaloneGifts: 'Standalone Gifts',
       pix: 'PIX Accepted',
     },
     subtitle: {
@@ -39,6 +40,10 @@ const en = {
       beforeAndAfter2: 'Check out the before and after below:',
       giftList:
         'If you want to give us a gift, we have some suggestions of things that would be very useful for us.',
+      standaloneGifts:
+        'You can also contribute with the full or partial value of one of our standalone gifts, via PIX',
+      contribute: 'Contribute',
+      giftTarget: 'Reached: {{reached}} of {{target}}',
       pix1: 'If none of our gift suggestions are interesting, or you are out of ideas, we also accept contributions of any value, via PIX.',
       pix2: "Just scan the QRCode above with your bank's app or transfer it directly to the PIX key:",
       open: 'Open',
@@ -60,6 +65,12 @@ const en = {
       willAttend: "Yes, I'll attend",
       willNotAttend: "Sorry, I won't be able to attend",
       presenceConfirmationUpdated: 'Presence confirmation updated!',
+    },
+    gifts: {
+      fridge: 'Inox Fridge',
+      bed: 'Queen Bed',
+      rack: 'TV Rack',
+      tv: "70' TV",
     },
     error: {
       invalidCode:
