@@ -72,6 +72,11 @@ const pt = {
       rack: 'Rack para TV',
       tv: 'TV de 70 polegadas',
       table: 'Mesa de Jantar',
+      purifier: 'Purificador de Água',
+      washer: 'Máquina de Lavar Roupa',
+      videogame: 'Videogame para o Noivo',
+      nuptials: 'Diária da Noite de Núpcias',
+      couch: 'Sofá',
     },
     error: {
       invalidCode:

@@ -72,6 +72,11 @@ const en = {
       rack: 'TV Rack',
       tv: "70' TV",
       table: 'Dinner Table',
+      purifier: 'Water Purifier',
+      washer: 'Washing Machine',
+      videogame: 'Videogame for the Groom',
+      nuptials: 'Hotel rate for the Wedding Night',
+      couch: 'Couch',
     },
     error: {
       invalidCode:

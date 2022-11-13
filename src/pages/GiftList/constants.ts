@@ -6,6 +6,11 @@ import CasaComfortLogo from 'assets/images/gift-list/casa-comfort-logo.png';
 import RackImage from 'assets/images/gift-list/rack.png';
 import TvImage from 'assets/images/gift-list/tv.png';
 import TableImage from 'assets/images/gift-list/table.png';
+import PurifierImage from 'assets/images/gift-list/purifier.png';
+import WasherImage from 'assets/images/gift-list/washer.png';
+import VideogameImage from 'assets/images/gift-list/videogame.png';
+import NuptialsImage from 'assets/images/gift-list/nuptials.png';
+import CouchImage from 'assets/images/gift-list/couch.png';
 
 export const giftLists = [
   {
@@ -45,5 +50,25 @@ export const standaloneGifts = [
   {
     title: 'table',
     logo: TableImage,
+  },
+  {
+    title: 'purifier',
+    logo: PurifierImage,
+  },
+  {
+    title: 'washer',
+    logo: WasherImage,
+  },
+  {
+    title: 'videogame',
+    logo: VideogameImage,
+  },
+  {
+    title: 'nuptials',
+    logo: NuptialsImage,
+  },
+  {
+    title: 'couch',
+    logo: CouchImage,
   },
 ];
