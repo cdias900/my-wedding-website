@@ -14,9 +14,9 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 7.2rem;
-  height: 7.2rem;
-  border-radius: 7.2rem;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 10rem;
   margin: 2rem;
   background-color: ${({ theme }) => theme.pink};
   right: 0;

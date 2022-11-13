@@ -15,7 +15,7 @@ const GiftPopUp = () => {
         navigate('gift-list');
       }}
     >
-      <GiftIcon width={40} height={40} color="white" />
+      <GiftIcon width={56} height={56} color="white" />
     </Container>
   );
 };
