@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import coverImg from 'assets/images/cover.png';
+import coverImg from 'assets/images/cover.jpeg';
 
 import { DEVICES } from 'styles/global';
 

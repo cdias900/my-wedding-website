@@ -39,6 +39,20 @@ import Gallery38 from 'assets/images/gallery/gallery-00038.jpg';
 import Gallery39 from 'assets/images/gallery/gallery-00039.jpg';
 import Gallery40 from 'assets/images/gallery/gallery-00040.jpg';
 import Gallery41 from 'assets/images/gallery/gallery-00041.jpg';
+import Gallery42 from 'assets/images/gallery/gallery-00042.jpeg';
+import Gallery43 from 'assets/images/gallery/gallery-00043.jpeg';
+import Gallery44 from 'assets/images/gallery/gallery-00044.jpeg';
+import Gallery45 from 'assets/images/gallery/gallery-00045.jpeg';
+import Gallery46 from 'assets/images/gallery/gallery-00046.jpeg';
+import Gallery47 from 'assets/images/gallery/gallery-00047.jpeg';
+import Gallery48 from 'assets/images/gallery/gallery-00048.jpeg';
+import Gallery49 from 'assets/images/gallery/gallery-00049.jpeg';
+import Gallery50 from 'assets/images/gallery/gallery-00050.jpeg';
+import Gallery51 from 'assets/images/gallery/gallery-00051.jpeg';
+import Gallery52 from 'assets/images/gallery/gallery-00052.jpeg';
+import Gallery53 from 'assets/images/gallery/gallery-00053.jpeg';
+import Gallery54 from 'assets/images/gallery/gallery-00054.jpeg';
+import Gallery55 from 'assets/images/gallery/gallery-00055.jpeg';
 
 const photos = [
   {
@@ -245,6 +259,76 @@ const photos = [
     src: Gallery41,
     width: 4,
     height: 3,
+  },
+  {
+    src: Gallery42,
+    width: 4,
+    height: 6,
+  },
+  {
+    src: Gallery43,
+    width: 4,
+    height: 6,
+  },
+  {
+    src: Gallery44,
+    width: 4,
+    height: 6,
+  },
+  {
+    src: Gallery45,
+    width: 4,
+    height: 6,
+  },
+  {
+    src: Gallery46,
+    width: 4,
+    height: 6,
+  },
+  {
+    src: Gallery47,
+    width: 4,
+    height: 6,
+  },
+  {
+    src: Gallery48,
+    width: 4,
+    height: 6,
+  },
+  {
+    src: Gallery49,
+    width: 4,
+    height: 6,
+  },
+  {
+    src: Gallery50,
+    width: 4,
+    height: 6,
+  },
+  {
+    src: Gallery51,
+    width: 6,
+    height: 4,
+  },
+  {
+    src: Gallery52,
+    width: 4,
+    height: 6,
+  },
+  {
+    src: Gallery53,
+    width: 6,
+    height: 4,
+  },
+  {
+    src: Gallery54,
+    width: 6,
+    height: 4,
+  },
+  {
+    src: Gallery55,
+    width: 4,
+    height: 6,
   },
 ];
 
