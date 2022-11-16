@@ -35,7 +35,7 @@ const CountdownSection = () => {
     const interval = setInterval(() => {
       const weddingDate = new Date('2022-12-16T19:00:00.000Z');
       const currentDate = new Date();
-      const monthDays = 365 / 12;
+      const monthDays = 30;
       const monthDiff = differenceInMonths(weddingDate, currentDate);
       const dayDiff = differenceInDays(weddingDate, currentDate) % monthDays;
       const hourDiff =
@@ -114,15 +114,13 @@ const CountdownSection = () => {
             {t('text.hour', { count: timeLeft.hours })}
           </CountdownLabel>
         </Countdown>
-        {timeLeft.months <= 0 && (
-          <Countdown>
-            <CountdownNumber>{timeLeft.minutes}</CountdownNumber>
-            <CountdownLabel>
-              {t('text.minute', { count: timeLeft.minutes })}
-            </CountdownLabel>
-          </Countdown>
-        )}
-        {timeLeft.days <= 0 && (
+        <Countdown>
+          <CountdownNumber>{timeLeft.minutes}</CountdownNumber>
+          <CountdownLabel>
+            {t('text.minute', { count: timeLeft.minutes })}
+          </CountdownLabel>
+        </Countdown>
+        {timeLeft.months <= 0 && timeLeft.days <= 0 && (
           <Countdown>
             <CountdownNumber>{timeLeft.seconds}</CountdownNumber>
             <CountdownLabel>
