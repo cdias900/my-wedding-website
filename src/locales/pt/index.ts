@@ -77,6 +77,7 @@ const pt = {
       videogame: 'Videogame para o Noivo',
       nuptials: 'Diária da Noite de Núpcias',
       couch: 'Sofá',
+      set: 'Jogo de Cama Queen',
     },
     error: {
       invalidCode:

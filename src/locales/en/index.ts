@@ -77,6 +77,7 @@ const en = {
       videogame: 'Videogame for the Groom',
       nuptials: 'Hotel rate for the Wedding Night',
       couch: 'Couch',
+      set: 'Queen size Bedding Set',
     },
     error: {
       invalidCode:

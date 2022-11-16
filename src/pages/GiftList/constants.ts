@@ -11,6 +11,7 @@ import WasherImage from 'assets/images/gift-list/washer.png';
 import VideogameImage from 'assets/images/gift-list/videogame.png';
 import NuptialsImage from 'assets/images/gift-list/nuptials.png';
 import CouchImage from 'assets/images/gift-list/couch.png';
+import SetImage from 'assets/images/gift-list/set.png';
 
 export const giftLists = [
   {
@@ -42,6 +43,10 @@ export const standaloneGifts = [
   {
     title: 'nuptials',
     logo: NuptialsImage,
+  },
+  {
+    title: 'set',
+    logo: SetImage,
   },
   {
     title: 'washer',
