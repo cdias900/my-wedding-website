@@ -8,7 +8,7 @@ const pt = {
       beforeAndAfter: 'O Bem Que a Morena Me Fez',
       gallery: 'Nossa Galeria',
       giftList: 'Lista de Presentes',
-      standaloneGifts: 'Presentes Avulsos',
+      standaloneGifts: 'Presentes',
       pix: 'Aqui aceitas PIX',
     },
     subtitle: {
@@ -39,9 +39,9 @@ const pt = {
         'Antes de conhecê-la, eu era magrelo, esquelético, triste. Mas com a chegada dela, tudo mudou!',
       beforeAndAfter2: 'Confira abaixo o antes e o depois:',
       giftList:
-        'Caso queira nos presentear, temos algumas sugestões de coisas que seriam bem úteis para nós.',
+        'Caso queira nos presentear com algo diferente, temos algumas sugestões de coisas que seriam bem úteis para nós.',
       standaloneGifts:
-        'Você também pode contribuir com o valor total ou parcial de um de nossos presentes avulsos.',
+        'Você pode nos ajudar contribuindo com o valor total ou parcial de um de nossos presentes abaixo.',
       contribute: 'Contribuir',
       giftTarget: 'Alcançado: {{reached}} de {{target}}',
       pix1: 'Caso nenhuma de nossas sugestões de presentes seja interessante, ou esteja sem ideias, também aceitamos contribuições de qualquer valor, via PIX.',

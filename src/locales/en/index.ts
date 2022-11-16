@@ -8,7 +8,7 @@ const en = {
       beforeAndAfter: 'How Good She Has Been to Me',
       gallery: 'Our Gallery',
       giftList: 'Gifts List',
-      standaloneGifts: 'Standalone Gifts',
+      standaloneGifts: 'Gifts',
       pix: 'PIX Accepted',
     },
     subtitle: {
@@ -39,9 +39,9 @@ const en = {
         'Before I met her, I was skinny, scrawny, sad. But after I met her, everything changed!',
       beforeAndAfter2: 'Check out the before and after below:',
       giftList:
-        'If you want to give us a gift, we have some suggestions of things that would be very useful for us.',
+        'If you want to give us a different gift, we have some suggestions of things that would be very useful for us.',
       standaloneGifts:
-        'You can also contribute with the full or partial value of one of our standalone gifts.',
+        'You can help us contributing with the full or partial value of one of our gifts below.',
       contribute: 'Contribute',
       giftTarget: 'Reached: {{reached}} of {{target}}',
       pix1: 'If none of our gift suggestions are interesting, or you are out of ideas, we also accept contributions of any value, via PIX.',

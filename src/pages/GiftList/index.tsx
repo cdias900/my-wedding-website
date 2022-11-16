@@ -51,21 +51,21 @@ const GiftList = () => {
   return (
     <Container>
       <GiftGradient>
-        <Title>{t('title.giftList')}</Title>
-        <DescriptionText>{t('text.giftList')}</DescriptionText>
-      </GiftGradient>
-      <ListsContainer>
-        {giftLists.map(list => (
-          <GiftListItem key={list.title} {...list} />
-        ))}
-      </ListsContainer>
-      <GiftGradient>
         <Title>{t('title.standaloneGifts')}</Title>
         <DescriptionText>{t('text.standaloneGifts')}</DescriptionText>
       </GiftGradient>
       <ListsContainer>
         {standaloneGifts.map(gift => (
           <GiftItem key={gift.title} {...gift} {...giftValues[gift.title]} />
+        ))}
+      </ListsContainer>
+      <GiftGradient>
+        <Title>{t('title.giftList')}</Title>
+        <DescriptionText>{t('text.giftList')}</DescriptionText>
+      </GiftGradient>
+      <ListsContainer>
+        {giftLists.map(list => (
+          <GiftListItem key={list.title} {...list} />
         ))}
       </ListsContainer>
       <GiftGradient>

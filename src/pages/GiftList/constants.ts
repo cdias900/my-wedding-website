@@ -40,12 +40,12 @@ export const standaloneGifts = [
   //   logo: BedImage,
   // },
   {
-    title: 'rack',
-    logo: RackImage,
+    title: 'nuptials',
+    logo: NuptialsImage,
   },
   {
-    title: 'tv',
-    logo: TvImage,
+    title: 'washer',
+    logo: WasherImage,
   },
   {
     title: 'table',
@@ -56,19 +56,19 @@ export const standaloneGifts = [
     logo: PurifierImage,
   },
   {
-    title: 'washer',
-    logo: WasherImage,
+    title: 'couch',
+    logo: CouchImage,
   },
   {
     title: 'videogame',
     logo: VideogameImage,
   },
   {
-    title: 'nuptials',
-    logo: NuptialsImage,
+    title: 'tv',
+    logo: TvImage,
   },
   {
-    title: 'couch',
-    logo: CouchImage,
+    title: 'rack',
+    logo: RackImage,
   },
 ];
