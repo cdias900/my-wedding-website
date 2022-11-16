@@ -132,14 +132,22 @@ const Admin = () => {
   );
 
   const getConfirmationIcon = useCallback(
-    (status?: boolean) => {
+    (status?: boolean, reason?: string) => {
       const statusText = getConfirmationStatusText(status);
 
       if (statusText === 'confirmed')
         return <ConfirmedIcon width={16} height={16} color="green" />;
 
       if (statusText === 'notConfirmed')
-        return <NotConfirmedIcon width={16} height={16} color="red" />;
+        return (
+          <NotConfirmedIcon
+            width={16}
+            height={16}
+            color="red"
+            // eslint-disable-next-line no-alert
+            onClick={() => alert(reason || 'O convidado não informou o motivo')}
+          />
+        );
 
       return <UnknownIcon width={16} height={16} />;
     },
@@ -177,15 +185,12 @@ const Admin = () => {
     [getConfirmationStatusText, statusFilter],
   );
 
-  const updateStatusFilter = useCallback(
-    (key: keyof StatusFilter, value: boolean) => {
-      setStatusFilter(prevStatus => ({
-        ...prevStatus,
-        [key]: value,
-      }));
-    },
-    [],
-  );
+  const updateStatusFilter = useCallback((key: keyof StatusFilter) => {
+    setStatusFilter(prevStatus => ({
+      ...prevStatus,
+      [key]: !prevStatus[key],
+    }));
+  }, []);
 
   useEffect(() => {
     if (isSigned) {
@@ -307,25 +312,19 @@ const Admin = () => {
           <InputContainer>
             <IconButton
               active={statusFilter.confirmed}
-              onClick={() =>
-                updateStatusFilter('confirmed', !statusFilter.confirmed)
-              }
+              onClick={() => updateStatusFilter('confirmed')}
             >
               <ConfirmedIcon width={16} height={16} color="green" />
             </IconButton>
             <IconButton
               active={statusFilter.notConfirmed}
-              onClick={() =>
-                updateStatusFilter('notConfirmed', !statusFilter.notConfirmed)
-              }
+              onClick={() => updateStatusFilter('notConfirmed')}
             >
               <NotConfirmedIcon width={16} height={16} color="red" />
             </IconButton>
             <IconButton
               active={statusFilter.unknown}
-              onClick={() =>
-                updateStatusFilter('unknown', !statusFilter.unknown)
-              }
+              onClick={() => updateStatusFilter('unknown')}
             >
               <UnknownIcon width={16} height={16} />
             </IconButton>
@@ -346,7 +345,7 @@ const Admin = () => {
                       <GuestNameContainer key={guest.name}>
                         <Text>{guest.name}</Text>
                         <Separator />
-                        {getConfirmationIcon(guest.confirmed)}
+                        {getConfirmationIcon(guest.confirmed, guest.reason)}
                       </GuestNameContainer>
                     ))}
                   </td>
