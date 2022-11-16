@@ -285,6 +285,22 @@ const Admin = () => {
             />
           </InputContainer>
           <InputContainer>
+            <Text>
+              Número de convites: {invites.filter(getSearchFilter).length}
+            </Text>
+          </InputContainer>
+          <InputContainer>
+            <Text>
+              Número de convidados:{' '}
+              {invites
+                .filter(getSearchFilter)
+                .reduce(
+                  (previous, current) => previous + current.guests.length,
+                  0,
+                )}
+            </Text>
+          </InputContainer>
+          <InputContainer>
             <IconButton
               active={statusFilter.confirmed}
               onClick={() =>
