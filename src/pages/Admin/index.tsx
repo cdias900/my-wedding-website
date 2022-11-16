@@ -168,6 +168,15 @@ const Admin = () => {
     [getConfirmationStatusText, searchCode, searchName, statusFilter],
   );
 
+  const reduceGuestAmount = useCallback(
+    (previous: number, current: Invite) =>
+      previous +
+      current.guests.filter(
+        guest => statusFilter[getConfirmationStatusText(guest.confirmed)],
+      ).length,
+    [getConfirmationStatusText, statusFilter],
+  );
+
   const updateStatusFilter = useCallback(
     (key: keyof StatusFilter, value: boolean) => {
       setStatusFilter(prevStatus => ({
@@ -292,12 +301,7 @@ const Admin = () => {
           <InputContainer>
             <Text>
               Número de convidados:{' '}
-              {invites
-                .filter(getSearchFilter)
-                .reduce(
-                  (previous, current) => previous + current.guests.length,
-                  0,
-                )}
+              {invites.filter(getSearchFilter).reduce(reduceGuestAmount, 0)}
             </Text>
           </InputContainer>
           <InputContainer>
