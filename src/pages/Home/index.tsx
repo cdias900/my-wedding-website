@@ -20,6 +20,7 @@ import {
   GallerySection,
   GiftPopUp,
   HistorySection,
+  PhotoshootSection,
 } from 'components';
 
 import { trackEvent } from 'utils/analytics';
@@ -112,6 +113,7 @@ const Home = () => {
       <AboutUsSection ref={aboutUsRef} />
       <HistorySection ref={historyRef} />
       <BeforeAndAfterSection />
+      <PhotoshootSection />
       <GallerySection ref={galleryRef} />
       {showGiftPopUp && <GiftPopUp />}
     </Container>

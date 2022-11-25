@@ -19,3 +19,4 @@ export * from './BeforeAndAfterSection';
 export * from './LanguageSwitch';
 export * from './Toast';
 export * from './ConfirmPresenceModal';
+export * from './PhotoshootSection';

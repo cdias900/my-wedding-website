@@ -7,6 +7,7 @@ const en = {
       history: 'Our Love Story',
       beforeAndAfter: 'How Good She Has Been to Me',
       gallery: 'Our Gallery',
+      photoshoot: 'Our Romantic Photoshoot',
       giftList: 'Gifts List',
       standaloneGifts: 'Gifts',
       pix: 'PIX Accepted',
@@ -17,6 +18,7 @@ const en = {
       loveStory: 'Love Story',
       beforeAndAfter: 'Before & After',
       gallery: 'Photo Gallery',
+      photoshoot: 'Romantic',
     },
     text: {
       history: 'Our Story',

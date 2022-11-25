@@ -7,6 +7,7 @@ const pt = {
       history: 'Nossa História de Amor',
       beforeAndAfter: 'O Bem Que a Morena Me Fez',
       gallery: 'Nossa Galeria',
+      photoshoot: 'Nosso Ensaio Romântico',
       giftList: 'Lista de Presentes',
       standaloneGifts: 'Presentes',
       pix: 'Aqui aceitas PIX',
@@ -17,6 +18,7 @@ const pt = {
       loveStory: 'Love Story',
       beforeAndAfter: 'Antes & Depois',
       gallery: 'Galeria de Fotos',
+      photoshoot: 'Romantic',
     },
     text: {
       history: 'Nossa História',

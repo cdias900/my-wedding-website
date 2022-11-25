@@ -47,6 +47,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "check-ts": "tsc --noEmit -p ./tsconfig.json",
     "prepare": "husky install",
     "postinstall": "patch-package"
   },

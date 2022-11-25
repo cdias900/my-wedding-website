@@ -1,4 +1,4 @@
-import { forwardRef, useCallback, useState } from 'react';
+import { useCallback, useState } from 'react';
 import Gallery, { PhotoClickHandler } from 'react-photo-gallery';
 import Carousel, { Modal, ModalGateway } from 'react-images';
 import { useTranslation } from 'react-i18next';
@@ -10,25 +10,24 @@ import { trackEvent } from 'utils/analytics';
 
 import { photos } from './constants';
 
-import { GalleryContainer } from './styles';
+import { PhotoshootContainer } from './styles';
 
-const GallerySection = forwardRef<HTMLDivElement>((_, ref) => {
+const PhotoshootSection = () => {
   const { t } = useTranslation();
 
   const [currentImage, setCurrentImage] = useState(0);
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
 
-  // eslint-disable-next-line no-shadow
   const openPreview: PhotoClickHandler = useCallback((_, { index }) => {
-    trackEvent('gallery_photo_clicked', { photo: index });
+    trackEvent('photoshoot_photo_clicked', { photo: index });
     setCurrentImage(index);
     setIsPreviewOpen(true);
   }, []);
 
   return (
-    <GalleryContainer ref={ref}>
-      <Subtitle>{t('subtitle.gallery')}</Subtitle>
-      <Title>{t('title.gallery')}</Title>
+    <PhotoshootContainer>
+      <Subtitle>{t('subtitle.photoshoot')}</Subtitle>
+      <Title>{t('title.photoshoot')}</Title>
       <Gallery onClick={openPreview} photos={photos} />
       <ModalGateway>
         {isPreviewOpen ? (
@@ -42,8 +41,8 @@ const GallerySection = forwardRef<HTMLDivElement>((_, ref) => {
           </Modal>
         ) : null}
       </ModalGateway>
-    </GalleryContainer>
+    </PhotoshootContainer>
   );
-});
+};
 
-export { GallerySection };
+export { PhotoshootSection };
