@@ -9,7 +9,7 @@ import {
 import { onValue, ref as dbRef, set } from 'firebase/database';
 import { useTranslation } from 'react-i18next';
 
-import { database } from 'config/firebase';
+import { database } from 'config/firebaseDatabase';
 
 import { Button } from 'components/Button';
 import { Subtitle } from 'components/Subtitle';

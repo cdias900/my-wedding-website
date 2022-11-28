@@ -8,8 +8,9 @@ import {
 import { ref, onValue, set } from 'firebase/database';
 import { nanoid } from 'nanoid';
 import { useLocation } from 'react-router-dom';
+import axios from 'axios';
 
-import { database } from 'config/firebase';
+import { database } from 'config/firebaseDatabase';
 
 import { ReactComponent as ConfirmedIcon } from 'assets/icons/check-mark.svg';
 import { ReactComponent as NotConfirmedIcon } from 'assets/icons/x-mark.svg';
@@ -61,6 +62,11 @@ const Admin = () => {
   });
   const [searchCode, setSearchCode] = useState('');
   const [searchName, setSearchName] = useState('');
+  const [notification, setNotification] = useState({
+    title: '',
+    text: '',
+    link: '',
+  });
   const passwordRef = useRef<HTMLInputElement>(null);
 
   const handleLogin: FormEventHandler<HTMLFormElement> = useCallback(e => {
@@ -118,6 +124,40 @@ const Admin = () => {
       setGuests([{ name: '' }]);
     },
     [guests],
+  );
+
+  const updateNotification = (key: keyof typeof notification, value: string) =>
+    setNotification(n => ({
+      ...n,
+      [key]: value,
+    }));
+
+  const handleSendNotification: FormEventHandler<HTMLFormElement> = useCallback(
+    async e => {
+      e.preventDefault();
+
+      if (!notification.title || !notification.text) return;
+
+      const response = await axios.post(
+        '/.netlify/functions/send-notification',
+        notification,
+      );
+
+      if (response.status === 200) {
+        window.postMessage({
+          type: 'serviceWorkerMessage',
+          message: 'Notificação enviada com sucesso!',
+          timeout: 5000,
+        });
+      } else {
+        window.postMessage({
+          type: 'serviceWorkerMessage',
+          message: 'Erro ao enviar notificação.',
+          timeout: 5000,
+        });
+      }
+    },
+    [notification],
   );
 
   const getConfirmationStatusText = useCallback(
@@ -222,6 +262,7 @@ const Admin = () => {
             <InputContainer key={guest + String(index)}>
               <Text>Nome do Convidado:</Text>
               <Input
+                required
                 value={guest.name}
                 onChange={e =>
                   setGuests(g => {
@@ -237,7 +278,7 @@ const Admin = () => {
           <>
             <InputContainer>
               <Text>Digite a senha:</Text>
-              <Input type="password" ref={passwordRef} />
+              <Input required type="password" ref={passwordRef} />
             </InputContainer>
             <Button label="Login" type="submit" />
           </>
@@ -274,6 +315,34 @@ const Admin = () => {
           </ButtonsContainer>
         )}
       </FormContainer>
+      {isSigned && (
+        <FormContainer onSubmit={handleSendNotification}>
+          <InputContainer>
+            <Text>Título da notificação:</Text>
+            <Input
+              required
+              value={notification.title}
+              onChange={e => updateNotification('title', e.target.value)}
+            />
+          </InputContainer>
+          <InputContainer>
+            <Text>Texto da notificação:</Text>
+            <Input
+              required
+              value={notification.text}
+              onChange={e => updateNotification('text', e.target.value)}
+            />
+          </InputContainer>
+          <InputContainer>
+            <Text>Url da notificação:</Text>
+            <Input
+              value={notification.link}
+              onChange={e => updateNotification('link', e.target.value)}
+            />
+          </InputContainer>
+          <Button label="Enviar Notificação" type="submit" />
+        </FormContainer>
+      )}
       {isSigned && (
         <Container>
           <InputContainer>

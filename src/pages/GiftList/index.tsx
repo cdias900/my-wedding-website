@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useLocation } from 'react-router-dom';
 import { onValue, ref } from 'firebase/database';
 
-import { database } from 'config/firebase';
+import { database } from 'config/firebaseDatabase';
 
 import { Subtitle, Title, GiftListItem, GiftItem } from 'components';
 

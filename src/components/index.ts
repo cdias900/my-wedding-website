@@ -20,3 +20,4 @@ export * from './LanguageSwitch';
 export * from './Toast';
 export * from './ConfirmPresenceModal';
 export * from './PhotoshootSection';
+export * from './NotificationOverlay';

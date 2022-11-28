@@ -1,6 +1,6 @@
 import { logEvent } from 'firebase/analytics';
 
-import { analytics as firebaseAnalytics } from 'config/firebase';
+import { analytics as firebaseAnalytics } from 'config/firebaseAnalytics';
 import { analytics as segmentAnalytics } from 'config/segment';
 
 export const trackEvent = (event: string, params?: { [key: string]: any }) => {
