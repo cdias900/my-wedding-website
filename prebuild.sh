@@ -1,9 +1,5 @@
 #!/usr/bin/env bash
 
-set -a
-source <(cat .env | sed -e '/^#/d;/^\s*$/d' -e "s/'/'\\\''/g" -e "s/=\(.*\)/='\1'/g")
-set +a
-
 echo -e "/* eslint-disable no-restricted-globals */
 /* eslint-disable no-undef */
 // Scripts for firebase and firebase messaging
@@ -24,14 +20,16 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-const messaging = firebase.messaging();
+if (firebase.messaging.isSupported()) {
+  const messaging = firebase.messaging();
 
-messaging.onBackgroundMessage(payload => {
-  const notificationTitle = payload.notification.title;
-  const notificationOptions = {
-    body: payload.notification.body,
-    icon: '/logo512.png',
-  };
+  messaging.onBackgroundMessage(payload => {
+    const notificationTitle = payload.notification.title;
+    const notificationOptions = {
+      body: payload.notification.body,
+      icon: '/logo512.png',
+    };
 
-  self.registration.showNotification(notificationTitle, notificationOptions);
-});" > "$PWD/public/firebase-messaging-sw.js"
+    self.registration.showNotification(notificationTitle, notificationOptions);
+  });
+}" > "$PWD/public/firebase-messaging-sw.js"

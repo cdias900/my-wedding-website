@@ -67,6 +67,8 @@ const en = {
       willAttend: "Yes, I'll attend",
       willNotAttend: "Sorry, I won't be able to attend",
       presenceConfirmationUpdated: 'Presence confirmation updated!',
+      notifications:
+        'Would you like to turn on notifications and get updates about the latest news of our wedding?',
     },
     gifts: {
       fridge: 'Inox Fridge',

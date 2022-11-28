@@ -67,6 +67,8 @@ const pt = {
       willAttend: 'Sim, irei comparecer',
       willNotAttend: 'Desculpe, não poderei',
       presenceConfirmationUpdated: 'Confirmação de presença atualizada!',
+      notifications:
+        'Você gostaria de ativar as notificações e receber as notícias mais recentes sobre o nosso casamento?',
     },
     gifts: {
       fridge: 'Geladeira Inox',
