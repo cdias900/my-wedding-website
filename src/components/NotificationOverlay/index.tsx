@@ -38,7 +38,6 @@ const NotificationOverlay = () => {
         if (token) saveFcmToken(token);
       });
       onMessage(messaging, payload => {
-        console.log('MESSAGE RECEIVED', payload);
         window.postMessage({
           type: 'serviceWorkerMessage',
           message: `${payload.notification?.title}\n${payload.notification?.body}`,
