@@ -40,7 +40,7 @@ const NotificationOverlay = () => {
       onMessage(messaging, payload => {
         window.postMessage({
           type: 'serviceWorkerMessage',
-          message: `${payload.notification?.title}\n${payload.notification?.body}`,
+          message: `${payload.notification?.title}: ${payload.notification?.body}`,
           timeout: 5000,
         });
       });
