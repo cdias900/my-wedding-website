@@ -27,7 +27,7 @@ const handler: Handler = async (event, _) => {
         const tokens = snapshot.val();
         if (!tokens) return;
 
-        await axios.post(
+        const response = await axios.post(
           'https://fcm.googleapis.com/fcm/send',
           {
             registration_ids: tokens,
@@ -43,6 +43,7 @@ const handler: Handler = async (event, _) => {
             },
           },
         );
+        console.log('FCM RESPONSE', response.data);
       },
       {
         onlyOnce: true,

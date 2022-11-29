@@ -20,16 +20,15 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-if (firebase.messaging.isSupported()) {
-  const messaging = firebase.messaging();
+const messaging = firebase.messaging();
 
-  messaging.onBackgroundMessage(payload => {
-    const notificationTitle = payload.notification.title;
-    const notificationOptions = {
-      body: payload.notification.body,
-      icon: '/logo512.png',
-    };
+messaging.onBackgroundMessage(payload => {
+  console.log('Background message received', payload);
+  const notificationTitle = payload.notification.title;
+  const notificationOptions = {
+    body: payload.notification.body,
+    icon: '/logo512.png',
+  };
 
-    self.registration.showNotification(notificationTitle, notificationOptions);
-  });
-}" > "$PWD/public/firebase-messaging-sw.js"
+  self.registration.showNotification(notificationTitle, notificationOptions);
+});" > "$PWD/public/firebase-messaging-sw.js"

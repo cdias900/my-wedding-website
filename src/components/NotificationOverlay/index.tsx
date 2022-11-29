@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import {
   getMessaging,
   getToken,
@@ -28,6 +28,26 @@ const NotificationOverlay = () => {
   const theme = useTheme();
   const { t } = useTranslation();
 
+  const registerNotifications = useCallback(async () => {
+    const supported = await isSupported();
+    if (supported) {
+      const messaging = getMessaging(app);
+      getToken(messaging, {
+        vapidKey: process.env.REACT_APP_PUSH_PUBLIC_KEY,
+      }).then(token => {
+        if (token) saveFcmToken(token);
+      });
+      onMessage(messaging, payload => {
+        console.log('MESSAGE RECEIVED', payload);
+        window.postMessage({
+          type: 'serviceWorkerMessage',
+          message: `${payload.notification?.title}\n${payload.notification?.body}`,
+          timeout: 5000,
+        });
+      });
+    }
+  }, []);
+
   const onClickYes = useCallback(() => {
     trackEvent('enable_notifications_yes');
     setShowModal(false);
@@ -35,27 +55,13 @@ const NotificationOverlay = () => {
       window.Notification.requestPermission().then(async perm => {
         setPermission(perm);
         setShowNotificationOverlay(false);
-        if (perm === 'granted') {
-          const supported = await isSupported();
-          if (supported) {
-            const messaging = getMessaging(app);
-            getToken(messaging, {
-              vapidKey: process.env.REACT_APP_PUSH_PUBLIC_KEY,
-            }).then(token => {
-              if (token) saveFcmToken(token);
-            });
-            onMessage(messaging, payload => {
-              window.postMessage({
-                type: 'serviceWorkerMessage',
-                message: `${payload.notification?.title}\n${payload.notification?.body}`,
-                timeout: 5000,
-              });
-            });
-          }
-        }
       });
     }
   }, []);
+
+  useEffect(() => {
+    if (permission === 'granted') registerNotifications();
+  }, [permission, registerNotifications]);
 
   if (permission !== 'default') return null;
 
