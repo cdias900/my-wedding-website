@@ -138,24 +138,49 @@ const Admin = () => {
 
       if (!notification.title || !notification.text) return;
 
-      const response = await axios.post(
-        '/.netlify/functions/send-notification',
-        notification,
-      );
+      onValue(
+        ref(database, 'tokens'),
+        async snapshot => {
+          const tokens = snapshot.val();
+          if (!tokens) return;
 
-      if (response.status === 200) {
-        window.postMessage({
-          type: 'serviceWorkerMessage',
-          message: 'Notificação enviada com sucesso!',
-          timeout: 5000,
-        });
-      } else {
-        window.postMessage({
-          type: 'serviceWorkerMessage',
-          message: 'Erro ao enviar notificação.',
-          timeout: 5000,
-        });
-      }
+          const response = await axios.post(
+            'https://fcm.googleapis.com/fcm/send',
+            {
+              registration_ids: tokens,
+              notification: {
+                title: notification.title,
+                body: notification.text,
+              },
+              webpush: {
+                link: `https://gabiepedro.cdias.dev/${notification.link}`,
+              },
+            },
+            {
+              headers: {
+                Authorization: `key=${process.env.REACT_APP_FCM_SERVER_KEY}`,
+                'Content-Type': 'application/json',
+              },
+            },
+          );
+          if (response.status === 200) {
+            window.postMessage({
+              type: 'serviceWorkerMessage',
+              message: 'Notificação enviada com sucesso!',
+              timeout: 5000,
+            });
+          } else {
+            window.postMessage({
+              type: 'serviceWorkerMessage',
+              message: 'Erro ao enviar notificação.',
+              timeout: 5000,
+            });
+          }
+        },
+        {
+          onlyOnce: true,
+        },
+      );
     },
     [notification],
   );
