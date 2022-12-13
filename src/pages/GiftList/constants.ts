@@ -1,6 +1,5 @@
 import HavanLogo from 'assets/images/gift-list/havan-logo.png';
 import DularLogo from 'assets/images/gift-list/dular-logo.png';
-import CasaComfortLogo from 'assets/images/gift-list/casa-comfort-logo.png';
 // import FridgeImage from 'assets/images/gift-list/fridge.png';
 // import BedImage from 'assets/images/gift-list/bed.png';
 import RackImage from 'assets/images/gift-list/rack.png';
@@ -15,13 +14,8 @@ import SetImage from 'assets/images/gift-list/set.png';
 
 export const giftLists = [
   {
-    title: 'Casa Comfort',
-    url: 'https://bit.ly/3khnzlZ',
-    logo: CasaComfortLogo,
-  },
-  {
     title: 'Dular',
-    url: 'https://www.listasdular.com.br/listas/listaProdutos.jsp?lista.codLista=75155',
+    url: 'https://www.listasdular.com.br/listas/listaProdutos.jsp?lista.codLista=75357',
     logo: DularLogo,
   },
   {
