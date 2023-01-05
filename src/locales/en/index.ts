@@ -123,8 +123,7 @@ const en = {
     },
     footer: {
       subtitle: "Pedro & Gabi' Wedding",
-      copyright:
-        'Designed by Douglas Biagi Grana - Lupim. All rights reserved {{year}}',
+      copyright: 'Designed by Lupim. All rights reserved {{year}}',
     },
   },
 };

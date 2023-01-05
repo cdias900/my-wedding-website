@@ -123,8 +123,7 @@ const pt = {
     },
     footer: {
       subtitle: 'Casamento de Pedro & Gabi',
-      copyright:
-        'Projetado por Douglas Biagi Grana - Lupim. Todos os direitos reservados {{year}}',
+      copyright: 'Projetado por Lupim. Todos os direitos reservados {{year}}',
     },
   },
 };
