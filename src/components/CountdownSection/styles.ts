@@ -80,7 +80,7 @@ export const CountdownNumber = styled.span`
   font-family: 'Volkhov', serif;
   font-size: 8rem;
   font-weight: 700;
-  color ${({ theme }) => theme.blue};
+  color: ${({ theme }) => theme.blue};
 
   @media ${DEVICES.tablet} {
     font-size: 6rem;
