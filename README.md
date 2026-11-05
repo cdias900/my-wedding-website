@@ -2,7 +2,9 @@
 
 This is the website that I created for my wedding. In it you can find all the information related to my story with my fiancée, some pictures of us and the gift lists.
 
-# Build Status [![Netlify Status](https://api.netlify.com/api/v1/badges/b496e3aa-8ca0-41ba-a41a-34be5da945f5/deploy-status)](https://app.netlify.com/sites/gabiepedro/deploys)
+# Deployment
+
+Served from `gabiepedro.cdias.dev` by an assets-only Cloudflare Worker (`wrangler.jsonc`). `.github/workflows/deploy.yml` builds and deploys on every push to `main`; the `REACT_APP_*` build variables and the Cloudflare credentials are repository secrets.
 
 # Technologies
 
