@@ -1,41 +1,55 @@
-# My Wedding Website
+<p align="center">
+  <img src="public/logo512.png" alt="Wedding website icon" width="96" height="96">
+</p>
 
-This is the website that I created for my wedding. In it you can find all the information related to my story with my fiancée, some pictures of us and the gift lists.
+<h1 align="center">Wedding Website</h1>
 
-# Deployment
+<p align="center">A bilingual wedding website for sharing the celebration with guests.</p>
 
-Served from `gabiepedro.cdias.dev` by an assets-only Cloudflare Worker (`wrangler.jsonc`). `.github/workflows/deploy.yml` builds and deploys on every push to `main`; the `REACT_APP_*` build variables and the Cloudflare credentials are repository secrets.
+<p align="center"><a href="https://gabiepedro.cdias.dev">gabiepedro.cdias.dev</a></p>
 
-# Technologies
+## What it is
 
-Here is a list of some of the technologies used in this project:
+A private-couple wedding website for guests, with the couple's story, photos, celebration information and gift list. It is available in Portuguese and English and can be installed as a progressive web app.
 
-- Core:
-  - React
-  - React Router
-  - Styled Components
-  - TypeScript
-  - Axios
-- Linting:
-  - ESLint
-  - Prettier
-  - Husky
-  - CommitLint
-  - Commitizen
-- Analytics:
-  - Firebase Analytics
-- Localization:
-  - i18next
-- PWA:
-  - Workbox Service Worker
+## Features
 
-TODO: Add unit tests
+**The celebration**
+- Share the couple's story and photo galleries
+- Present event information and a countdown
+- Let guests confirm their presence
 
-# Project Structure
+**Gift list**
+- Browse gift ideas and contribution progress
+- See gift-list updates as they change
 
+**Guest experience**
+- Switch between Portuguese and English
+- Install the site as a PWA and access cached content offline
 
-This project is divided into some folders inside the `src` directory, according to the file's responsibility.
+## Privacy
 
-The app also works offline with the help of a service worker. The service worker is responsible for caching the website content and letting the user know when there is a new version of the content.
+The site contains personal wedding content intended for invited guests. It uses Firebase and Segment analytics, and Firebase services support the gift list, attendance responses and notifications. Do not add private addresses, phone numbers, email addresses or guest data to this repository or README.
 
+## Look
 
+A photo-led wedding design with soft lavender botanical accents and a warm, personal tone.
+
+## Layout
+
+| Path | What it holds |
+| --- | --- |
+| `src/pages` | Home, gift list and administration pages |
+| `src/components` | Story, gallery, event and shared interface sections |
+| `src/locales` | Portuguese and English copy |
+| `src/assets` | Photos, illustrations and audio |
+| `public` | PWA assets and static files |
+| `src/service-worker.ts` | Offline caching and update behavior |
+
+## Status
+
+Live at [gabiepedro.cdias.dev](https://gabiepedro.cdias.dev) for the wedding celebration.
+
+## Development
+
+Building, testing and deploying are covered in [AGENTS.md](AGENTS.md).
